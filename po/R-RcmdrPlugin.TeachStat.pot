@@ -1,0 +1,782 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: RcmdrPlugin.TeachStat 1.0.10\n"
+"POT-Creation-Date: 2018-11-05 17:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Randomness test for two level factor..."
+msgstr ""
+
+msgid "Randomness test for two level factor"
+msgstr ""
+
+msgid "Randomness test for numeric variable..."
+msgstr ""
+
+msgid "Randomness test for numeric variable"
+msgstr ""
+
+msgid "Show graphically"
+msgstr ""
+
+msgid "Cut-point (median by default):"
+msgstr ""
+
+msgid "Cut-point must be numeric or NULL"
+msgstr ""
+
+msgid "Hypothesis Testing for a proportion"
+msgstr ""
+
+msgid "<no variable selected>"
+msgstr ""
+
+msgid "Variable (pick one)"
+msgstr ""
+
+msgid "Proportion for the level (pick one)"
+msgstr ""
+
+msgid "No. successes"
+msgstr ""
+
+msgid "No. failures"
+msgstr ""
+
+msgid "Population proportion != p0"
+msgstr ""
+
+msgid "Population proportion < p0"
+msgstr ""
+
+msgid "Population proportion > p0"
+msgstr ""
+
+msgid "Alternative hypothesis"
+msgstr ""
+
+msgid "Null hypothesis: p ="
+msgstr ""
+
+msgid "Successes number value must be a positive integer number"
+msgstr ""
+
+msgid "Failures number value must be a positive integer number"
+msgstr ""
+
+msgid "A variable or successes number and failures number must be selected"
+msgstr ""
+
+msgid "A variable must be selected or the sum of successes and failures numbers must be positive"
+msgstr ""
+
+msgid "Successes number and failures number must be provided"
+msgstr ""
+
+msgid "Confidence level must be between 0 and 1"
+msgstr ""
+
+msgid "Value for the null hypothesis must be between 0 and 1 (and not be)"
+msgstr ""
+
+msgid "No. attempts"
+msgstr ""
+
+msgid "Other levels"
+msgstr ""
+
+msgid "Distribution"
+msgstr ""
+
+msgid "Test statistics value"
+msgstr ""
+
+msgid "p-value"
+msgstr ""
+
+msgid "Population proportion is not equal to"
+msgstr ""
+
+msgid "Population proportion is less than"
+msgstr ""
+
+msgid "Population proportion is greater than"
+msgstr ""
+
+msgid "Sample estimate"
+msgstr ""
+
+msgid "There must be at least 1 success and 1 failure"
+msgstr ""
+
+msgid "Sample"
+msgstr ""
+
+msgid "Hypothesis Testing for the ratio of two variances"
+msgstr ""
+
+msgid "Groups (pick one)"
+msgstr ""
+
+msgid "Group 1"
+msgstr ""
+
+msgid "Group 2"
+msgstr ""
+
+msgid "Ratio of population variances != sigma^2_1/sigma^2_2"
+msgstr ""
+
+msgid "Ratio of population variances < sigma^2_1/sigma^2_2"
+msgstr ""
+
+msgid "Ratio of population variances > sigma^2_1/sigma^2_2"
+msgstr ""
+
+msgid "Null hypothesis: sigma^2_1/sigma^2_2 ="
+msgstr ""
+
+msgid "No group selected"
+msgstr ""
+
+msgid "No variable selected"
+msgstr ""
+
+msgid "Group 1 and Group 2 must not coincide"
+msgstr ""
+
+msgid "Value for the null hypothesis must be a positive number"
+msgstr ""
+
+msgid "Hypothesis testing for the ratio of two variances"
+msgstr ""
+
+msgid "Variable"
+msgstr ""
+
+msgid "Groups"
+msgstr ""
+
+msgid "with"
+msgstr ""
+
+msgid "and"
+msgstr ""
+
+msgid "degrees of freedom"
+msgstr ""
+
+msgid "Ratio of population variances is not equal to"
+msgstr ""
+
+msgid "Ratio of population variances is less than"
+msgstr ""
+
+msgid "Ratio of population variances is greater than"
+msgstr ""
+
+msgid "Hypothesis testing for difference of proportions"
+msgstr ""
+
+msgid "Success"
+msgstr ""
+
+msgid "Sample 1"
+msgstr ""
+
+msgid "Sample 2"
+msgstr ""
+
+msgid "Population proportion difference != p0_1 - p0_2"
+msgstr ""
+
+msgid "Population proportion difference < p0_1 - p0_2"
+msgstr ""
+
+msgid "Population proportion difference > p0_1 - p0_2"
+msgstr ""
+
+msgid "Null hypothesis: p_1 - p_2 ="
+msgstr ""
+
+msgid "Successes number value of Sample 1 must be a positive integer number"
+msgstr ""
+
+msgid "Failures number value of Sample 1 must be a positive integer number"
+msgstr ""
+
+msgid "Successes number value of Sample 2 must be a positive integer number"
+msgstr ""
+
+msgid "Failures number value of Sample 2 must be a positive integer number"
+msgstr ""
+
+msgid "Variables or successes number and failures number of two samples must be selected"
+msgstr ""
+
+msgid "Successes and failures numbers for the two samples must be selected"
+msgstr ""
+
+msgid "Group 1, Group 2 and Success must be selected"
+msgstr ""
+
+msgid "Value for the null hypothesis must be between -1 and 1"
+msgstr ""
+
+msgid "Population difference is not equal to"
+msgstr ""
+
+msgid "Population difference is less than"
+msgstr ""
+
+msgid "Population difference is greater than"
+msgstr ""
+
+msgid "Sample estimates"
+msgstr ""
+
+msgid "There must be at least 1 success and 1 failure for both samples"
+msgstr ""
+
+msgid "Hypothesis Testing for the mean"
+msgstr ""
+
+msgid "Variance"
+msgstr ""
+
+msgid "Known"
+msgstr ""
+
+msgid "Unknown"
+msgstr ""
+
+msgid "Population mean != mu0"
+msgstr ""
+
+msgid "Population mean < mu0"
+msgstr ""
+
+msgid "Population mean > mu0"
+msgstr ""
+
+msgid "Null hypothesis: mu ="
+msgstr ""
+
+msgid "Known variance value must be a positive number"
+msgstr ""
+
+msgid "No valid value for the Null Hypothesis"
+msgstr ""
+
+msgid "Hypothesis Testing for the mean with unknown variance"
+msgstr ""
+
+msgid "Hypothesis Testing for the mean with known variance ="
+msgstr ""
+
+msgid "Population mean is not equal to"
+msgstr ""
+
+msgid "Population mean is less than"
+msgstr ""
+
+msgid "Population mean is greater than"
+msgstr ""
+
+msgid "Hypothesis Testing for the difference of independent means"
+msgstr ""
+
+msgid "Variances"
+msgstr ""
+
+msgid "Unknown and equal"
+msgstr ""
+
+msgid "Unknown and unequal"
+msgstr ""
+
+msgid "Population mean difference != mu0_1-mu0_2"
+msgstr ""
+
+msgid "Population mean difference < mu0_1-mu0_2"
+msgstr ""
+
+msgid "Population mean difference > mu0_1-mu0_2"
+msgstr ""
+
+msgid "Null hypothesis: mu_1 - mu_2 ="
+msgstr ""
+
+msgid "Known variances values must be positive numbers"
+msgstr ""
+
+msgid "Hypothesis Testing for the mean difference of two independent samples with known variances"
+msgstr ""
+
+msgid "Hypothesis Testing for the mean difference of two independent samples with unknown and equal variances"
+msgstr ""
+
+msgid "Hypothesis Testing for the mean difference of two independent samples with unknown and unequal variances"
+msgstr ""
+
+msgid "Hypothesis Testing for paired means"
+msgstr ""
+
+msgid "First variable (pick one)"
+msgstr ""
+
+msgid "Second variable (pick one)"
+msgstr ""
+
+msgid "Difference between population means != mu0_1-mu0_2"
+msgstr ""
+
+msgid "Difference between population means < mu0_1-mu0_2"
+msgstr ""
+
+msgid "Difference between population means > mu0_1-mu0_2"
+msgstr ""
+
+msgid "No variable selected in First variable"
+msgstr ""
+
+msgid "No variable selected in Second variable"
+msgstr ""
+
+msgid "Selected variables must be different"
+msgstr ""
+
+msgid "Hypothesis Testing for the mean difference of two paired samples"
+msgstr ""
+
+msgid "Hypothesis Testing for the variance"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Population variance != sigma^2_0"
+msgstr ""
+
+msgid "Population variance < sigma^2_0"
+msgstr ""
+
+msgid "Population variance > sigma^2_0"
+msgstr ""
+
+msgid "Null hypothesis: sigma^2 ="
+msgstr ""
+
+msgid "Known mean value must be numeric"
+msgstr ""
+
+msgid "Hypothesis Testing for the variance with unknown mean"
+msgstr ""
+
+msgid "Hypothesis Testing for the variance with known mean ="
+msgstr ""
+
+msgid "Population variance is not equal to"
+msgstr ""
+
+msgid "Population variance is less than"
+msgstr ""
+
+msgid "Population variance is greater than"
+msgstr ""
+
+msgid "Change variables type..."
+msgstr ""
+
+msgid "Change variables type"
+msgstr ""
+
+msgid "Nominal variables"
+msgstr ""
+
+msgid "Ordinal variables"
+msgstr ""
+
+msgid "Numeric variables"
+msgstr ""
+
+msgid "At least one variable must be selected"
+msgstr ""
+
+msgid "The variables"
+msgstr ""
+
+msgid "can not be coerce in numeric"
+msgstr ""
+
+msgid "Select one or more variables to modify their type:"
+msgstr ""
+
+msgid "Convert selected variables to:"
+msgstr ""
+
+msgid "Quantile:"
+msgstr ""
+
+msgid "Numerical summary"
+msgstr ""
+
+msgid "Frequency distribution for discrete variables"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "Numerical summary weighted by"
+msgstr ""
+
+msgid "not all values are positive"
+msgstr ""
+
+msgid "the following groups are empty:"
+msgstr ""
+
+msgid ","
+msgstr ""
+
+msgid "no weights avaliable."
+msgstr ""
+
+msgid "Frequency distribution for the tabulated variable"
+msgstr ""
+
+msgid "Ranges midpoints"
+msgstr ""
+
+msgid "Confidence Interval for the ratio of two variances"
+msgstr ""
+
+msgid "Confidence level:"
+msgstr ""
+
+msgid "Confidence level"
+msgstr ""
+
+msgid "Interval"
+msgstr ""
+
+msgid "Confidence interval for difference of proportions"
+msgstr ""
+
+msgid "Confidence Interval for the mean"
+msgstr ""
+
+msgid "Confidence Interval for the mean with unknown variance"
+msgstr ""
+
+msgid "Confidence Interval for the mean with known variance ="
+msgstr ""
+
+msgid "Confidence Interval for the difference of independent means"
+msgstr ""
+
+msgid "Confidence Interval for the mean difference of two independent samples with known variances"
+msgstr ""
+
+msgid "Confidence Interval for the mean difference of two independent samples with unknown and equal variances"
+msgstr ""
+
+msgid "Confidence Interval for the mean difference of two independent samples with unknown and unequal variances"
+msgstr ""
+
+msgid "Confidence Interval for paired means"
+msgstr ""
+
+msgid "Confidence Interval for the mean difference of two paired samples"
+msgstr ""
+
+msgid "Variables"
+msgstr ""
+
+msgid "Confidence interval for a proportion"
+msgstr ""
+
+msgid "Confidence Interval for a proportion"
+msgstr ""
+
+msgid "Confidence Interval for the variance"
+msgstr ""
+
+msgid "Confidence Interval for the variance with unknown mean"
+msgstr ""
+
+msgid "Confidence Interval for the variance with known mean ="
+msgstr ""
+
+msgid "Numerical summaries - Tabulated data"
+msgstr ""
+
+msgid "Lower bound"
+msgstr ""
+
+msgid "Upper bound"
+msgstr ""
+
+msgid "Frequency"
+msgstr ""
+
+msgid "Frequency table"
+msgstr ""
+
+msgid "Standard Deviation"
+msgstr ""
+
+msgid "Standard Error of Mean"
+msgstr ""
+
+msgid "Interquartile Range"
+msgstr ""
+
+msgid "Mode"
+msgstr ""
+
+msgid "Coefficient of Variation"
+msgstr ""
+
+msgid "Skewness"
+msgstr ""
+
+msgid "Kurtosis"
+msgstr ""
+
+msgid "Quantiles:"
+msgstr ""
+
+msgid "No variable selected for lower bound"
+msgstr ""
+
+msgid "No variable selected for upper bound"
+msgstr ""
+
+msgid "No variable selected for frequency"
+msgstr ""
+
+msgid "Lower bound must be an ordered vector"
+msgstr ""
+
+msgid "Upper bound must be an ordered vector"
+msgstr ""
+
+msgid "Lower bound must be smaller than upper bound"
+msgstr ""
+
+msgid "Lower and upper bounds must hold Lb[i]>=Up[i-1]"
+msgstr ""
+
+msgid "No statistics selected"
+msgstr ""
+
+msgid "Quantiles must be a numeric vector in [0,1]"
+msgstr ""
+
+msgid "Numerical summaries"
+msgstr ""
+
+msgid "Variables (pick one or more)"
+msgstr ""
+
+msgid "Group (pick one)"
+msgstr ""
+
+msgid "Pick a group"
+msgstr ""
+
+msgid "No factors"
+msgstr ""
+
+msgid "Type 1"
+msgstr ""
+
+msgid "Type 2"
+msgstr ""
+
+msgid "Type 3"
+msgstr ""
+
+msgid "Summarize by:"
+msgstr ""
+
+msgid "Summarize by groups"
+msgstr ""
+
+msgid "Numerical summaries - Weighted variables"
+msgstr ""
+
+msgid "Weight variable"
+msgstr ""
+
+msgid "Numerical summaries - Discrete variables"
+msgstr ""
+
+msgid "Breaks"
+msgstr ""
+
+msgid "Breaks must be an integer > 1 or a numeric vector of length > 1"
+msgstr ""
+
+msgid "Frequency distributions qualitative variables"
+msgstr ""
+
+msgid "Sort by frequency"
+msgstr ""
+
+msgid "Quantile must be in [0,1]"
+msgstr ""
+
+msgid "You must specify a Standard Deviation of the population"
+msgstr ""
+
+msgid "Population Standard Deviation must be positive"
+msgstr ""
+
+msgid "not enough observations"
+msgstr ""
+
+msgid "data are essentially constant"
+msgstr ""
+
+msgid "Standard Deviation must be positive (>0)"
+msgstr ""
+
+msgid "You must specify a mean of the population"
+msgstr ""
+
+msgid "'p.null' must be a single number between -1 and 1"
+msgstr ""
+
+msgid "'conf.level' must be a single number between 0 and 1"
+msgstr ""
+
+msgid "'ey' or 'ny' are missing"
+msgstr ""
+
+msgid "With one sample, 'p.null' must be > 0 and < 1"
+msgstr ""
+
+msgid "There must be at least 1 success and 1 failure in each sample"
+msgstr ""
+
+msgid "not enough 'x' observations"
+msgstr ""
+
+msgid "The number of tries must be greater than or equal to the number of success"
+msgstr ""
+
+msgid "not enough 'y' observations"
+msgstr ""
+
+msgid "You must specify both Standard Deviations of the population"
+msgstr ""
+
+msgid "Population Standard Deviation of 'x' must be positive"
+msgstr ""
+
+msgid "Population Standard Deviation of 'y' must be positive"
+msgstr ""
+
+msgid "Statistical Inference"
+msgstr ""
+
+msgid "Descriptive Statistics"
+msgstr ""
+
+msgid "Frequency distributions for qualitative variables..."
+msgstr ""
+
+msgid "Numerical summaries - Discrete variables..."
+msgstr ""
+
+msgid "Numerical summaries..."
+msgstr ""
+
+msgid "Numerical summaries - Weighted variables..."
+msgstr ""
+
+msgid "Numerical summaries - Tabulated data..."
+msgstr ""
+
+msgid "Confidence Intervals"
+msgstr ""
+
+msgid "Confidence interval for the mean..."
+msgstr ""
+
+msgid "Confidence interval for the variance..."
+msgstr ""
+
+msgid "Confidence interval for a proportion..."
+msgstr ""
+
+msgid "Confidence intervals for a sample"
+msgstr ""
+
+msgid "Confidence interval for the difference of independent means..."
+msgstr ""
+
+msgid "Confidence interval for mean paired difference..."
+msgstr ""
+
+msgid "Confidence interval for difference of proportions..."
+msgstr ""
+
+msgid "Confidence interval for the ratio of two variances..."
+msgstr ""
+
+msgid "Confidence intervals for two samples"
+msgstr ""
+
+msgid "Hypothesis Testing"
+msgstr ""
+
+msgid "Hypothesis testing for the mean..."
+msgstr ""
+
+msgid "Hypothesis testing for the variance..."
+msgstr ""
+
+msgid "Hypothesis testing for a proportion..."
+msgstr ""
+
+msgid "Hypothesis testing for a sample"
+msgstr ""
+
+msgid "Hypothesis testing for independent means..."
+msgstr ""
+
+msgid "Hypothesis testing for paired means..."
+msgstr ""
+
+msgid "Hypothesis testing for the ratio of two variances..."
+msgstr ""
+
+msgid "Hypothesis testing for difference of proportions..."
+msgstr ""
+
+msgid "Hypothesis testing for two samples"
+msgstr ""
+
+msgid "Basic Statistics"
+msgstr ""
+
+msgid "Random Variables"
+msgstr ""
+
+msgid "Import data from text file, clipboard, or URL..."
+msgstr ""
+
+msgid "Factor (pick one or more)"
+msgstr ""
+
+msgid "Variables and types in active data set"
+msgstr ""

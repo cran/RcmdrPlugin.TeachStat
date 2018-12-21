@@ -1,0 +1,818 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: RcmdrPlugin.TeachStat 1.0.10\n"
+"POT-Creation-Date: 2018-11-05 17:00\n"
+"PO-Revision-Date: 2018-12-07 16:04+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Randomness test for two level factor..."
+msgstr "Test de aleatoriedade para un factor de dous niveis..."
+
+msgid "Randomness test for two level factor"
+msgstr "Test de aleatoriedade para un factor de dous niveis"
+
+msgid "Randomness test for numeric variable..."
+msgstr "Test de aleatoriedade para una variábel numérica..."
+
+msgid "Randomness test for numeric variable"
+msgstr "Test de aleatoriedade para una variábel numérica"
+
+msgid "Show graphically"
+msgstr "Mostrar gráficamente"
+
+msgid "Cut-point (median by default):"
+msgstr "Punto de corte (mediana por defecto):"
+
+msgid "Cut-point must be numeric or NULL"
+msgstr "O punto de corte debe ser numérico ou nulo"
+
+msgid "Hypothesis Testing for a proportion"
+msgstr "Proba de hipótese para unha proporción"
+
+msgid "<no variable selected>"
+msgstr "<Non hai ningunha variábel seleccionada>"
+
+msgid "Variable (pick one)"
+msgstr "Variábel (elixir unha)"
+
+msgid "Proportion for the level (pick one)"
+msgstr "Proporción para o nivel (escoller un)"
+
+msgid "No. successes"
+msgstr "Nº éxitos"
+
+msgid "No. failures"
+msgstr "Nº fracasos"
+
+msgid "Population proportion != p0"
+msgstr "Proporción poboacional !=p 0"
+
+msgid "Population proportion < p0"
+msgstr "Proporción poboacional < p 0"
+
+msgid "Population proportion > p0"
+msgstr "Proporción poboacional > p 0"
+
+msgid "Alternative hypothesis"
+msgstr "Hipótese alternativa"
+
+msgid "Null hypothesis: p ="
+msgstr "Hipótese nula: p ="
+
+msgid "Successes number value must be a positive integer number"
+msgstr "O número de éxitos debe ser un número enteiro positivo"
+
+msgid "Failures number value must be a positive integer number"
+msgstr "O número de fracasos debe ser un número enteiro positivo"
+
+msgid "A variable or successes number and failures number must be selected"
+msgstr ""
+"A variábel ou o número de éxitos e número de fracasos debe ser seleccionada"
+
+msgid ""
+"A variable must be selected or the sum of successes and failures numbers "
+"must be positive"
+msgstr ""
+"A variábel debe ser seleccionada ou a suma do número de éxitos e de fracasos "
+"debe ser positov"
+
+msgid "Successes number and failures number must be provided"
+msgstr "O número de éxitos e o número de fracasos debe ser suministrado"
+
+msgid "Confidence level must be between 0 and 1"
+msgstr "O nivel de confianza debe estar entre 0 e 1"
+
+msgid "Value for the null hypothesis must be between 0 and 1 (and not be)"
+msgstr "O valor para a hipótese nula debe estar entre 0 e 1"
+
+msgid "No. attempts"
+msgstr "Nº intentos"
+
+msgid "Other levels"
+msgstr "Outros niveis"
+
+msgid "Distribution"
+msgstr "Distribución"
+
+msgid "Test statistics value"
+msgstr "Valor do estatístico de proba"
+
+msgid "p-value"
+msgstr "p-valor"
+
+msgid "Population proportion is not equal to"
+msgstr "Proporción poboacional non é igual a"
+
+msgid "Population proportion is less than"
+msgstr "Proporción poboacional é menor de"
+
+msgid "Population proportion is greater than"
+msgstr "Proporción poboacional é maior que"
+
+msgid "Sample estimate"
+msgstr "Estimación mostral"
+
+msgid "There must be at least 1 success and 1 failure"
+msgstr "Debe haber polo menos 1 éxito e 1 fracaso"
+
+msgid "Sample"
+msgstr "Mostra"
+
+msgid "Hypothesis Testing for the ratio of two variances"
+msgstr "Proba de hipótese para o cociente de dúas varianzas"
+
+msgid "Groups (pick one)"
+msgstr "Grupos (elixir un)"
+
+msgid "Group 1"
+msgstr "Grupo 1"
+
+msgid "Group 2"
+msgstr "Grupo 2"
+
+msgid "Ratio of population variances != sigma^2_1/sigma^2_2"
+msgstr "Cociente entre varianzas poboacionais !=  sigma^2_1/sigma^2_2"
+
+msgid "Ratio of population variances < sigma^2_1/sigma^2_2"
+msgstr "Cociente entre varianzas poboacionais <  sigma^2_1/sigma^2_2"
+
+msgid "Ratio of population variances > sigma^2_1/sigma^2_2"
+msgstr "Cociente entre varianzas poboacionais >  sigma^2_1/sigma^2_2"
+
+msgid "Null hypothesis: sigma^2_1/sigma^2_2 ="
+msgstr "Hipótese nula: sigma^2_1/sigma^2_2="
+
+msgid "No group selected"
+msgstr "Ningún grupo seleccionado"
+
+msgid "No variable selected"
+msgstr "Variábel non seleccionada"
+
+msgid "Group 1 and Group 2 must not coincide"
+msgstr "Grupo 1 e Grupo 2 non debe coincidir"
+
+msgid "Value for the null hypothesis must be a positive number"
+msgstr "O valor para a hipótese nula debe ser un número positivo"
+
+msgid "Hypothesis testing for the ratio of two variances"
+msgstr "Proba de hipótese para a o cociente de dúas varianzas"
+
+msgid "Variable"
+msgstr "Variábel"
+
+msgid "Groups"
+msgstr "Grupos"
+
+msgid "with"
+msgstr "con"
+
+msgid "and"
+msgstr "y"
+
+msgid "degrees of freedom"
+msgstr "graos de liberdade"
+
+msgid "Ratio of population variances is not equal to"
+msgstr "O cociente de varianzas poboacionais non é igual a"
+
+msgid "Ratio of population variances is less than"
+msgstr "O cociente de varianzas poboacionais é menor que"
+
+msgid "Ratio of population variances is greater than"
+msgstr "O cociente de varianzas poboacionais é maior que"
+
+msgid "Hypothesis testing for difference of proportions"
+msgstr "Proba de hipótese para a diferencia de proporcións"
+
+msgid "Success"
+msgstr "Éxito"
+
+msgid "Sample 1"
+msgstr "Mostra 1"
+
+msgid "Sample 2"
+msgstr "Mostra 2"
+
+msgid "Population proportion difference != p0_1 - p0_2"
+msgstr "Diferenza de proporcións poboacionais != p0_1 - p0_2"
+
+msgid "Population proportion difference < p0_1 - p0_2"
+msgstr "Diferenza de proporcións poboacionais < p0_1 - p0_2"
+
+msgid "Population proportion difference > p0_1 - p0_2"
+msgstr "Diferenza de proporcións poboacionais > p0_1 - p0_2"
+
+msgid "Null hypothesis: p_1 - p_2 ="
+msgstr "Hipótese nula: p_1 - p_2 ="
+
+msgid "Successes number value of Sample 1 must be a positive integer number"
+msgstr "O número de éxitos de Mostra 1 debe ser un enteiro positivo"
+
+msgid "Failures number value of Sample 1 must be a positive integer number"
+msgstr "O número de fracasos de Mostra 1 debe ser un enteiro positivo"
+
+msgid "Successes number value of Sample 2 must be a positive integer number"
+msgstr "O número de éxitos de Mostra 2 debe ser un enteiro positivo"
+
+msgid "Failures number value of Sample 2 must be a positive integer number"
+msgstr "O número de fracasos de Mostra 2 debe ser un enteiro positivo"
+
+msgid ""
+"Variables or successes number and failures number of two samples must be "
+"selected"
+msgstr ""
+"As variábeis ou o número de éxitos e número de fracasos de dúas mostras "
+"deben ser seleccionada"
+
+msgid "Successes and failures numbers for the two samples must be selected"
+msgstr ""
+"O número de éxitos e fracasos para dúas mostras deben ser seleccionados"
+
+msgid "Group 1, Group 2 and Success must be selected"
+msgstr "Grupo 1, Grupo 2 e o éxito debe ser seleccionado"
+
+msgid "Value for the null hypothesis must be between -1 and 1"
+msgstr "O valor para a hipótese nula debe estar entre -1 e 1"
+
+msgid "Population difference is not equal to"
+msgstr "Diferenza poboacional non é igual a"
+
+msgid "Population difference is less than"
+msgstr "Diferenza poboacional é menor que"
+
+msgid "Population difference is greater than"
+msgstr "Diferenza poboacional é maior que"
+
+msgid "Sample estimates"
+msgstr "Estimacións mostrais"
+
+msgid "There must be at least 1 success and 1 failure for both samples"
+msgstr "Debe haber polo menos 1 éxito e 1 fracaso para ambas mostras"
+
+msgid "Hypothesis Testing for the mean"
+msgstr "Proba de hipótese para a media"
+
+msgid "Variance"
+msgstr "Varianza"
+
+msgid "Known"
+msgstr "Coñecida"
+
+msgid "Unknown"
+msgstr "Descoñecida"
+
+msgid "Population mean != mu0"
+msgstr "Media poboacional !=mu0"
+
+msgid "Population mean < mu0"
+msgstr "Media poboacional < mu0"
+
+msgid "Population mean > mu0"
+msgstr "Media poboacional > mu0"
+
+msgid "Null hypothesis: mu ="
+msgstr "Hipótese nula: mu ="
+
+msgid "Known variance value must be a positive number"
+msgstr "A varianza coñecida debe ser un número positivo"
+
+msgid "No valid value for the Null Hypothesis"
+msgstr "Valor non válido para a hipótese nula"
+
+msgid "Hypothesis Testing for the mean with unknown variance"
+msgstr "Proba de hipótese para a media con varianza descoñecida"
+
+msgid "Hypothesis Testing for the mean with known variance ="
+msgstr "Proba de hipótese para a media con varianza coñecida ="
+
+msgid "Population mean is not equal to"
+msgstr "Media poboacional non é igual a"
+
+msgid "Population mean is less than"
+msgstr "Media poboacional é menor que"
+
+msgid "Population mean is greater than"
+msgstr "Media poboacional é maior que"
+
+msgid "Hypothesis Testing for the difference of independent means"
+msgstr "Proba de hipótese para a diferenza de medias independentes"
+
+msgid "Variances"
+msgstr "Varianzas"
+
+msgid "Unknown and equal"
+msgstr "Descoñecidas e iguais"
+
+msgid "Unknown and unequal"
+msgstr "Descoñecidas e desiguais"
+
+msgid "Population mean difference != mu0_1-mu0_2"
+msgstr "Diferencia de medias poboacionais != mu0_1-mu0_2"
+
+msgid "Population mean difference < mu0_1-mu0_2"
+msgstr "Diferencia de medias poboacionais < mu0_1-mu0_2"
+
+msgid "Population mean difference > mu0_1-mu0_2"
+msgstr "Diferencia de medias poboacionais > mu0_1-mu0_2"
+
+msgid "Null hypothesis: mu_1 - mu_2 ="
+msgstr "Hipótese nula: mu_1 - mu_2 ="
+
+msgid "Known variances values must be positive numbers"
+msgstr "Os valores das variancias coñecidas deben ser números positivos"
+
+msgid ""
+"Hypothesis Testing for the mean difference of two independent samples with "
+"known variances"
+msgstr ""
+"Proba de hipótese para a diferenza de medias de dúas mostras independentes "
+"con varianzas coñecidas"
+
+msgid ""
+"Hypothesis Testing for the mean difference of two independent samples with "
+"unknown and equal variances"
+msgstr ""
+"Proba de hipótese para a diferenza de medias de dúas mostras independentes "
+"con varianzas descoñecidas e iguais"
+
+msgid ""
+"Hypothesis Testing for the mean difference of two independent samples with "
+"unknown and unequal variances"
+msgstr ""
+"Proba de hipótese para a diferenza de medias de dúas mostras independentes "
+"con varianzas descoñecidas e desiguais"
+
+msgid "Hypothesis Testing for paired means"
+msgstr "Proba de hipótese de medias pareadas"
+
+msgid "First variable (pick one)"
+msgstr "Primeira variábel (elixir unha)"
+
+msgid "Second variable (pick one)"
+msgstr "Segunda variábel (elixir unha)"
+
+msgid "Difference between population means != mu0_1-mu0_2"
+msgstr "Diferenza entre medias poboacionais != mu0_1-mu0_2"
+
+msgid "Difference between population means < mu0_1-mu0_2"
+msgstr "Diferenza entre medias poboacionais < mu0_1-mu0_2"
+
+msgid "Difference between population means > mu0_1-mu0_2"
+msgstr "Diferenza entre medias poboacionais > mu0_1-mu0_2"
+
+msgid "No variable selected in First variable"
+msgstr "Non hai ningunha variábel seleccionada na Primeira variábel"
+
+msgid "No variable selected in Second variable"
+msgstr "Non hai ningunha variábel seleccionada na Segunda variábel"
+
+msgid "Selected variables must be different"
+msgstr "As variábeis seleccionadas deben ser diferentes"
+
+msgid "Hypothesis Testing for the mean difference of two paired samples"
+msgstr "Proba de hipótese para a diferenza de medias de dúas mostras pareadas"
+
+msgid "Hypothesis Testing for the variance"
+msgstr "Proba de hipótese para a varianza"
+
+msgid "Mean"
+msgstr "Media"
+
+msgid "Population variance != sigma^2_0"
+msgstr "Varianza poboacional != sigma^2_0"
+
+msgid "Population variance < sigma^2_0"
+msgstr "Varianza poboacional < sigma^2_0"
+
+msgid "Population variance > sigma^2_0"
+msgstr "Varianza poboacional > sigma^2_0"
+
+msgid "Null hypothesis: sigma^2 ="
+msgstr "Hipótese nula: sigma^2 ="
+
+msgid "Known mean value must be numeric"
+msgstr "O valor da meida coñecida debe ser un número"
+
+msgid "Hypothesis Testing for the variance with unknown mean"
+msgstr "Proba de hipótese para a varianza con media descoñecida"
+
+msgid "Hypothesis Testing for the variance with known mean ="
+msgstr "Proba de hipótese para a varianza con media coñecida"
+
+msgid "Population variance is not equal to"
+msgstr "Varianza poboacional non é igual  a"
+
+msgid "Population variance is less than"
+msgstr "Varianza poboacional é menor que"
+
+msgid "Population variance is greater than"
+msgstr "Varianza poboacional é maior que"
+
+msgid "Change variables type..."
+msgstr "Cambiar tipo de variábeis..."
+
+msgid "Change variables type"
+msgstr "Cambiar tipo de variábeis"
+
+msgid "Nominal variables"
+msgstr "Variábeis nominais"
+
+msgid "Ordinal variables"
+msgstr "Variábeis ordinais"
+
+msgid "Numeric variables"
+msgstr "Variábeis numéricas"
+
+msgid "At least one variable must be selected"
+msgstr "Polo menos unha variábel debe ser seleccionada"
+
+msgid "The variables"
+msgstr "As Variábeis"
+
+msgid "can not be coerce in numeric"
+msgstr "non poden ser forzadas a numérico"
+
+msgid "Select one or more variables to modify their type:"
+msgstr "Seleccionar unha ou máis variábeis para modificar o seu tipo:"
+
+msgid "Convert selected variables to:"
+msgstr "Convertir variábeis seleccionadas a:"
+
+msgid "Quantile:"
+msgstr "Cuantile:"
+
+msgid "Numerical summary"
+msgstr "Resumos numéricos"
+
+msgid "Frequency distribution for discrete variables"
+msgstr "Distribución de frecuencias para variábeis discretas"
+
+msgid "Group"
+msgstr "Grupo"
+
+msgid "Numerical summary weighted by"
+msgstr "Resumo numérico ponderado pola"
+
+msgid "not all values are positive"
+msgstr "non todos os valors son positivos"
+
+msgid "the following groups are empty:"
+msgstr "os seguintes grupos estan valeiros:"
+
+msgid ","
+msgstr ","
+
+msgid "no weights avaliable."
+msgstr "sen pesos dispoñibles."
+
+msgid "Frequency distribution for the tabulated variable"
+msgstr "Distribución de frecuencia para a variábel tabulada"
+
+msgid "Ranges midpoints"
+msgstr "Puntos medios dos rangos"
+
+msgid "Confidence Interval for the ratio of two variances"
+msgstr "Intervalo de confianza para o cociente entre dúas varianzas"
+
+msgid "Confidence level:"
+msgstr "Nivel de confianza:"
+
+msgid "Confidence level"
+msgstr "Nivel de confianza"
+
+msgid "Interval"
+msgstr "Intervalo"
+
+msgid "Confidence interval for difference of proportions"
+msgstr "Intervalo de confianza para diferenza de proporcións"
+
+msgid "Confidence Interval for the mean"
+msgstr "Intervalo de confianza para a media"
+
+msgid "Confidence Interval for the mean with unknown variance"
+msgstr "Intervalo de confianza para a media con varianza descoñecida"
+
+msgid "Confidence Interval for the mean with known variance ="
+msgstr "Intervalo de confianza para a media con varianza coñecida ="
+
+msgid "Confidence Interval for the difference of independent means"
+msgstr "Intervalo de confianza para a diferenza de medias independentes"
+
+msgid ""
+"Confidence Interval for the mean difference of two independent samples with "
+"known variances"
+msgstr ""
+"Intervalo de confianza para a diferenza de medias de dúas mostras "
+"independentes con varianzas coñecidas"
+
+msgid ""
+"Confidence Interval for the mean difference of two independent samples with "
+"unknown and equal variances"
+msgstr ""
+"Intervalo de confianza para a diferenza de medias de dúas mostras "
+"independentes con varianzas descoñecidas e iguais"
+
+msgid ""
+"Confidence Interval for the mean difference of two independent samples with "
+"unknown and unequal variances"
+msgstr ""
+"Intervalo de confianza para a diferenza de medias de dúas mostras "
+"independentes con varianzas descoñecidas e desiguais"
+
+msgid "Confidence Interval for paired means"
+msgstr "Intervalo de confianza para a diferenza de medias pareadas"
+
+msgid "Confidence Interval for the mean difference of two paired samples"
+msgstr ""
+"Intervalo de confianza para a diferenza de medias de dúas mostras pareadas"
+
+msgid "Variables"
+msgstr "Variábeis"
+
+msgid "Confidence interval for a proportion"
+msgstr "Intervalo de confianza para unha proporción"
+
+msgid "Confidence Interval for a proportion"
+msgstr "Intervalo de Confianza para unha proporción"
+
+msgid "Confidence Interval for the variance"
+msgstr "Intervalo de confianza para a varianza"
+
+msgid "Confidence Interval for the variance with unknown mean"
+msgstr "Intervalo de confianza para a varianza con media descoñecida"
+
+msgid "Confidence Interval for the variance with known mean ="
+msgstr "Intervalo de confianza para a varianza con media coñecida ="
+
+msgid "Numerical summaries - Tabulated data"
+msgstr "Resumos numéricos - datos tabulados"
+
+msgid "Lower bound"
+msgstr "Límite inferior"
+
+msgid "Upper bound"
+msgstr "Límite superior"
+
+msgid "Frequency"
+msgstr "Frecuencia"
+
+msgid "Frequency table"
+msgstr "Táboa de Frecuencias"
+
+msgid "Standard Deviation"
+msgstr "Desviación estándar"
+
+msgid "Standard Error of Mean"
+msgstr "Erro estándar da media"
+
+msgid "Interquartile Range"
+msgstr "Rango Intercuartílico"
+
+msgid "Mode"
+msgstr "Moda"
+
+msgid "Coefficient of Variation"
+msgstr "Coeficiente de Variación"
+
+msgid "Skewness"
+msgstr "Asimetría"
+
+msgid "Kurtosis"
+msgstr "Curtose"
+
+msgid "Quantiles:"
+msgstr "Cuantís:"
+
+msgid "No variable selected for lower bound"
+msgstr "Variábel non seleccionada para o límite inferior"
+
+msgid "No variable selected for upper bound"
+msgstr "Variábel non seleccionada para o límite superior"
+
+msgid "No variable selected for frequency"
+msgstr "Variábel non seleccionada para a frecuencia"
+
+msgid "Lower bound must be an ordered vector"
+msgstr "O límite inferior debe ser un vector ordeado"
+
+msgid "Upper bound must be an ordered vector"
+msgstr "O límite superior debe ser un vector ordeado"
+
+msgid "Lower bound must be smaller than upper bound"
+msgstr "O límite inferior debe ser mais pequeno que o límite superior"
+
+msgid "Lower and upper bounds must hold Lb[i]>=Up[i-1]"
+msgstr "Os límites inferior e superior deben manter Lb [i]> = Up [i-1]"
+
+msgid "No statistics selected"
+msgstr "Estatísticos non seleccionados"
+
+msgid "Quantiles must be a numeric vector in [0,1]"
+msgstr "Os cuantís debe ser un vector numérico no [0,1]"
+
+msgid "Numerical summaries"
+msgstr "Resumos numéricos"
+
+msgid "Variables (pick one or more)"
+msgstr "Variábeis (elección dun ou máis)"
+
+msgid "Group (pick one)"
+msgstr "Grupo (elixir un)"
+
+msgid "Pick a group"
+msgstr "Escoller un grupo"
+
+msgid "No factors"
+msgstr "Sen factores"
+
+msgid "Type 1"
+msgstr "Tipo 1"
+
+msgid "Type 2"
+msgstr "Tipo 2"
+
+msgid "Type 3"
+msgstr "Tipo 3"
+
+msgid "Summarize by:"
+msgstr "Resumir por:"
+
+msgid "Summarize by groups"
+msgstr "Resumir por grupos"
+
+msgid "Numerical summaries - Weighted variables"
+msgstr "Resumos numéricos - Variábeis ponderada"
+
+msgid "Weight variable"
+msgstr "Variábel de ponderación"
+
+msgid "Numerical summaries - Discrete variables"
+msgstr "Resumos numéricos - Variábeis discretas"
+
+msgid "Breaks"
+msgstr "Cortes"
+
+msgid "Breaks must be an integer > 1 or a numeric vector of length > 1"
+msgstr "Os cortes debe ser un enteiro> 1 ou un vector numérico de lonxitude> 1"
+
+msgid "Frequency distributions qualitative variables"
+msgstr "Distribucións de frecuencia para variábeis cualitativas"
+
+msgid "Sort by frequency"
+msgstr "Ordear por frecuencia"
+
+msgid "Quantile must be in [0,1]"
+msgstr "Os cuantís debe estar en [0,1]"
+
+msgid "You must specify a Standard Deviation of the population"
+msgstr "Debe especificar a desviación estándar poboacional"
+
+msgid "Population Standard Deviation must be positive"
+msgstr "A desviación estándar poboacional debe ser positiva"
+
+msgid "not enough observations"
+msgstr "observacións insuficientes"
+
+msgid "data are essentially constant"
+msgstr "os datos son esencialmente constante"
+
+msgid "Standard Deviation must be positive (>0)"
+msgstr "A desviación estándar debe ser positiva (> 0)"
+
+msgid "You must specify a mean of the population"
+msgstr "Debese especificar a media poboacional"
+
+msgid "'p.null' must be a single number between -1 and 1"
+msgstr "'p.null' debe ser un número entre -1 e 1"
+
+msgid "'conf.level' must be a single number between 0 and 1"
+msgstr "'conf.level' debe ser un número entre 0 e 1"
+
+msgid "'ey' or 'ny' are missing"
+msgstr "'ey' ou 'ny'  están missing"
+
+msgid "With one sample, 'p.null' must be > 0 and < 1"
+msgstr "Cunha mostra, 'p.null' debe ser> 0 e <1"
+
+msgid "There must be at least 1 success and 1 failure in each sample"
+msgstr "Debe haber polo menos 1 éxito e un fracaso en cada mostra"
+
+msgid "not enough 'x' observations"
+msgstr "sen suficientes observaicóns 'x'"
+
+msgid ""
+"The number of tries must be greater than or equal to the number of success"
+msgstr "O número de probas debe ser maior que ou igual ao número de éxito"
+
+msgid "not enough 'y' observations"
+msgstr "sen suficientes observaicóns 'y'"
+
+msgid "You must specify both Standard Deviations of the population"
+msgstr "Debe especificar ambas desviacións estándar das poboacións"
+
+msgid "Population Standard Deviation of 'x' must be positive"
+msgstr "A desviación estándar poboacional de 'x' debe ser positiva"
+
+msgid "Population Standard Deviation of 'y' must be positive"
+msgstr "A desviación estándar poboacional de 'y' debe ser positiva"
+
+msgid "Statistical Inference"
+msgstr "Inferencia Estatística"
+
+msgid "Descriptive Statistics"
+msgstr "Estatística Descritiva"
+
+msgid "Frequency distributions for qualitative variables..."
+msgstr "Distribucións de frecuencia para variábeis cualitativas..."
+
+msgid "Numerical summaries - Discrete variables..."
+msgstr "Resumos numéricos - Variábeis discretas..."
+
+msgid "Numerical summaries..."
+msgstr "Resumos numéricow..."
+
+msgid "Numerical summaries - Weighted variables..."
+msgstr "Resumos numéricos - Variábeis ponderadas..."
+
+msgid "Numerical summaries - Tabulated data..."
+msgstr "Resumos numéricos - Datos tabulados..."
+
+msgid "Confidence Intervals"
+msgstr "Intervalos de confianza"
+
+msgid "Confidence interval for the mean..."
+msgstr "Intervalo de confianza para a media..."
+
+msgid "Confidence interval for the variance..."
+msgstr "Intervalo de confianza para a varianza..."
+
+msgid "Confidence interval for a proportion..."
+msgstr "Intervalo de confianza para unha proporción..."
+
+msgid "Confidence intervals for a sample"
+msgstr "Intervalos de Confianza para unha mostra"
+
+msgid "Confidence interval for the difference of independent means..."
+msgstr "Intervalo de confianza para a diferenza de medias independentes..."
+
+msgid "Confidence interval for mean paired difference..."
+msgstr "Intervalo de confianza para a diferenza de medias pareadas..."
+
+msgid "Confidence interval for difference of proportions..."
+msgstr "Intervalo de confianza para diferenza de proporcións..."
+
+msgid "Confidence interval for the ratio of two variances..."
+msgstr "Intervalo de confianza para o cociente entre dúas varianzas..."
+
+msgid "Confidence intervals for two samples"
+msgstr "Intervalos de Confianza para dúas mostras"
+
+msgid "Hypothesis Testing"
+msgstr "Probas de hipótese"
+
+msgid "Hypothesis testing for the mean..."
+msgstr "Proba de hipótese para a media..."
+
+msgid "Hypothesis testing for a proportion..."
+msgstr "Proba de hipótese para unha proporción..."
+
+msgid "Hypothesis testing for a sample"
+msgstr "Probas de hipótese para unha mostra"
+
+msgid "Hypothesis testing for independent means..."
+msgstr "Proba de hipótese para medias independentes..."
+
+msgid "Hypothesis testing for paired means..."
+msgstr "Proba de hipótese de medias pareadas..."
+
+msgid "Hypothesis testing for the ratio of two variances..."
+msgstr "Proba de hipótese para o cociente de dúas varianzas..."
+
+msgid "Hypothesis testing for difference of proportions..."
+msgstr "Proba de hipótese para a diferencia de proporcións..."
+
+msgid "Hypothesis testing for two samples"
+msgstr "Probas de hipótese para dúas mostras"
+
+msgid "Basic Statistics"
+msgstr "Estatística Básica"
+
+msgid "Random Variables"
+msgstr "Variábeis Aleatorias"
+
+msgid "Import data from text file, clipboard, or URL..."
+msgstr "Importar datos dende arquivo de texto, portapapeles ou URL..."
+
+msgid "Factor (pick one or more)"
+msgstr "Factor (elexir un ou máis)"
+
+msgid "Variables and types in active data set"
+msgstr "Variábeis e tipos do conxunto de datos activo"

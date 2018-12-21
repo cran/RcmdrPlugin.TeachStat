@@ -1,0 +1,30 @@
+RcmdrPlugin.TeachStat v1.0.10 (Release date: 2018-10-28)
+==============
+
+Changes:
+
+* Addition of randomness tests items to the menu of "Nonparametric Tests" (adapted from RcmdrPlugin.UCA).
+* Addition to the menu of the package of an adaptation of the "data" menu.
+* Addition of a check box for making ordered factor in "numeric to factor" window.
+* Addition of a new option to levels names: "Range midpoints" in "bin variable" window.
+* Allowance for reorder level factor for several factors at a time and convert them to ordered factor.
+* Addition of an item menu to modify the variables type.
+* Save the dataframe in a file when it is created.
+
+
+
+
+RcmdrPlugin.TeachStat v1.0.9 (Release date: 2017-01-13)
+==============
+
+Changes:
+
+* Changes in the name of some menus.
+* Addition of some menus: Summary of the "active data set", "contingency tables" and "random variables".
+
+RcmdrPlugin.TeachStat v1.0.8 (Release date: 2016-10-17)
+==============
+
+Changes:
+
+* Multilingual support (english, spanish and galician).

@@ -1,0 +1,51 @@
+#type	menu/item		operation/parent	label			command/menu		activation		install?
+menu	EstadisticaUvigoMenu		topMenu			""			""			""			""
+item    topMenu			cascade     "Statistics Inference"	EstadisticaUvigoMenu             ""		        ""
+
+#item  EstadisticaUvigoMenu   separator               "" "" "" ""
+
+menu  EDescriptivaMenu      EstadisticaUvigoMenu    "" "" "" ""
+item  EDescriptivaMenu      command             "Frequency distributions for qualitative variables..."   resumenVariablesCualitativas          "factorsP()" ""
+item  EDescriptivaMenu   command             "Numerical summaries - Discrete variables..."    resumenNumericoVDiscreta          "numericP()" "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
+
+item  EDescriptivaMenu      command        "Numerical summaries..." resumenNumerico          "numericP()" "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
+item  EDescriptivaMenu   command            "Numerical summaries - Weighted variables..."    resumenNumericoPonderada          "numericP()" "packageAvailable('RcmdrMisc') && packageAvailable('Hmisc') && packageAvailable('abind')"
+
+item   EDescriptivaMenu command             "Numerical summaries - Tabulated data..."   resumenDatosTabulados          "numericP(n=3)" ""
+item  EstadisticaUvigoMenu   cascade        "Descriptive Statistics"  EDescriptivaMenu "" ""
+
+menu  IConfianzaMenu      EstadisticaUvigoMenu    "" "" "" ""
+item  EstadisticaUvigoMenu   cascade        "Confidence Intervals"  IConfianzaMenu  "" ""
+menu  IConfianzaMenu1     IConfianzaMenu          "" "" "" ""
+item  IConfianzaMenu1       command        "Confidence interval for the mean..." intervaloConfianzaMedia "numericP()"  "packageAvailable('tcltk2')"
+item  IConfianzaMenu1       command        "Confidence interval for the variance..." intervaloConfianzaVarianza "numericP()"  "packageAvailable('tcltk2')"
+item  IConfianzaMenu1       command        "Confidence interval for a proportion..." intervaloConfianzaProporcion ""  "packageAvailable('tcltk2')"
+item  IConfianzaMenu        cascade         "Confidence intervals for a sample" IConfianzaMenu1 "" ""
+
+menu  IConfianzaMenu2     IConfianzaMenu          "" "" "" ""
+item  IConfianzaMenu2       command        "Confidence interval for the difference of independent means..." intervaloConfianzaMediasIndependientes "twoOrMoreLevelFactorsP() && numericP()"  "packageAvailable('tcltk2')"
+item  IConfianzaMenu2       command        "Confidence interval for mean paired difference..." intervaloConfianzaMediasPareadas "numericP(n=2)"  ""
+item  IConfianzaMenu2       command        "Confidence interval for the ratio of two variances..." intervaloConfianza2Varianzas "twoOrMoreLevelFactorsP() && numericP()"  "packageAvailable('tcltk2')"
+item  IConfianzaMenu2       command        "Confidence interval for difference of proportions..." intervaloConfianzaDiferenciaProporciones ""  "packageAvailable('tcltk2')"
+item  IConfianzaMenu        cascade         "Confidence intervals for two samples" IConfianzaMenu2 "" ""
+
+menu  CHipotesisMenu      EstadisticaUvigoMenu    "" "" "" ""
+item  EstadisticaUvigoMenu   cascade        "Hypothesis Testing"  CHipotesisMenu "" ""
+menu  CHipotesisMenu1     CHipotesisMenu          "" "" "" ""
+item  CHipotesisMenu1      command        "Hypothesis testing for the mean..." contrasteHipotesisMedia "numericP()"  "packageAvailable('tcltk2')"
+item  CHipotesisMenu1      command        "Hypothesis testing for the variance..." contrasteHipotesisVarianza "numericP()"  ""
+item  CHipotesisMenu1      command        "Hypothesis testing for a proportion..." contrastHipotesisProporcion ""  ""
+item  CHipotesisMenu        cascade         "Hypothesis testing for a sample" CHipotesisMenu1 "" ""
+
+menu  CHipotesisMenu2     CHipotesisMenu          "" "" "" ""
+item  CHipotesisMenu2      command        "Hypothesis testing for independent means..." contrasteHipotesisMediasIndependientes "twoOrMoreLevelFactorsP() && numericP()"  ""
+item  CHipotesisMenu2      command        "Hypothesis testing for paired means..." contrasteHipotesisMediasPareadas "numericP(n=2)"  ""
+item  CHipotesisMenu2      command        "Hypothesis testing for the ratio of two variances..." contrasteHipotesis2Varianzas "twoOrMoreLevelFactorsP() && numericP()"  ""
+item  CHipotesisMenu2      command        "Hypothesis testing for difference of proportions..." contrasteHipotesisDiferenciaProporciones ""  "packageAvailable('tcltk2')"
+item  CHipotesisMenu        cascade         "Hypothesis testing for two samples" CHipotesisMenu2 "" ""
+
+
+
+
+
+remove  statisticsTable    ""		""										""							""      ""
