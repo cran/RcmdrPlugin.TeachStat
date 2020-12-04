@@ -235,7 +235,7 @@ contrastHipotesisProporcion <- function () {
 
     if(!is.na(valornexitos)){
 
-      if(valornexitos*(valornfracasos)<1){
+      if((valornexitos==0)||(valornfracasos==0)){
         errorCondition(recall=contrastHipotesisProporcion, message=gettext("There must be at least 1 success and 1 failure",domain="R-RcmdrPlugin.TeachStat"))
         return()
       }

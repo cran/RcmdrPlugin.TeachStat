@@ -89,7 +89,7 @@ resumenNumericoPonderada <- function(){
       return()
     }
 
-    if(((NA %in% quants)||(length( quants[(quants<0)|(quants>1)])!=0) || length(quants)<=1)&&(quantsVar==1)){
+    if(((NA %in% quants)||(length( quants[(quants<0)|(quants>1)])!=0) || length(quants)<1)&&(quantsVar==1)){
        errorCondition(recall=resumenNumericoPonderada, message=gettext("Quantiles must be a numeric vector in [0,1]",domain="R-RcmdrPlugin.TeachStat"))
        return()
     }

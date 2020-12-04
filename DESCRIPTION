@@ -1,21 +1,23 @@
 Package: RcmdrPlugin.TeachStat
 Type: Package
-Title: RCommander Plugin for Teaching Statistical Methods
-Version: 1.0.10
+Title: R Commander Plugin for Teaching Statistical Methods
+Version: 1.1.0
 Authors@R: c(
     person("Tomás R.", "Cotos Yañez", email="cotos@uvigo.es",role = "aut",comment = c(ORCID = "0000-0002-7732-6565")),
     person("Manuel A.", "Mosquera Rodríguez", email = "mamrguez@uvigo.es", role = c("aut","cre"),comment = c(ORCID = "0000-0002-4769-6119")),
     person("Ana", "Pérez González", email = "anapg@uvigo.es", role = "aut",comment = c(ORCID = "0000-0003-4706-7125")),
     person("Benigno", "Reguengo Lareo", role = "aut"))
-Description: RCommander plugin for teaching statistical methods. 
+Description: R Commander plugin for teaching statistical methods. 
     It adds a new menu for making easier the teaching of the main concepts about the main statistical methods.
 License: GPL (>= 2)
-Imports: Rcmdr (>= 2.3-0), Hmisc, tcltk2, randtests, tseries
+Depends: R (>= 3.5.0)
+Imports: Rcmdr (>= 2.5-1), tcltk, Hmisc, tcltk2, randtests, tseries,
+        IndexNumR, lme4, distr, distrEx
 Suggests: tkrplot
 LazyData: TRUE
 Encoding: latin1
 NeedsCompilation: no
-Packaged: 2018-12-11 17:01:43 UTC; alfredo
+Packaged: 2020-12-04 16:31:09 UTC; alfredo
 Author: Tomás R. Cotos Yañez [aut] (<https://orcid.org/0000-0002-7732-6565>),
   Manuel A. Mosquera Rodríguez [aut, cre]
     (<https://orcid.org/0000-0002-4769-6119>),
@@ -23,4 +25,4 @@ Author: Tomás R. Cotos Yañez [aut] (<https://orcid.org/0000-0002-7732-6565>),
   Benigno Reguengo Lareo [aut]
 Maintainer: Manuel A. Mosquera Rodríguez <mamrguez@uvigo.es>
 Repository: CRAN
-Date/Publication: 2018-12-21 14:00:17 UTC
+Date/Publication: 2020-12-04 18:00:02 UTC

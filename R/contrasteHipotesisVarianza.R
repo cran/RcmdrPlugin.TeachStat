@@ -1,5 +1,7 @@
 contrasteHipotesisVarianza <- function () {
  #invisible(library(tcltk2))
+  # To ensure that menu name is included in pot file
+  gettext("Hypothesis testing for the variance...", domain="R-RcmdrPlugin.TeachStat")
 
   defaults <- list (initial.var=gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"),initial.Media="0",initial.valorMediaconocida="",
                     initial.nconf="0.95",initial.alternative = "two.sided",initial.sigma2 = "1")

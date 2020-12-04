@@ -318,8 +318,8 @@ reorderFactors <- function(){
                          message=sprintf(gettextRcmdr("Number of levels (%d) too large."), nvalues))
           return()
         }
-        initializeDialog(subdialog, title=paste(gettextRcmdr("Reorder Levels for"),
-                                                if(sameLevels && length(variables) > 1) "Factors" else fname))
+        initializeDialog(subdialog, title=paste(gettext("Reorder Levels for",domain="R-RcmdrPlugin.TeachStat"),
+                                                if(sameLevels && length(variables) > 1) gettextRcmdr("Factors") else fname))
         order <- 1:nvalues
         onOKsub <- function() {
           closeDialog(subdialog)

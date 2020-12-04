@@ -1,9 +1,45 @@
-exportPattern("^([^.]|\\..+\\.)")
-import(stats)
+# Export all
+#exportPattern("^([^.]|\\..+\\.)")
+
+export(aovremm, aovreml, BCindexnumbers, binomialProbabilitiesInter, binVariable2, calcular_frecuencia, calcularResumenDatosTabulados,
+       calcularResumenVariablesDiscretas, calcularResumenVariablesContinuas, chisqProbabilitiesInter, Cindexnumbers, ComplexIN, contrasteHipotesis2Varianzas, 
+       contrasteHipotesisDiferenciaProporciones, contrasteHipotesisMedia, contrasteHipotesisMediasIndependientes, 
+       contrasteHipotesisMediasPareadas, contrasteHipotesisVarianza, contrastHipotesisProporcion, ConvertVariables, Cprop.test, 
+       Deflat, Deflation, DMKV.test, exponentialProbabilitiesInter, FProbabilitiesInter, geomProbabilitiesInter, 
+       intervaloConfianza2Varianzas, intervaloConfianzaDiferenciaProporciones, intervaloConfianzaMedia, 
+       intervaloConfianzaMediasIndependientes, intervaloConfianzaMediasPareadas, intervaloConfianzaProporcion, 
+       intervaloConfianzaVarianza, listTypesVariables, MKV.test, moda, negbinomialProbabilitiesInter, newDataSet2, 
+       normalProbabilitiesInter, numeric.runs.test, numericToFactor2, oneWayAnovaRE, percentil, Pindexnumbers, 
+       PoissonProbabilitiesInter, pprint, priceIndexNum, randomnessFTest, randomnessNTest, reorderFactors, 
+       resumenDatosTabulados, resumenNumerico, resumenNumericoPonderada, resumenNumericoVDiscreta, resumenNumericoVContinua,
+       resumenVariablesCualitativas, Sindex, Sindexnumbers, tabla.frec.cualitativa, tabla.frec.cuantitativa, tProbabilitiesInter, 
+       twolevelfactor.runs.test, twoOrMoreLevelFactors, twoOrMoreLevelFactorsP, uniformProbabilitiesInter, 
+       variablesandtypesDataSet, VKM.test, VUM.test, W.numSummary, genericDistrDefine, genericDistrQuantiles, 
+       genericProbabilitiesInter, genericDistrPlot, genericDistrCharac, genericDistrSamples, normalDistrQuantiles, 
+       normalDistrPlot, normalDistrCharac, normalDistrSamples, tDistrQuantiles, tDistrPlot, tDistrCharac, tDistrSamples, 
+       chisqDistrQuantiles, chisqDistrPlot, chisqDistrCharac, chisqDistrSamples, FDistrQuantiles, FDistrPlot, FDistrCharac, 
+       FDistrSamples, exponentialDistrQuantiles, exponentialDistrPlot, exponentialDistrCharac, exponentialDistrSamples, 
+       uniformDistrQuantiles, uniformDistrPlot, uniformDistrCharac, uniformDistrSamples, DgenericDistrDefine, 
+       DgenericDistrQuantiles, DgenericProbabilitiesInter, DgenericDistrMass, DgenericDistrPlot, DgenericDistrCharac, 
+       DgenericDistrSamples, binomialDistrQuantiles, binomialDistrMass, binomialDistrPlot, binomialDistrCharac, 
+       binomialDistrSamples, PoissonDistrQuantiles, PoissonDistrMass, PoissonDistrPlot, PoissonDistrCharac, 
+       PoissonDistrSamples, geomDistrQuantiles, geomDistrMass, geomDistrPlot, geomDistrCharac, geomDistrSamples, 
+       negbinomialDistrQuantiles, negbinomialDistrMass, negbinomialDistrPlot, negbinomialDistrCharac, negbinomialDistrSamples,
+       plotRegions, characRV, listDistrs, DiscreteDistrsP, AbscontDistrsP)
+
 import(Rcmdr)
 import(tcltk2)
-importFrom(Hmisc, wtd.mean, wtd.var,wtd.quantile,wtd.table,wtd.rank)
-importFrom(tcltk, tkfont.create, ttkprogressbar, tkwidget, setTkProgressBar, ttknotebook, tkadd, tkselect, tkbutton,ttkcombobox,tkget)
+
+importFrom(stats, aov, as.formula, complete.cases, confint, cov.wt, na.omit, pchisq, pnorm, qchisq, qnorm, relevel,
+             var)
+
+importFrom(Hmisc, wtd.mean, wtd.var,wtd.quantile,wtd.table,wtd.rank,capitalize)
+importFrom(tcltk, tkfont.create, ttkprogressbar, tkwidget, setTkProgressBar, ttknotebook, tkadd, 
+           tkselect, tkbutton,ttkcombobox,tkget, .Tcl, .Tcl.args,tkgrid.forget)
 importFrom(tseries, tseries.runs.test = "runs.test")
 importFrom(randtests, randtests.runs.test = "runs.test")
 importFrom(utils, type.convert)
+importFrom(IndexNumR, priceIndex)
+importFrom(lme4, lmer,VarCorr,methTitle)
+importFrom(grDevices, rgb, nclass.FD, nclass.Sturges, nclass.scott)
+

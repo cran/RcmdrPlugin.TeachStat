@@ -1,22 +1,21 @@
-
-resumenNumericoVDiscreta <- function(){
+resumenNumericoVContinua <- function(){
   Library("abind")
   Library("e1071")
   
-  dialogName <- "resumenNumericoVDiscreta"
+  dialogName <- "resumenNumericoVContinua"
   defaults <- list(initial.x=NULL,initial.sg2=gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"),
-                   initial.tablafrecuencia="0", initial.cortes="0", initial.valorcortes="",
+                   initial.tablafrecuencia="0", initial.valorcortes="",
                    initial.cortes.n="", initial.cortes.v="", initial.cortes.al="", initial.cortes.from="", initial.cortes.to="", initial.cortes.by="",
-                   #initial.g=NULL, 
                    initial.mean="1",
                    initial.sd="1", initial.se.mean="0", initial.IQR="1", initial.cv="0",
                    initial.quantiles.variable="1",
                    initial.quantiles="0, .25, .5, .75, 1",
-                   initial.skewness="0", initial.kurtosis="0", initial.tab=0)
+                   initial.skewness="0", initial.kurtosis="0", initial.type="2",
+                   initial.tab=0)
   
   dialog.values <- getDialog(dialogName, defaults)
-  #initial.group <- dialog.values$initial.group
-  initializeDialog(title=gettext("Numerical summaries - Discrete variables",domain="R-RcmdrPlugin.TeachStat"), use.tabs=TRUE, tabs=c("dataTab", "statisticsTab"))
+  initial.group <- dialog.values$initial.group
+  initializeDialog(title=gettext("Numerical summaries - Continuous variables",domain="R-RcmdrPlugin.TeachStat"), use.tabs=TRUE, tabs=c("dataTab", "statisticsTab"))
   
   varFrame<-tkframe(dataTab)
   
@@ -32,79 +31,46 @@ resumenNumericoVDiscreta <- function(){
   selectGroupComboBox <- variableComboBox(varFrame, variableList=Factors(), state=mostrar,
                                           initialSelection=dialog.values$initial.sg2, title=gettext("Group (pick one)",domain="R-RcmdrPlugin.TeachStat"))
   
+  
   stkFrame<-tkframe(dataTab)
+  
   tablafrecuenciaVar<-tclVar(dialog.values$initial.tablafrecuencia)
   tablafrecuenciaCheckBox<-ttkcheckbutton(stkFrame, variable=tablafrecuenciaVar,text=gettext("Frequency table",domain="R-RcmdrPlugin.TeachStat"),
                                           command = function(){ if(tclvalue(tablafrecuenciaVar)=="1"){
-                                            tk2state.set(cortesCheckBox, state = "normal")} else
-                                            { tk2state.set(cortesCheckBox, state = "disabled")
-                                              tk2state.set(ncortesRadioButton, state = "disabled")
-                                              tk2state.set(ncortesEntry, state = "disabled")
-                                              tk2state.set(vcortesRadioButton, state = "disabled")
-                                              tk2state.set(vcortesEntry, state = "disabled")
-                                              tk2state.set(alcortesRadioButton, state = "disabled")
-                                              tk2state.set(alcortesEntry, state = "disabled")
-                                              tk2state.set(seqcortesRadioButton, state = "disabled")
-                                              tk2state.set(fromcortesEntry, state = "disabled")
-                                              tk2state.set(tocortesEntry, state = "disabled")
-                                              tk2state.set(tocortesLabel, state = "disabled")
-                                              tk2state.set(bycortesEntry, state = "disabled")
-                                              tk2state.set(bycortesLabel, state = "disabled")
-                                              tclvalue(cortesVar)<-"0"
-                                              tclvalue(valorcortesVar)<-""
-                                              tclvalue(nvalorcortesVar)<-""
-                                              tclvalue(vvalorcortesVar)<-""
-                                              tclvalue(alvalorcortesVar)<-""
-                                              tclvalue(fromvalorcortesVar)<-""
-                                              tclvalue(tovalorcortesVar)<-""
-                                              tclvalue(byvalorcortesVar)<-""
-                                            }
+                                            tk2state.set(ncortesRadioButton, state = "normal")
+                                            tk2state.set(vcortesRadioButton, state = "normal")
+                                            tk2state.set(alcortesRadioButton, state = "normal")
+                                            tk2state.set(seqcortesRadioButton, state = "normal")
+                                            tk2state.set(tocortesLabel, state = "normal")
+                                            tk2state.set(bycortesLabel, state = "normal")
+                                          } else{
+                                            tk2state.set(ncortesRadioButton, state = "disabled")
+                                            tk2state.set(ncortesEntry, state = "disabled")
+                                            tk2state.set(vcortesRadioButton, state = "disabled")
+                                            tk2state.set(vcortesEntry, state = "disabled")
+                                            tk2state.set(alcortesRadioButton, state = "disabled")
+                                            tk2state.set(alcortesEntry, state = "disabled")
+                                            tk2state.set(seqcortesRadioButton, state = "disabled")
+                                            tk2state.set(fromcortesEntry, state = "disabled")
+                                            tk2state.set(tocortesEntry, state = "disabled")
+                                            tk2state.set(tocortesLabel, state = "disabled")
+                                            tk2state.set(bycortesEntry, state = "disabled")
+                                            tk2state.set(bycortesLabel, state = "disabled")
+                                            tclvalue(valorcortesVar)<-""
+                                            tclvalue(nvalorcortesVar)<-""
+                                            tclvalue(vvalorcortesVar)<-""
+                                            tclvalue(alvalorcortesVar)<-""
+                                            tclvalue(fromvalorcortesVar)<-""
+                                            tclvalue(tovalorcortesVar)<-""
+                                            tclvalue(byvalorcortesVar)<-""
+                                          }
                                           })
   
-  cortesFrame<-tkframe(dataTab)
-  
-  if(dialog.values$initial.tablafrecuencia=="0"){
-    mostrar_cortes<-"disabled"
-  }
-  else{mostrar_cortes<-"normal"}
-  
-  cortesVar<-tclVar(dialog.values$initial.cortes)
-  cortesCheckBox<-ttkcheckbutton(cortesFrame, variable=cortesVar,text=gettext("Breaks",domain="R-RcmdrPlugin.TeachStat"),state=mostrar_cortes,
-                                 command = function(){ if(tclvalue(cortesVar)=="1"){
-                                   tk2state.set(ncortesRadioButton, state = "normal")
-                                   tk2state.set(vcortesRadioButton, state = "normal")
-                                   tk2state.set(alcortesRadioButton, state = "normal")
-                                   tk2state.set(seqcortesRadioButton, state = "normal")
-                                   tk2state.set(tocortesLabel, state = "normal")
-                                   tk2state.set(bycortesLabel, state = "normal")
-                                 } else
-                                 { tk2state.set(ncortesRadioButton, state = "disabled")
-                                   tk2state.set(ncortesEntry, state = "disabled")
-                                   tk2state.set(vcortesRadioButton, state = "disabled")
-                                   tk2state.set(vcortesEntry, state = "disabled")
-                                   tk2state.set(alcortesRadioButton, state = "disabled")
-                                   tk2state.set(alcortesEntry, state = "disabled")
-                                   tk2state.set(seqcortesRadioButton, state = "disabled")
-                                   tk2state.set(fromcortesEntry, state = "disabled")
-                                   tk2state.set(tocortesEntry, state = "disabled")
-                                   tk2state.set(tocortesLabel, state = "disabled")
-                                   tk2state.set(bycortesEntry, state = "disabled")
-                                   tk2state.set(bycortesLabel, state = "disabled")
-                                   tclvalue(valorcortesVar)<-""
-                                   tclvalue(nvalorcortesVar)<-""
-                                   tclvalue(vvalorcortesVar)<-""
-                                   tclvalue(alvalorcortesVar)<-""
-                                   tclvalue(fromvalorcortesVar)<-""
-                                   tclvalue(tovalorcortesVar)<-""
-                                   tclvalue(byvalorcortesVar)<-""}
-                                 })
-  
-  
-  optcortesFrame<-tkframe(cortesFrame)
+  optcortesFrame<-tkframe(stkFrame)
   
   valorcortesVar<-tclVar(dialog.values$initial.valorcortes)
   
-  if(dialog.values$initial.cortes=="0"){
+  if(dialog.values$initial.tablafrecuencia=="0"){
     mostrar_opcortes<-"disabled"
   }
   else{mostrar_opcortes<-"normal"}
@@ -140,7 +106,6 @@ resumenNumericoVDiscreta <- function(){
   
   nvalorcortesVar <- tclVar(dialog.values$initial.cortes.n)
   ncortesEntry <- ttkentry(ncortesFrame, width="12", textvariable=nvalorcortesVar, state=mostrar)
-  
   
   # Vector of breaks
   vcortesFrame<-tkframe(optcortesFrame)
@@ -247,11 +212,18 @@ resumenNumericoVDiscreta <- function(){
   bycortesLabel<-labelRcmdr(seqcortesFrame,text=gettext("by:",domain="R-RcmdrPlugin.TeachStat"),state=mostrar_opcortes)
   
   
-  
-  checkBoxes(window = statisticsTab, frame="checkBoxFrame", boxes=c("mean", "sd", "se.mean", "IQR", "cv","skewness", "kurtosis"),
-             initialValues=c(dialog.values$initial.mean, dialog.values$initial.sd, dialog.values$initial.se.mean, dialog.values$initial.IQR, dialog.values$initial.cv,dialog.values$initial.skewness, dialog.values$initial.kurtosis),
-             labels=gettext(c("Mean", "Standard Deviation", "Standard Error of Mean", "Interquartile Range", "Coefficient of Variation","Skewness", "Kurtosis"),domain="R-RcmdrPlugin.TeachStat"))
-  
+  checkBoxes(window = statisticsTab, frame="checkBoxFrame", boxes=c("mean", "sd", "se.mean", "IQR", "cv"),
+             initialValues=c(dialog.values$initial.mean, dialog.values$initial.sd, dialog.values$initial.se.mean, 
+                             dialog.values$initial.IQR, dialog.values$initial.cv),
+             labels=gettext(c("Mean", "Standard Deviation", "Standard Error of Mean", "Interquartile Range", 
+                              "Coefficient of Variation"),domain="R-RcmdrPlugin.TeachStat"))
+  skFrame <- tkframe(statisticsTab)
+  checkBoxes(window = skFrame, frame="skCheckBoxFrame", boxes=c("skewness", "kurtosis"),
+             initialValues=c(dialog.values$initial.skewness, dialog.values$initial.kurtosis),
+             labels=gettext(c("Skewness", "Kurtosis"),domain="R-RcmdrPlugin.TeachStat"))
+  radioButtons(window = skFrame, name="typeButtons", buttons=c("b1", "b2", "b3"), values=c("1", "2", "3"),
+               initialValue=dialog.values$initial.type,
+               labels=gettext(c("Type 1", "Type 2", "Type 3"),domain="R-RcmdrPlugin.TeachStat"))
   quantilesVariable <- tclVar(dialog.values$initial.quantiles.variable)
   quantilesFrame <- tkframe(statisticsTab)
   quantilesCheckBox <- tkcheckbutton(quantilesFrame, variable=quantilesVariable,
@@ -259,15 +231,14 @@ resumenNumericoVDiscreta <- function(){
   quantiles <- tclVar(dialog.values$initial.quantiles)
   quantilesEntry <- ttkentry(quantilesFrame, width="20", textvariable=quantiles)
   
-  
   onOK <- function(){
     tab <- if (as.character(tkselect(notebook)) == dataTab$ID) 0 else 1
     x <- getSelection(xBox)
-    g<- getSelection(selectGroupComboBox)
+    sg2var <- getSelection(selectGroupComboBox)
+    
     tfrec<-tclvalue(tablafrecuenciaVar)
     
     ### Cortes
-    cortes<-tclvalue(cortesVar)
     valorcortes<-tclvalue(valorcortesVar)
     nvalorcortes<-tclvalue(nvalorcortesVar)
     vvalorcortes<-tclvalue(vvalorcortesVar)
@@ -276,8 +247,6 @@ resumenNumericoVDiscreta <- function(){
     tovalorcortes<-tclvalue(tovalorcortesVar)
     byvalorcortes<-tclvalue(byvalorcortesVar)
     
-    
-    #doItAndPrint(str(sg2var))
     quants <- tclvalue(quantiles)
     meanVar <- tclvalue(meanVariable)
     sdVar <- tclvalue(sdVariable)
@@ -287,16 +256,17 @@ resumenNumericoVDiscreta <- function(){
     quantsVar <- tclvalue(quantilesVariable)
     skewnessVar <- tclvalue(skewnessVariable)
     kurtosisVar <- tclvalue(kurtosisVariable)
-    
-    
-    
+    typeVar <- tclvalue(typeButtonsVariable)
     putDialog(dialogName, list(
-      initial.x=x,initial.sg2=g,initial.tablafrecuencia=tfrec,initial.cortes=cortes,initial.valorcortes=valorcortes,
+      initial.x=x,initial.sg2=sg2var,
+      initial.tablafrecuencia=tfrec,initial.valorcortes=valorcortes,
       initial.cortes.n=nvalorcortes, initial.cortes.v=vvalorcortes, initial.cortes.al=alvalorcortes, initial.cortes.from=fromvalorcortes,
       initial.cortes.to=tovalorcortes, initial.cortes.by=byvalorcortes,
-      initial.mean=meanVar, initial.sd=sdVar, initial.se.mean=se.meanVar, initial.IQR=IQRVar, initial.cv=cvVar,
+      initial.mean=meanVar, initial.sd=sdVar,
+      initial.se.mean=se.meanVar, initial.IQR=IQRVar, initial.cv=cvVar,
       initial.quantiles.variable=quantsVar, initial.quantiles=quants,
-      initial.skewness=skewnessVar, initial.kurtosis=kurtosisVar, initial.tab=tab
+      initial.skewness=skewnessVar, initial.kurtosis=kurtosisVar, initial.type=typeVar,
+      initial.tab=tab
     ))
     
     closeDialog()
@@ -315,7 +285,7 @@ resumenNumericoVDiscreta <- function(){
     tovalorcortes <- as.numeric(tovalorcortes)
     byvalorcortes <- as.numeric(byvalorcortes)
     
-    if(cortes==1){
+    if(tfrec==1){
       if(valorcortes=="ncortes"){
         if(length(nvalorcortes)==0){
           errorCondition(recall=dialogNameF, message=gettext("Breaks number must be provided",domain="R-RcmdrPlugin.TeachStat"))
@@ -366,90 +336,40 @@ resumenNumericoVDiscreta <- function(){
       }
     }
     
-    
     quants <- paste(gsub(",+", ",", gsub(" ", ",", quants)), sep="")
     
     quants <- as.numeric( strsplit(quants,split=",")[[1]])
     
-    if(((NA %in% quants)||(length( quants[(quants<0)|(quants>1)])!=0) || length(quants)<1)&&(quantsVar==1)){
-      errorCondition(recall=dialogNameF, message=gettext("Quantiles must be a numeric vector in [0,1]",domain="R-RcmdrPlugin.TeachStat"))
+    if(((NA %in% quants)||(length( quants[(quants<0)|(quants>1)])!=0) || length(quants)<1) &&(quantsVar==1)){
+      errorCondition(recall=dialogNameF, message=gettext("Quantiles must be a numeric vector in [0,1]",
+                                                         domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
     
     if((length(quants)==0 )&&(quantsVar==1)){
-      errorCondition(recall=dialogNameF, message=gettext("Quantiles must be a numeric vector in [0,1]",domain="R-RcmdrPlugin.TeachStat"))
+      errorCondition(recall=dialogNameF, message=gettext("Quantiles must be a numeric vector in [0,1]",
+                                                         domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
     
+    quants<-paste("c(",paste(quants, collapse=",", sep=""),")",sep="")
     
-    
-    posiblesstatistic<-c("mean", "sd", "se(mean)", "IQR", "quantiles", "cv", "skewness", "kurtosis")
-    statselegidas<-c(meanVar, sdVar, se.meanVar, IQRVar, quantsVar, cvVar, skewnessVar, kurtosisVar)
-    
-    #print(posiblesstatistic)
-    #print(statselegidas)
-    
-    stats <- posiblesstatistic[as.logical(as.numeric(statselegidas))]
-    
-    if (length(stats) == 0){
+    .activeDataSet <- ActiveDataSet()
+    vars <- if (length(x) == 1) paste('"', x, '"', sep="")
+    else paste(",c(", paste('"', x, '"', collapse=", ", sep=""), ")", sep="")
+    vars <- paste(.activeDataSet, "[", vars, "]", sep="")
+    stats <- paste("c(",
+                   paste(c('"mean"', '"sd"', '"se(mean)"', '"IQR"', '"quantiles"', '"cv"', '"skewness"', '"kurtosis"')
+                         [c(meanVar, sdVar, se.meanVar, IQRVar, quantsVar, cvVar, skewnessVar, kurtosisVar) == 1],
+                         collapse=", "), ")", sep="")
+    if (stats == "c()"){
       errorCondition(recall=dialogNameF, message=gettext("No statistics selected",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
-    
-    activeDataSet <- ActiveDataSet()
-    activeDataSet<-get(activeDataSet)
-    vDiscretasSeleccionadas<-subset(activeDataSet,select = x)
-    if(g==gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat")){factorSeleccionado<-NULL}
-    else{factorSeleccionado<-activeDataSet[,g]}
+    type.text <- if (skewnessVar == 1 || kurtosisVar == 1) paste(', type="', typeVar, '"', sep="") else ""
     
     print_tabla_Frecuencia<-as.logical(as.numeric(tfrec))
-    
-    
-    ###################### Imprimir la función a llamar por RCommander ###########################################
-    
-    .activeDataSet<-ActiveDataSet()
-    
-    if(0 == length(x)) vdiscreta<-"NULL"
-    else{        if (length(x) == 1){vdiscreta<- paste('"', x, '"', sep="")
-    vdiscreta<-paste(.activeDataSet, "[", vdiscreta, "]", sep="")
-    }
-      else{ vdiscreta<-paste("c(", paste('"', x, '"', collapse=", ", sep=""), ")", sep="")
-      
-      vdiscreta <- paste(.activeDataSet, "[,", vdiscreta, "]", sep="")
-      }
-    }
-    #### Si quisieramos pasarle solo un vector(factor)
-    
-    #   if(0 == length(x)) vdiscreta <-"NULL"
-    #    else{
-    #      vdiscreta <- if (length(x) == 1) paste('"', x, '"', sep="")
-    #     else paste("c(", paste('"', x, '"', collapse=", ", sep=""), ")", sep="")
-    #      vdiscreta <- paste(.activeDataSet, "[,", vdiscreta, "]", sep="")
-    #    }
-    
-    
-    
-    stadisticas <- paste("c(",
-                         paste(c('"mean"', '"sd"', '"se(mean)"', '"IQR"', '"quantiles"', '"cv"', '"skewness"', '"kurtosis"')
-                               [c(meanVar, sdVar, se.meanVar, IQRVar, quantsVar, cvVar, skewnessVar, kurtosisVar) == 1],
-                               collapse=", "), ")", sep="")
-    
-    
-    
-    
-    if(g==gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat")){grupo<-"NULL"}
-    else{grupo<-paste(.activeDataSet,"$",g, sep="")}
-    
-    
-    
-    if(0 == length(quants)) cuantiles <-"NULL"
-    else{
-      cuantiles <- if (length(quants) == 1) paste(quants , sep="")
-      else paste("c(", paste(quants, collapse=",", sep=""), ")", sep="")
-    }
-    
-    # if(0 == length(valorcortes)) vcortes <-"NULL"
-    if(0 == cortes) vcortes <-"NULL"
+    if(0 == tfrec) vcortes <-"NULL"
     else{
       vcortes <- if(valorcortes=="ncortes"){
         paste(nvalorcortes , sep="")
@@ -462,26 +382,20 @@ resumenNumericoVDiscreta <- function(){
       }
     }
     
-    command<- paste("calcularResumenVariablesDiscretas(data=", vdiscreta,", statistics =", stadisticas,", quantiles = ",cuantiles,", groups=", grupo,", tablaFrecuencia=",print_tabla_Frecuencia,", cortes=",vcortes,")",sep="" )
-    
+    command <- if (length(Factors())!=0 && sg2var!=gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat")) {
+      grps <- paste(.activeDataSet, "$", sg2var, sep="")
+      paste("calcularResumenVariablesContinuas(data=", vars, ", groups=", grps, ", statistics=", stats,
+            ", quantiles=", quants, type.text,", tablaFrecuencia=",print_tabla_Frecuencia,", cortes=",vcortes, ")", sep="")
+    }
+    else  paste("calcularResumenVariablesContinuas(data=", vars, ", statistics=", stats,
+                ", quantiles=", quants, type.text,", tablaFrecuencia=",print_tabla_Frecuencia,", cortes=",vcortes, ")", sep="")
     doItAndPrint(command)
-    
-    ###Funcion a llamar
-    ## calcularResumenVariablesDiscretas(data=vDiscretasSeleccionadas, statistics = stats, quantiles = quants, groups=factorSeleccionado,tablaFrecuencia=print_tabla_Frecuencia)
-    
-    
-    
-    
-    
     tkfocus(CommanderWindow())
   }
-  OKCancelHelp(helpSubject="calcularResumenVariablesDiscretas", reset=dialogName, apply =dialogName)
-  #if (length(Factors())!=0){
+  OKCancelHelp(helpSubject="calcularResumenVariablesContinuas", reset=dialogName, apply =dialogName)
   tkgrid(getFrame(xBox),labelRcmdr(varFrame, text="     "),getFrame(selectGroupComboBox),sticky="nw")
   tkgrid(varFrame, sticky="nw")
   tkgrid(labelRcmdr(stkFrame,text="  "),sticky="nw")
-  tkgrid(tablafrecuenciaCheckBox, sticky="w")
-  tkgrid(stkFrame, sticky="nw")
   tkgrid(ncortesRadioButton,labelRcmdr(ncortesFrame,text=" "),ncortesEntry,sticky="nw")
   tkgrid(ncortesFrame,sticky="nw")
   tkgrid(vcortesRadioButton,labelRcmdr(vcortesFrame,text=" "),vcortesEntry,sticky="nw")
@@ -492,20 +406,15 @@ resumenNumericoVDiscreta <- function(){
          tocortesLabel,labelRcmdr(seqcortesFrame,text=" "),tocortesEntry,
          labelRcmdr(seqcortesFrame,text=" "),bycortesLabel,labelRcmdr(seqcortesFrame,text=" "),bycortesEntry,sticky="nw")
   tkgrid(seqcortesFrame,sticky="nw")
-  tkgrid(cortesCheckBox,labelRcmdr(cortesFrame,text=" "),optcortesFrame,sticky="nw")
-  tkgrid(cortesFrame,sticky="nw")
+  tkgrid(tablafrecuenciaCheckBox,labelRcmdr(stkFrame,text=" "),optcortesFrame,sticky="nw")
+  tkgrid(stkFrame, sticky="nw")
   
   
-  #}else tkgrid(getFrame(xBox),labelRcmdr(dataTab, text="     "),getFrame(gBox),sticky="nw")
-  #tkgrid(getFrame(xBox),sticky="nw")
-  #tkgrid(getFrame(selectGroupComboBox), sticky="nw")
-  # tkgrid(groupFrame,sticky="e")
-  # tkgrid(getFrame(gBox),sticky="e")
   tkgrid(checkBoxFrame, sticky="nw")
-  
+  tkgrid(skCheckBoxFrame, typeButtonsFrame, sticky="nw")
+  tkgrid(skFrame, sticky="w")
   tkgrid(quantilesCheckBox, quantilesEntry, sticky="w")
   tkgrid(quantilesFrame)
-  #tkgrid(groupsFrame, sticky = "w", padx=6)
   dialogSuffix(use.tabs=TRUE, grid.buttons=TRUE, tabs=c("dataTab", "statisticsTab"),
                tab.names=c("Data", "Statistics"))
 }

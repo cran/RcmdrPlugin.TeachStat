@@ -1,6 +1,8 @@
 ConvertVariables<- function () {
   # To ensure that menu name is included in pot file
   gettext("Change variables type...", domain="R-RcmdrPlugin.TeachStat")
+  
+  env <- environment()
 
   defaults <- list (initial.var1=NULL, initial.var2=NULL, initial.var3=NULL)
   dialog.values <- getDialog ("ConvertVariables", defaults)
@@ -8,12 +10,24 @@ ConvertVariables<- function () {
 
 
   #Instrucciones para hallar las variables cualitativas ordinal
-  activeDataSet<-ActiveDataSet()
-  activeDataSet<-get(activeDataSet)
-  factores_en_ActiveDataSet<-Factors()
-  datos_tipo_ordenado<-names(activeDataSet[factores_en_ActiveDataSet])[(sapply(activeDataSet[factores_en_ActiveDataSet], is.ordered))]
-  ordinales_en_ActiveDataSet<-factores_en_ActiveDataSet[factores_en_ActiveDataSet %in% datos_tipo_ordenado]
-  nominales_en_ActiveDataSet<-factores_en_ActiveDataSet[!factores_en_ActiveDataSet %in% datos_tipo_ordenado]
+  activeDataSet <- ActiveDataSet()
+  activeDataSet <- get(activeDataSet)
+  factores_en_ActiveDataSet <- Factors()
+  if(length(factores_en_ActiveDataSet)==0){
+    ordinales_en_ActiveDataSet <- nominales_en_ActiveDataSet <- otros_en_ActiveDataSet <- vector("character")
+  } else {
+    datos_tipo_factor<-names(activeDataSet[factores_en_ActiveDataSet])[(sapply(activeDataSet[factores_en_ActiveDataSet], is.factor))]
+    if(length(datos_tipo_factor)==0){
+      nominales_en_ActiveDataSet <- ordinales_en_ActiveDataSet <- vector("character")
+      otros_en_ActiveDataSet <- factores_en_ActiveDataSet
+    } else{
+      datos_tipo_ordenado <- names(activeDataSet[datos_tipo_factor])[(sapply(activeDataSet[datos_tipo_factor], is.ordered))]
+      ordinales_en_ActiveDataSet <- datos_tipo_factor[datos_tipo_factor %in% datos_tipo_ordenado]
+      nominales_en_ActiveDataSet <- datos_tipo_factor[!datos_tipo_factor %in% datos_tipo_ordenado]
+      otros_en_ActiveDataSet <- factores_en_ActiveDataSet[!factores_en_ActiveDataSet %in% datos_tipo_factor]
+    }
+  }
+  
 
 
   #Construyo los diferentes Box existentes
@@ -22,20 +36,33 @@ ConvertVariables<- function () {
  
   vnominal <- variableListBox(variablesFrame, nominales_en_ActiveDataSet, selectmode="multiple", title = gettext("Nominal variables",domain="R-RcmdrPlugin.TeachStat"))
                                        # initialSelection = varPosn(dialog.values$initial.var1,"factor"))
+  # deselection of all items
+  tkselection.clear(vnominal$listbox, 0, "end")
+  
   vordinal <- variableListBox(variablesFrame, ordinales_en_ActiveDataSet, selectmode="multiple", title = gettext("Ordinal variables",domain="R-RcmdrPlugin.TeachStat"))
                                  # initialSelection = varPosn(dialog.values$initial.var2,"all"))
+  tkselection.clear(vordinal$listbox, 0, "end")
   
   vnumerica <- variableListBox(variablesFrame, Numeric() , selectmode="multiple", title = gettext("Numeric variables",domain="R-RcmdrPlugin.TeachStat"))
                                          # initialSelection = varPosn(dialog.values$initial.var3,"numeric"))
+  tkselection.clear(vnumerica$listbox, 0, "end")
+  
+  votros <- variableListBox(variablesFrame, otros_en_ActiveDataSet, selectmode="multiple", title = gettext("Other variables",domain="R-RcmdrPlugin.TeachStat"))
+  # initialSelection = varPosn(dialog.values$initial.var1,"factor"))
+  tkselection.clear(votros$listbox, 0, "end")
+  
+
   
   onOK <- function() {
     var1<-as.character(tkget(vnominal$listbox,0,"end"))
     var2<-as.character(tkget(vordinal$listbox,0,"end"))
     var3<-as.character(tkget(vnumerica$listbox,0,"end"))
+    var4<-as.character(tkget(votros$listbox,0,"end"))
  
     if("" %in% var1) var1<-var1[var1!=""]
     if("" %in% var2) var2<-var2[var2!=""]
     if("" %in% var3) var3<-var3[var3!=""]
+    if("" %in% var4) var4<-var4[var4!=""]
     
    
     putDialog ("ConvertVariables", list(initial.var1=var1, initial.var2=var2, initial.var3=var3))
@@ -55,6 +82,7 @@ ConvertVariables<- function () {
       errorCondition(recall = ConvertVariables, message = gettext("At least one variable must be selected",domain="R-RcmdrPlugin.TeachStat"))
       return()
     } else {
+      datasetactivo<-get(.activeDataSet, envir = env)
       command <- NULL
       if(length(asNominal)>0){
         for (name in asNominal){
@@ -65,7 +93,12 @@ ConvertVariables<- function () {
           #     return()
           #   }
           # }
-          command <- paste(command, "\n  ", name, " <- as.factor(", name,")", sep="")
+          
+          if(is.ordered(datasetactivo[,name])){
+            command <- paste(command, '\n  class(', name, ') <- "factor"', sep="")
+          } else{
+            command <- paste(command, "\n  ", name, " <- as.factor(", name,")", sep="")
+          }
         }
       }
       if(length(asOrdinal)>0){
@@ -114,6 +147,12 @@ ConvertVariables<- function () {
   }
   
   toNominal <- function() {
+    selOt <- as.numeric(tkcurselection(votros$listbox)) #Positions to change
+    selOther<- NULL
+    for(i in selOt) selOther <- c(selOther, as.character(tkget(votros$listbox,i)))
+    for(i in rev(selOt)) tkdelete(votros$listbox,i)
+    for(var in selOther) tkinsert(vnominal$listbox,"end",var)
+    
     selOr <- as.numeric(tkcurselection(vordinal$listbox)) #Positions to change
     selOrdinal <- NULL
     for(i in selOr) selOrdinal <- c(selOrdinal, as.character(tkget(vordinal$listbox,i)))
@@ -128,6 +167,12 @@ ConvertVariables<- function () {
   }
   
   toOrdinal <- function() {
+    selOt <- as.numeric(tkcurselection(votros$listbox)) #Positions to change
+    selOther<- NULL
+    for(i in selOt) selOther <- c(selOther, as.character(tkget(votros$listbox,i)))
+    for(i in rev(selOt)) tkdelete(votros$listbox,i)
+    for(var in selOther) tkinsert(vordinal$listbox,"end",var)
+    
     selNo <- as.numeric(tkcurselection(vnominal$listbox)) #Positions to change
     selNominal <- NULL
     for(i in selNo) selNominal <- c(selNominal, as.character(tkget(vnominal$listbox,i)))
@@ -142,6 +187,12 @@ ConvertVariables<- function () {
   }
   
   toNumeric <- function() {
+    selOt <- as.numeric(tkcurselection(votros$listbox)) #Positions to change
+    selOther<- NULL
+    for(i in selOt) selOther <- c(selOther, as.character(tkget(votros$listbox,i)))
+    for(i in rev(selOt)) tkdelete(votros$listbox,i)
+    for(var in selOther) tkinsert(vnumerica$listbox,"end",var)
+    
     selOr <- as.numeric(tkcurselection(vordinal$listbox)) #Positions to change
     selOrdinal <- NULL
     for(i in selOr) selOrdinal <- c(selOrdinal, as.character(tkget(vordinal$listbox,i)))
@@ -159,13 +210,13 @@ ConvertVariables<- function () {
  OKCancelHelp(helpSubject = "ConvertVariables", reset="ConvertVariables", apply="ConvertVariables")
 
  tkgrid(labelRcmdr(variablesFrame, text=gettext("Select one or more variables to modify their type:",domain="R-RcmdrPlugin.TeachStat"),fg = getRcmdr("title.color"), font="RcmdrTitleFont"),columnspan=3, sticky="w") 
- tkgrid(getFrame(vnominal), labelRcmdr(variablesFrame, text="   "),getFrame(vordinal),labelRcmdr(variablesFrame, text="   "),getFrame(vnumerica) ,sticky="nw")
+ tkgrid(getFrame(vnominal), labelRcmdr(variablesFrame, text="   "),getFrame(vordinal),labelRcmdr(variablesFrame, text="   "),getFrame(vnumerica),labelRcmdr(variablesFrame, text="   "),getFrame(votros) ,sticky="nw")
  
  
  ConvertButtons <- tkframe(top) 
- NominalButton <- buttonRcmdr(ConvertButtons, text="Nominal", command=toNominal)
- OrdinalButton <- buttonRcmdr(ConvertButtons, text="Ordinal", command=toOrdinal)
- NumericButton <- buttonRcmdr(ConvertButtons, text="Numeric", command=toNumeric)
+ NominalButton <- buttonRcmdr(ConvertButtons, text=gettext("Nominal",domain="R-RcmdrPlugin.TeachStat"), command=toNominal)
+ OrdinalButton <- buttonRcmdr(ConvertButtons, text=gettext("Ordinal",domain="R-RcmdrPlugin.TeachStat"), command=toOrdinal)
+ NumericButton <- buttonRcmdr(ConvertButtons, text=gettext("Numeric",domain="R-RcmdrPlugin.TeachStat"), command=toNumeric)
  
  tkgrid(labelRcmdr(ConvertButtons, text=gettext("Convert selected variables to: ",domain="R-RcmdrPlugin.TeachStat"),fg = getRcmdr("title.color"), font="RcmdrTitleFont"), NominalButton,labelRcmdr(ConvertButtons, text=""),OrdinalButton , labelRcmdr(ConvertButtons, text=""),NumericButton)
  

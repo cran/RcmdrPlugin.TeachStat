@@ -1,1 +1,18 @@
-if (getRversion() >= '2.15.1') globalVariables(c('mediaVariable','mediaFrame','numSummary','top','ttkcombobox','tk2state.set','alternativeVariable','alternativeFrame','buttonsFrame','varianzaVariable','varianzaFrame','MediaVariable','MediaFrame','dataTab','statisticsTab','tkselect','notebook','meanVariable','sdVariable','se.meanVariable','IQRVariable','modeVariable','cvVariable','skewnessVariable','kurtosisVariable','checkBoxFrame','sgroupsVariable','typeButtonsVariable','.groups','skCheckBoxFrame','typeButtonsFrame','entry1','levelNames','levelsFrame','levelsVariable','methodFrame','methodVariable','namesButton','numbersButton','onCancel','subButtonsFrame','subdialog'))
+if (getRversion() >= '2.15.1') globalVariables(c('mediaVariable','mediaFrame','numSummary','top','ttkcombobox','tk2state.set',
+                                                 'alternativeVariable','alternativeFrame','buttonsFrame','varianzaVariable',
+                                                 'varianzaFrame','MediaVariable','MediaFrame','dataTab','statisticsTab',
+                                                 'tkselect','notebook','meanVariable','sdVariable','se.meanVariable','IQRVariable',
+                                                 'modeVariable','cvVariable','skewnessVariable','kurtosisVariable','checkBoxFrame',
+                                                 'sgroupsVariable','typeButtonsVariable','.groups','skCheckBoxFrame',
+                                                 'typeButtonsFrame','entry1','levelNames','levelsFrame','levelsVariable',
+                                                 'methodFrame','methodVariable','namesButton','numbersButton','onCancel',
+                                                 'subButtonsFrame','subdialog','ariVariable','col2rgb','colorConverter',
+                                                 'colorspaces','convertColor','fisVariable','geoVariable','harVariable',
+                                                 'lasVariable','paaVariable','varestFrame','varestVariable','buttonFrame',
+                                                 'cumVariable', 'd', 'densVariable', 'densorcumFrame', 'densorcumVariable',
+                                                 'dsnameValue', 'expecVariable', 'getLow', 'getUp', 'getdistrOption', 'hasArg',
+                                                 'hex.1', 'hex.2', 'is', 'legendPositionFrame', 'legendPositionVariable', 'lines',
+                                                 'massorcumFrame', 'massorcumVariable', 'medianVariable', 'par', 'plot', 'points',
+                                                 'polygon', 'rgb', 'sumVariable', 'support', 'valuesOrQuantilesFrame',
+                                                 'valuesOrQuantilesVariable', 'xlim', 'tipoFrame', 'tipoVariable'))
+

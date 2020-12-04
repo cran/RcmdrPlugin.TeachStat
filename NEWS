@@ -1,3 +1,25 @@
+RcmdrPlugin.TeachStat v1.1.0 (Release date: 2020-11-16)
+==============
+
+Changes:
+
+* Bug fixes and added improvements in "Change variables type".
+* Use of "distr" package for menu on "Random Variables" which allows to work with generic distributions.
+* Addition of a new menu for working with Index Numbers.
+* Addition of a new menu item for ANOVA with random effects.
+* More options to provide breaks in a frequency table for discrete variables.
+* Addition of a new option to compute a frequency table for continuous variables.
+* Addition of the option to compute one-sided confidence intervals
+
+
+RcmdrPlugin.TeachStat v1.0.10-9001 (Release date: 2019-02-09)
+==============
+
+Changes:
+
+* Bugs fixes.
+
+
 RcmdrPlugin.TeachStat v1.0.10 (Release date: 2018-10-28)
 ==============
 
@@ -12,8 +34,6 @@ Changes:
 * Save the dataframe in a file when it is created.
 
 
-
-
 RcmdrPlugin.TeachStat v1.0.9 (Release date: 2017-01-13)
 ==============
 
@@ -21,6 +41,7 @@ Changes:
 
 * Changes in the name of some menus.
 * Addition of some menus: Summary of the "active data set", "contingency tables" and "random variables".
+
 
 RcmdrPlugin.TeachStat v1.0.8 (Release date: 2016-10-17)
 ==============

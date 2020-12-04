@@ -366,7 +366,7 @@ muestrasFrame<-ttkframe(seleccionFrame, borderwidth=1, relief="solid", padding=c
     }
 
     if(!is.na(valornexitos)){
-      if(valornexitos*(valornfracasos)*valornexitos2*(valornfracasos2)<1){
+      if((valornexitos==0)||(valornfracasos==0)||(valornexitos2==0)||(valornfracasos2==0)){
         errorCondition(recall=contrastHipotesisProporcion, message=gettext("There must be at least 1 success and 1 failure for both samples",domain="R-RcmdrPlugin.TeachStat"))
         return()
       }

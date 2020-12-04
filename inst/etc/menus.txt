@@ -1,13 +1,17 @@
 # Some Rcmdr menus for the RcmdrPlugin.TeachStat
 # When the plug-in is loaded, these menus are merged with the standard Rcmdr menus
 
-# last modified: Oct 2018 by M. A. Mosquera
+# last modified: Nov 2019 by M. A. Mosquera
 
 #   type    menu/item		            operation/parent	    label			                                                          command/menu                                 activation                                install?
+
+    item    meansMenu       	      command               "One-Way ANOVA with random effects..."                              oneWayAnovaRE                               "numericP() && factorsP()"                 "packageAvailable('multcomp') && packageAvailable('abind') && packageAvailable('lme4')"
 
 # Rcmdr Menus Modifications (from RcmdrPlugin.UCA)
     item    nonparametricMenu       command               "Randomness test for two level factor..."                           randomnessFTest                             "twoLevelFactorsP()"                       ""
     item    nonparametricMenu       command               "Randomness test for numeric variable..."                           randomnessNTest                             "numericP()"                               ""
+####
+
 
 # New structure of menus  
     menu    EstadisticaUvigoMenu    topMenu               ""                                                                  ""                                          ""                                         ""
@@ -20,7 +24,7 @@
 
     item    dataMenu2               command               "New data set..."                                                   newDataSet2                                 ""                                         "getRcmdr('editDataset.threshold') > 0"
     item    dataMenu2               command               "Load data set..."                                                  loadDataSet                                 ""                                         ""
-    item	  dataMenu2               command               "Merge data sets..."                                                mergeDataSets                               "dataSetsP(2)"                             "packageAvailable('car') && packageAvailable('RcmdrMisc')"
+    item    dataMenu2               command               "Merge data sets..."                                                mergeDataSets                               "dataSetsP(2)"                             "packageAvailable('car') && packageAvailable('RcmdrMisc')"
     item    dataMenu2               separator             ""                                                                  ""                                          ""                                         ""
     item    dataMenu2               command               "Import data from text file, clipboard, or URL..."                  readDataSet                                 ""                                         ""
 
@@ -73,6 +77,18 @@
     item    dataMenu2               cascade               "Manage variables in active data set"                               variablesMenu2                              ""                                         ""
 
 
+#####
+
+
+    menu    IndexNumberMenu         EstadisticaUvigoMenu  ""                                                                  ""                                          ""                                          ""
+    item    EstadisticaUvigoMenu    cascade               "Index Numbers"                                                     IndexNumberMenu                             ""                                          ""
+ 
+    item    IndexNumberMenu         command               "Simple index numbers..."                                           Sindexnumbers		                            "twoOrMoreLevelFactorsP() && numericP()"    ""
+    item    IndexNumberMenu         command               "Complex index numbers..."                                          Cindexnumbers		                            "twoOrMoreLevelFactorsP() && numericP()"    ""
+    item    IndexNumberMenu         command               "Base change..."                                                    BCindexnumbers		                          "twoOrMoreLevelFactorsP() && numericP()"    ""
+    item    IndexNumberMenu         command               "Price index..."                                                    Pindexnumbers		                            "twoOrMoreLevelFactorsP() && numericP(n=2)" "packageAvailable('IndexNumR')"
+    item    IndexNumberMenu         command               "Deflation..."                                                      Deflation 		                              "twoOrMoreLevelFactorsP() && numericP(n=2)" ""
+
 
 #####
 
@@ -86,7 +102,7 @@
     item    EDescriptivaMenu        command               "Frequency distributions for qualitative variables..."              resumenVariablesCualitativas                "factorsP()"                               ""
     item    EDescriptivaMenu        command               "Numerical summaries - Discrete variables..."                       resumenNumericoVDiscreta                    "numericP()"                               "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
 
-    item    EDescriptivaMenu        command               "Numerical summaries..."                                            resumenNumerico                             "numericP()"                               "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
+    item    EDescriptivaMenu        command               "Numerical summaries..."                                            resumenNumericoVContinua                    "numericP()"                               "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
     item    EDescriptivaMenu        command               "Numerical summaries - Weighted variables..."                       resumenNumericoPonderada                    "numericP()"                               "packageAvailable('RcmdrMisc') && packageAvailable('Hmisc') && packageAvailable('abind')"
 
     item    EDescriptivaMenu        command               "Numerical summaries - Tabulated data..."                           resumenDatosTabulados                       "numericP(n=3)"                            ""
@@ -103,94 +119,134 @@
     menu    continuasMenu           VAleatoriaMenu        ""                                                                  ""                                          ""                                         ""
     item    VAleatoriaMenu          cascade               "Continuous distributions"                                          continuasMenu                               ""                                         ""
 
+    # Continuous generic distribution
+    menu    genericMenuES            continuasMenu         ""                                                                 ""                                          ""                                         ""
+    item    continuasMenu            cascade               "Continuous Generic distribution"                                  genericMenuES                               ""                                         "packageAvailable('distr')"
+    item    genericMenuES            command               "Continuous Generic distribution definition..."                    genericDistrDefine                          ""                                         "packageAvailable('distr')"
+    item    genericMenuES            command               "Continuous Generic quantiles..."                                  genericDistrQuantiles                       "AbscontDistrsP()"                         "packageAvailable('distr')"
+    item    genericMenuES            command               "Continuous Generic probabilities..."                              genericProbabilitiesInter                   "AbscontDistrsP()"                         "packageAvailable('distr')"
+    item    genericMenuES            command               "Plot continuous Generic distribution..."                          genericDistrPlot                            "AbscontDistrsP()"                         "packageAvailable('distr') && packageAvailable('RcmdrMisc')"
+    item    genericMenuES            command               "Continuous Generic characteristics..."                            genericDistrCharac                          "AbscontDistrsP()"                         "packageAvailable('distr')"
+    item    genericMenuES            command               "Sample from Continuous Generic distribution..."                   genericDistrSamples                         "AbscontDistrsP()"                         "packageAvailable('distr')"
+
     # Normal distribution
     menu    normalMenuES            continuasMenu         ""                                                                  ""                                          ""                                         ""
     item    continuasMenu           cascade               "Normal distribution"                                               normalMenuES                                ""                                         ""
-    item    normalMenuES            command               "Normal quantiles..."                                               normalQuantiles                             ""                                         ""
-    item    normalMenuES            command               "Normal probabilities..."                                           normalProbabilities                         ""                                         ""
-    item    normalMenuES            command               "Plot normal distribution..."                                       normalDistributionPlot                      ""                                         "packageAvailable('RcmdrMisc')"
-    item    normalMenuES            command               "Sample from normal distribution..."                                normalDistributionSamples                   ""                                         ""
+    item    normalMenuES            command               "Normal quantiles..."                                               normalDistrQuantiles                        ""                                         ""
+    item    normalMenuES            command               "Normal probabilities..."                                           normalProbabilitiesInter                    ""                                         ""
+#    item    normalMenuES            command               "Normal probabilities..."                                           normalProbabilities                         ""                                         ""
+    item    normalMenuES            command               "Plot normal distribution..."                                       normalDistrPlot                             ""                                         "packageAvailable('RcmdrMisc')"
+    item    normalMenuES            command               "Normal characteristics..."                                         normalDistrCharac                           ""                                         ""
+    item    normalMenuES            command               "Sample from normal distribution..."                                normalDistrSamples                          ""                                         ""
           
     # t distribution 
     menu    tMenuES                 continuasMenu         ""                                                                  ""                                          ""                                         ""
     item    continuasMenu           cascade               "t distribution"                                                    tMenuES                                     ""                                         ""
-    item    tMenuES                 command               "t quantiles..."                                                    tQuantiles                                  ""                                         ""
-    item    tMenuES                 command               "t probabilities..."                                                tProbabilities                              ""                                         ""
-    item    tMenuES                 command               "Plot t distribution..."                                            tDistributionPlot                           ""                                         "packageAvailable('RcmdrMisc')"
-    item    tMenuES                 command               "Sample from t distribution..."                                     tDistributionSamples                        ""                                         ""
+    item    tMenuES                 command               "t quantiles..."                                                    tDistrQuantiles                             ""                                         ""
+    item    tMenuES                 command               "t probabilities..."                                                tProbabilitiesInter                         ""                                         ""
+#    item    tMenuES                 command               "t probabilities..."                                                tProbabilities                              ""                                         ""
+    item    tMenuES                 command               "Plot t distribution..."                                            tDistrPlot                                  ""                                         "packageAvailable('RcmdrMisc')"
+    item    tMenuES                 command               "t characteristics..."                                              tDistrCharac                                ""                                         ""
+    item    tMenuES                 command               "Sample from t distribution..."                                     tDistrSamples                               ""                                         ""
           
     # Chi-square distribution
     menu    chisqMenuES             continuasMenu         ""                                                                  ""                                          ""                                         ""
     item    continuasMenu           cascade               "Chi-squared distribution"                                          chisqMenuES                                 ""                                         ""
-    item    chisqMenuES             command               "Chi-squared quantiles..."                                          chisqQuantiles                              ""                                         ""
-    item    chisqMenuES             command               "Chi-squared probabilities..."                                      chisqProbabilities                          ""                                         ""
-    item    chisqMenuES             command               "Plot chi-squared distribution..."                                  chisqDistributionPlot                       ""                                         "packageAvailable('RcmdrMisc')"
-    item    chisqMenuES             command               "Sample from chi-squared distribution..."                           chisqDistributionSamples                    ""                                         ""
+    item    chisqMenuES             command               "Chi-squared quantiles..."                                          chisqDistrQuantiles                         ""                                         ""
+    item    chisqMenuES             command               "Chi-squared probabilities..."                                      chisqProbabilitiesInter                     ""                                         ""
+#    item    chisqMenuES             command               "Chi-squared probabilities..."                                      chisqProbabilities                          ""                                         ""
+    item    chisqMenuES             command               "Plot chi-squared distribution..."                                  chisqDistrPlot                              ""                                         "packageAvailable('RcmdrMisc')"
+    item    chisqMenuES             command               "ChiSquared characteristics..."                                     chisqDistrCharac                            ""                                         ""
+    item    chisqMenuES             command               "Sample from chi-squared distribution..."                           chisqDistrSamples                           ""                                         ""
     
     # F distribution
     menu    FMenuES                 continuasMenu         ""                                                                  ""                                          ""                                         ""
     item    continuasMenu           cascade               "F distribution"                                                    FMenuES                                     ""                                         ""
-    item    FMenuES                 command               "F quantiles..."                                                    FQuantiles                                  ""                                         ""
-    item    FMenuES                 command               "F probabilities..."                                                FProbabilities                              ""                                         ""
-    item    FMenuES                 command               "Plot F distribution..."                                            FDistributionPlot                           ""                                         "packageAvailable('RcmdrMisc')"
-    item    FMenuES                 command               "Sample from F distribution..."                                     FDistributionSamples                        ""                                         ""
+    item    FMenuES                 command               "F quantiles..."                                                    FDistrQuantiles                             ""                                         ""
+    item    FMenuES                 command               "F probabilities..."                                                FProbabilitiesInter                         ""                                         ""
+#    item    FMenuES                 command               "F probabilities..."                                                FProbabilities                              ""                                         ""
+    item    FMenuES                 command               "Plot F distribution..."                                            FDistrPlot                                  ""                                         "packageAvailable('RcmdrMisc')"
+    item    FMenuES                 command               "F characteristics..."                                              FDistrCharac                                ""                                         ""
+    item    FMenuES                 command               "Sample from F distribution..."                                     FDistrSamples                               ""                                         ""
           
     # Exponential distribution
     menu    exponentialMenuES       continuasMenu         ""                                                                  ""                                          ""                                         "" 
     item    continuasMenu           cascade               "Exponential distribution"                                          exponentialMenuES                           ""                                         ""
-    item    exponentialMenuES       command               "Exponential quantiles..."                                          exponentialQuantiles                        ""                                         ""
-    item    exponentialMenuES       command               "Exponential probabilities..."                                      exponentialProbabilities                    ""                                         ""
-    item    exponentialMenuES       command               "Plot exponential distribution..."                                  exponentialDistributionPlot                 ""                                         "packageAvailable('RcmdrMisc')"
-    item    exponentialMenuES       command               "Sample from exponential distribution..."                           exponentialDistributionSamples              ""                                         ""
+    item    exponentialMenuES       command               "Exponential quantiles..."                                          exponentialDistrQuantiles                   ""                                         ""
+    item    exponentialMenuES       command               "Exponential probabilities..."                                      exponentialProbabilitiesInter               ""                                         ""
+#    item    exponentialMenuES       command               "Exponential probabilities..."                                      exponentialProbabilities                    ""                                         ""
+    item    exponentialMenuES       command               "Plot exponential distribution..."                                  exponentialDistrPlot                        ""                                         "packageAvailable('RcmdrMisc')"
+    item    exponentialMenuES       command               "Exponential characteristics..."                                    exponentialDistrCharac                      ""                                         ""
+    item    exponentialMenuES       command               "Sample from exponential distribution..."                           exponentialDistrSamples                     ""                                         ""
           
     # Uniform distribution      
     menu    uniformMenuES           continuasMenu         ""                                                                  ""                                          ""                                         "" 
     item    continuasMenu           cascade               "Uniform distribution"                                              uniformMenuES                               ""                                         ""
-    item    uniformMenuES           command               "Uniform quantiles..."                                              uniformQuantiles                            ""                                         ""
-    item    uniformMenuES           command               "Uniform probabilities..."                                          uniformProbabilities                        ""                                         ""
-    item    uniformMenuES           command               "Plot uniform distribution..."                                      uniformDistributionPlot                     ""                                         "packageAvailable('RcmdrMisc')"
-    item    uniformMenuES           command               "Sample from uniform distribution..."                               uniformDistributionSamples                  ""                                         ""
+    item    uniformMenuES           command               "Uniform quantiles..."                                              uniformDistrQuantiles                       ""                                         ""
+    item    uniformMenuES           command               "Uniform probabilities..."                                          uniformProbabilitiesInter                   ""                                         ""
+#    item    uniformMenuES           command               "Uniform probabilities..."                                          uniformProbabilities                        ""                                         ""
+    item    uniformMenuES           command               "Plot uniform distribution..."                                      uniformDistrPlot                            ""                                         "packageAvailable('RcmdrMisc')"
+    item    uniformMenuES           command               "Uniform characteristics..."                                        uniformDistrCharac                          ""                                         ""
+    item    uniformMenuES           command               "Sample from uniform distribution..."                               uniformDistrSamples                         ""                                         ""
      
      
     menu    discretasMenu           VAleatoriaMenu        ""                                                                  ""                                          ""                                         ""
     item    VAleatoriaMenu          cascade               "Discrete distributions"                                            discretasMenu                               ""                                         ""
      
+    # Discrete generic distribution
+    menu    DgenericMenuES           discretasMenu         ""                                                                 ""                                          ""                                         ""
+    item    discretasMenu            cascade               "Discrete Generic distribution"                                    DgenericMenuES                              ""                                         "packageAvailable('distr')"
+    item    DgenericMenuES           command               "Discrete Generic distribution definition..."                      DgenericDistrDefine                         ""                                         "packageAvailable('distr')"
+    item    DgenericMenuES           command               "Discrete Generic quantiles..."                                    DgenericDistrQuantiles                      "DiscreteDistrsP()"                        "packageAvailable('distr')"
+    item    DgenericMenuES           command               "Discrete Generic tail probabilities..."                           DgenericProbabilitiesInter                  "DiscreteDistrsP()"                        "packageAvailable('distr') && packageAvailable('RcmdrMisc')"
+    item    DgenericMenuES           command               "Discrete Generic probabilities..."                                DgenericDistrMass                           "DiscreteDistrsP()"                        "packageAvailable('distr')"
+    item    DgenericMenuES           command               "Plot discrete Generic distribution..."                            DgenericDistrPlot                           "DiscreteDistrsP()"                        "packageAvailable('distr') && packageAvailable('RcmdrMisc')"
+    item    DgenericMenuES           command               "Discrete Generic characteristics..."                              DgenericDistrCharac                         "DiscreteDistrsP()"                        "packageAvailable('distr')"
+    item    DgenericMenuES           command               "Sample from Discrete Generic distribution..."                     DgenericDistrSamples                        "DiscreteDistrsP()"                        "packageAvailable('distr')"
+
     # Binomial distribution     
     menu    binomialMenuES          discretasMenu         ""                                                                  ""                                          ""                                         ""
     item    discretasMenu           cascade               "Binomial distribution"                                             binomialMenuES                              ""                                         ""
-    item    binomialMenuES          command               "Binomial quantiles..."                                             binomialQuantiles                           ""                                         ""
-    item    binomialMenuES          command               "Binomial tail probabilities..."                                    binomialProbabilities                       ""                                         ""
-    item    binomialMenuES          command               "Binomial probabilities..."                                         binomialMass                                ""                                         ""
-    item    binomialMenuES          command               "Plot binomial distribution..."                                     binomialDistributionPlot                    ""                                         "packageAvailable('RcmdrMisc')"
-    item    binomialMenuES          command               "Sample from binomial distribution..."                              binomialDistributionSamples                 ""                                         ""
+    item    binomialMenuES          command               "Binomial quantiles..."                                             binomialDistrQuantiles                      ""                                         ""
+#    item    binomialMenuES          command               "Binomial tail probabilities..."                                    binomialProbabilities                      ""                                         ""
+    item    binomialMenuES          command               "Binomial tail probabilities..."                                    binomialProbabilitiesInter                   ""                                         ""
+    item    binomialMenuES          command               "Binomial probabilities..."                                         binomialDistrMass                           ""                                         ""
+    item    binomialMenuES          command               "Plot binomial distribution..."                                     binomialDistrPlot                           ""                                         "packageAvailable('RcmdrMisc')"
+    item    binomialMenuES          command               "Binomial characteristics..."                                       binomialDistrCharac                         ""                                         ""
+    item    binomialMenuES          command               "Sample from binomial distribution..."                              binomialDistrSamples                        ""                                         ""
                 
     # Poisson distribution            
     menu    PoissonMenuES           discretasMenu         ""                                                                  ""                                          ""                                         ""
     item    discretasMenu           cascade               "Poisson distribution"                                              PoissonMenuES                               ""                                         ""
-    item    PoissonMenuES           command               "Poisson quantiles..."                                              PoissonQuantiles                            ""                                         ""
-    item    PoissonMenuES           command               "Poisson tail probabilities..."                                     PoissonProbabilities                        ""                                         ""
-    item    PoissonMenuES           command               "Poisson probabilities..."                                          PoissonMass                                 ""                                         ""
-    item    PoissonMenuES           command               "Plot Poisson distribution..."                                      PoissonDistributionPlot                     ""                                         "packageAvailable('RcmdrMisc')"
-    item    PoissonMenuES           command               "Sample from Poisson distribution..."                               PoissonDistributionSamples                  ""                                         ""
+    item    PoissonMenuES           command               "Poisson quantiles..."                                              PoissonDistrQuantiles                       ""                                         ""
+#    item    PoissonMenuES           command               "Poisson tail probabilities..."                                     PoissonProbabilities                        ""                                         ""
+    item    PoissonMenuES           command               "Poisson tail probabilities..."                                     PoissonProbabilitiesInter                   ""                                         ""
+    item    PoissonMenuES           command               "Poisson probabilities..."                                          PoissonDistrMass                            ""                                         ""
+    item    PoissonMenuES           command               "Plot Poisson distribution..."                                      PoissonDistrPlot                            ""                                         "packageAvailable('RcmdrMisc')"
+    item    PoissonMenuES           command               "Poisson characteristics..."                                        PoissonDistrCharac                          ""                                         ""
+    item    PoissonMenuES           command               "Sample from Poisson distribution..."                               PoissonDistrSamples                         ""                                         ""
             
     # Geometric distribution            
     menu    geometricMenuES         discretasMenu         ""                                                                  ""                                          ""                                         ""
     item    discretasMenu           cascade               "Geometric distribution"                                            geometricMenuES                             ""                                         ""
-    item    geometricMenuES         command               "Geometric quantiles..."                                            geomQuantiles                               ""                                         ""
-    item    geometricMenuES         command               "Geometric tail probabilities..."                                   geomProbabilities                           ""                                         ""
-    item    geometricMenuES         command               "Geometric probabilities..."                                        geomMass                                    ""                                         ""
-    item    geometricMenuES         command               "Plot geometric distribution..."                                    geomDistributionPlot                        ""                                         "packageAvailable('RcmdrMisc')"
-    item    geometricMenuES         command               "Sample from geometric distribution..."                             geomDistributionSamples                     ""                                         ""
-                
-            
+    item    geometricMenuES         command               "Geometric quantiles..."                                            geomDistrQuantiles                          ""                                         ""
+#    item    geometricMenuES         command               "Geometric tail probabilities..."                                   geomProbabilities                           ""                                         ""
+    item    geometricMenuES         command               "Geometric tail probabilities..."                                   geomProbabilitiesInter                      ""                                         ""
+    item    geometricMenuES         command               "Geometric probabilities..."                                        geomDistrMass                               ""                                         ""
+    item    geometricMenuES         command               "Plot geometric distribution..."                                    geomDistrPlot                               ""                                         "packageAvailable('RcmdrMisc')"
+    item    geometricMenuES         command               "Geometric characteristics..."                                      geomDistrCharac                             ""                                         ""
+    item    geometricMenuES         command               "Sample from geometric distribution..."                             geomDistrSamples                            ""                                         ""
+
     # Negative binomial distribution      
     menu    negbinomialMenuES       discretasMenu         ""                                                                  ""                                          ""                                         ""
     item    discretasMenu           cascade               "Negative binomial distribution"                                    negbinomialMenuES                           ""                                         ""
-    item    negbinomialMenuES       command               "Negative binomial quantiles..."                                    negbinomialQuantiles                        ""                                         ""
-    item    negbinomialMenuES       command               "Negative binomial tail probabilities..."                           negbinomialProbabilities                    ""                                         ""
-    item    negbinomialMenuES       command               "Negative binomial probabilities..."                                negbinomialMass                             ""                                         ""
-    item    negbinomialMenuES       command               "Plot negative binomial distribution..."                            negbinomialDistributionPlot                 ""                                         "packageAvailable('RcmdrMisc')"
-    item    negbinomialMenuES       command               "Sample from negative binomial distribution..."                     negbinomialDistributionSamples              ""                                         ""
+    item    negbinomialMenuES       command               "Negative binomial quantiles..."                                    negbinomialDistrQuantiles                   ""                                         ""
+#    item    negbinomialMenuES       command               "Negative binomial tail probabilities..."                           negbinomialProbabilities                    ""                                         ""
+    item    negbinomialMenuES       command               "Negative binomial tail probabilities..."                           negbinomialProbabilitiesInter               ""                                         ""
+    item    negbinomialMenuES       command               "Negative binomial probabilities..."                                negbinomialDistrMass                        ""                                         ""
+    item    negbinomialMenuES       command               "Plot negative binomial distribution..."                            negbinomialDistrPlot                        ""                                         "packageAvailable('RcmdrMisc')"
+    item    negbinomialMenuES       command               "NegativeBinomial characteristics..."                               negbinomialDistrCharac                      ""                                         ""
+    item    negbinomialMenuES       command               "Sample from negative binomial distribution..."                     negbinomialDistrSamples                     ""                                         ""
 
 
     menu    InferenciaMenu          EstadisticaUvigoMenu  ""                                                                  ""                                          ""                                         ""

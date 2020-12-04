@@ -70,7 +70,7 @@ randomnessNTest <- function() {
     closeDialog()
     # Apply test
     draw_graph<-as.logical(as.numeric(var3))
-    threshold<-if(var4=="") paste0("median(",x,")") else as.numeric(var4)
+    threshold<-if(var4=="") paste0("median(",x,",na.rm=TRUE)") else as.numeric(var4)
     
     doItAndPrint(paste("with(", ActiveDataSet(), ", numeric.runs.test(", x, ", threshold=",threshold,", plot=",draw_graph,"))", sep = ""))
     tkfocus(CommanderWindow())

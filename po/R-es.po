@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: RcmdrPlugin.TeachStat 1.0.10\n"
-"POT-Creation-Date: 2018-11-05 17:00\n"
-"PO-Revision-Date: 2018-12-07 16:04+0100\n"
+"Project-Id-Version: RcmdrPlugin.TeachStat 1.0.11\n"
+"POT-Creation-Date: 2020-11-17 11:20\n"
+"PO-Revision-Date: 2020-11-17 11:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -34,11 +34,423 @@ msgstr "Punto de corte (mediana por defecto):"
 msgid "Cut-point must be numeric or NULL"
 msgstr "El punto de corte debe ser numérico o nulo"
 
-msgid "Hypothesis Testing for a proportion"
-msgstr "Contraste de Hipótesis para una proporción"
+msgid "Simple index numbers..."
+msgstr "Números índice simples..."
 
 msgid "<no variable selected>"
 msgstr "<ninguna variable seleccionada>"
+
+msgid "<no base level selected>"
+msgstr "<ningún nivel de la base seleccionado>"
+
+msgid "Simple Index Numbers"
+msgstr "Números Índice Simples"
+
+msgid "Value variable (pick one)"
+msgstr "Variable valor (Elegir una)"
+
+msgid "Base variable (pick one)"
+msgstr "Variable Base (elegir una)"
+
+msgid "<no level selected>"
+msgstr "<ningún nivel seleccionado>"
+
+msgid "Base (pick one)"
+msgstr "Base (Elegir una)"
+
+msgid "Add to data frame"
+msgstr "Añadir al conjunto de datos"
+
+msgid "Variable name:"
+msgstr "Nombre de la variable:"
+
+msgid "No value variable selected"
+msgstr "Ninguna variable valor seleccionada"
+
+msgid "No base variable selected"
+msgstr "Ninguna variable base seleccionada"
+
+msgid "No base level selected"
+msgstr "Ningún nivel de la base seleccionado"
+
+msgid "'The base variable cannot have repeated values'"
+msgstr "'La variable base no puede tener valores repetidos'"
+
+msgid "Base change..."
+msgstr "Cambio de base..."
+
+msgid "Base Change"
+msgstr "Cambio de Base"
+
+msgid "Index variable (pick one)"
+msgstr "Variable índice (elegir una)"
+
+msgid "New base (pick one)"
+msgstr "Nueva base (Elegir una)"
+
+msgid "No index variable selected"
+msgstr "Ninguna variable índice seleccionada"
+
+msgid "No new base level selected"
+msgstr "Ninguna nueva base seleccionada"
+
+msgid "Price index..."
+msgstr "Índice de precios..."
+
+msgid "Price Index"
+msgstr "Índice de Precios"
+
+msgid "Product variable (pick one)"
+msgstr "Variable Producto (elegir una)"
+
+msgid "Price variable (pick one)"
+msgstr "Variable Precio (elegir una)"
+
+msgid "Quantity variable (pick one)"
+msgstr "Variable cantidad (elegir una)"
+
+msgid "Laspeyres"
+msgstr "Laspeyres"
+
+msgid "Paasche"
+msgstr "Paasche"
+
+msgid "Fisher"
+msgstr "Fisher"
+
+msgid "Aggregation Method"
+msgstr "Método de Agregación"
+
+msgid "Other:"
+msgstr "Otro:"
+
+msgid "Save as a new data frame:"
+msgstr "Guardar como nuevo conjunto de datos:"
+
+msgid "name:"
+msgstr "nombre:"
+
+msgid "No product variable selected."
+msgstr "No se ha seleccionado ninguna variable producto."
+
+msgid "No base variable selected."
+msgstr "No se ha seleccionado ninguna variable base."
+
+msgid "No base level selected."
+msgstr "No se ha seleccionado ninguna base."
+
+msgid "No price variable selected."
+msgstr "No se ha seleccionado ninguna variable precio."
+
+msgid "No quantitity variable selected."
+msgstr "No se ha seleccionado ninguna variable cantidad."
+
+msgid "No other aggregation method was selected."
+msgstr "No se ha especificado otro método de agregación."
+
+msgid "No aggregation method selected."
+msgstr "No se ha seleccionado ningún método de agregación."
+
+msgid "No name for data frame."
+msgstr "No hay nombre para el conjunto de datos."
+
+msgid "Complex index numbers..."
+msgstr "Números índice complejos..."
+
+msgid "Complex Index Numbers"
+msgstr "Números Índice Complejos"
+
+msgid "Arithmetic"
+msgstr "Aritmética"
+
+msgid "Geometric"
+msgstr "Geométrica"
+
+msgid "Harmonic"
+msgstr "Harmónica"
+
+msgid "Geometric mean cannot be computed for variable"
+msgstr "La media geométrica no puede ser calculada para la variable"
+
+msgid "because it has non positive values"
+msgstr "porque tiene valores no positivos"
+
+msgid "Geometric mean cannot be computed for variables"
+msgstr "La media geométrica no puede ser calculada para las variables"
+
+msgid "because they have non positive values"
+msgstr "porque tienen valores no positivos"
+
+msgid "Harmonic mean cannot be computed for variable"
+msgstr "La media harmónica no puede ser calculada para la variable"
+
+msgid "because it has zero values"
+msgstr "porque tiene valores cero"
+
+msgid "Harmonic mean cannot be computed for variables"
+msgstr "La media harmónica no puede ser calculada para las variables"
+
+msgid "because they have zero values"
+msgstr "porque tienen valores cero"
+
+msgid "Deflation..."
+msgstr "Deflación..."
+
+msgid "Deflation"
+msgstr "Deflación"
+
+msgid "Current value (pick one)"
+msgstr "Valor corriente (elegir uno)"
+
+msgid "Deflator (pick one)"
+msgstr "Deflactor (elegir uno)"
+
+msgid "No current value variable selected"
+msgstr "Ningún valor corriente seleccionado"
+
+msgid "No deflactor selected"
+msgstr "Ningún deflactor seleccionado"
+
+msgid "Plot"
+msgstr "Gráfico"
+
+msgid "generic"
+msgstr "genérica"
+
+msgid "discrete"
+msgstr "discreta"
+
+msgid "continuous"
+msgstr "continua"
+
+msgid "distribution..."
+msgstr "distribución..."
+
+msgid "Discrete"
+msgstr "Discreta"
+
+msgid "Continuous"
+msgstr "Continua"
+
+msgid "Distribution"
+msgstr "Distribución"
+
+msgid "Distribution (pick one)"
+msgstr "Distribución (elegir una)"
+
+msgid "<no distribution selected>"
+msgstr "<ninguna distribución seleccionada>"
+
+msgid "Select function to plot:"
+msgstr "Seleccionar función a dibujar:"
+
+msgid "No plot selected."
+msgstr "Ningún gráfico seleccionado."
+
+msgid "Number of Successes"
+msgstr "Número de Éxitos"
+
+msgid "Number of Failures until Success"
+msgstr "Número de Fallos hasta el Éxito"
+
+msgid "Number of White Balls in Sample"
+msgstr "Número de Bolas Blancas en la muestra"
+
+msgid "Number of Failures Until Target Successes"
+msgstr "Número de Fallos hasta Éxitos Objetivo"
+
+msgid "Trials"
+msgstr "Intentos"
+
+msgid "Probability Mass"
+msgstr "Masa de Probabilidad"
+
+msgid "Numerator"
+msgstr "Numerador"
+
+msgid "Denominator"
+msgstr "Denominador"
+
+msgid "Density"
+msgstr "Densidad"
+
+msgid "Cumulative Probability"
+msgstr "Probabilidad Acumulada"
+
+msgid "You must specify 'to' for the range."
+msgstr "Debe especificar el valor de 'a' para el rango."
+
+msgid "tail"
+msgstr "cola"
+
+msgid "probabilities..."
+msgstr "probabilidades..."
+
+msgid "Probabilities"
+msgstr "Probabilidades"
+
+msgid "Plot region"
+msgstr "Dibujar la región"
+
+msgid "is not a valid list of numbers."
+msgstr "no es una lista válida de números."
+
+msgid "distribution's parameters:"
+msgstr "parámetros de la distribución:"
+
+msgid "Probabilities:"
+msgstr "Probabilidades:"
+
+msgid "From (>)"
+msgstr "Desde (>)"
+
+msgid "To (<=)"
+msgstr "Hasta (<=)"
+
+msgid "color:"
+msgstr "color:"
+
+msgid "quantiles..."
+msgstr "cuantiles..."
+
+msgid "Quantiles"
+msgstr "Cuantiles"
+
+msgid "Show cumulative probabilities"
+msgstr "Mostrar las probabilidades acumuladas"
+
+msgid "characteristics..."
+msgstr "características..."
+
+msgid "Characteristics"
+msgstr "Características"
+
+msgid "Expectation"
+msgstr "Esperanza"
+
+msgid "Median"
+msgstr "Mediana"
+
+msgid "Standard Deviation"
+msgstr "Desviación Típica"
+
+msgid "Interquartile Range"
+msgstr "Rango Intercuartílico"
+
+msgid "Skewness"
+msgstr "Asimetría"
+
+msgid "Kurtosis"
+msgstr "Curtosis"
+
+msgid "Moment of order:"
+msgstr "Momento de orden:"
+
+msgid "Central moment of order:"
+msgstr "Momento central de orden:"
+
+msgid "Moment not specified or not an integer number."
+msgstr "Momento no especificado o no es un número entero."
+
+msgid "Central moment not specified or not an integer number."
+msgstr "Momento central no especificado o no es un número entero."
+
+msgid "No characteristics selected."
+msgstr "Ninguna característica seleccionado."
+
+msgid "Sample from"
+msgstr "Muestra de"
+
+msgid "distribution definition..."
+msgstr "definición de la distribución..."
+
+msgid "Distribution Definition"
+msgstr "Definición Distribución"
+
+msgid "Probability mass function"
+msgstr "Función de masa de probabilidad"
+
+msgid "Distribution function"
+msgstr "Función de distribución"
+
+msgid "Select function to provide:"
+msgstr "Seleccionar función a proporcionar:"
+
+msgid "Density function"
+msgstr "Función de Densidad"
+
+msgid "Add piece"
+msgstr "Añadir trozo"
+
+msgid "Delete last piece"
+msgstr "Borrar el último trozo"
+
+msgid "You must enter the name of a distribution."
+msgstr "Debes introducir el nombre de una distribución."
+
+msgid "No support specified."
+msgstr "No se ha especificado el soporte."
+
+msgid "Support is not ordered."
+msgstr "El soporte no está ordenado."
+
+msgid "Probabilities are not ordered."
+msgstr "Las probabilidades no están ordenadas."
+
+msgid "Last probability must be 1."
+msgstr "La última probabilidad debe ser 1."
+
+msgid "Some definition not specified."
+msgstr "Alguna definición no está especificada."
+
+msgid "Some 'from' not specified."
+msgstr "Algún 'desde' no está especificado."
+
+msgid "Some 'to' not specified."
+msgstr "Algún 'a' no está especificado."
+
+msgid "'to' must be greater than 'from'."
+msgstr "'a' debe ser mayor que 'desde'."
+
+msgid "Overlapping definitions."
+msgstr "Definiciones solapadas."
+
+msgid "Definition intervals must be consecutive."
+msgstr "Los intervalos de definición deben ser consecutivos."
+
+msgid "Enter name for the distribution"
+msgstr "Introducir un nombre para la distribución"
+
+msgid "Support"
+msgstr "Soporte"
+
+msgid "Definition"
+msgstr "Definición"
+
+msgid "From"
+msgstr "Desde"
+
+msgid "To"
+msgstr "A"
+
+msgid "ANOVA table"
+msgstr "Tabla ANOVA"
+
+msgid ""
+"Estimation of some variance component is negative. The variance component "
+"model is inadequate."
+msgstr ""
+"La estimación de alguna componente de la varianza es negativa. El modelo de "
+"componentes de la varianza es inadecuado."
+
+msgid "Components of Variance"
+msgstr "Componentes de la Varianza"
+
+msgid "Confidence intervals"
+msgstr "Intervalos de confianza"
+
+msgid "Hypothesis Testing for a proportion"
+msgstr "Contraste de Hipótesis para una proporción"
 
 msgid "Variable (pick one)"
 msgstr "Variable (Elegir una)"
@@ -98,9 +510,6 @@ msgstr "Nº intentos"
 
 msgid "Other levels"
 msgstr "Otros niveles"
-
-msgid "Distribution"
-msgstr "Distribución"
 
 msgid "Test statistics value"
 msgstr "Valor del estadístico de contraste"
@@ -215,23 +624,19 @@ msgstr "Hipótesis nula: p_1 - p_2 ="
 
 msgid "Successes number value of Sample 1 must be a positive integer number"
 msgstr ""
-"Valor del número de éxitos para la Muestra 1 debe ser un número entero "
-"positivo"
+"El número de éxitos para la Muestra 1 debe ser un número entero positivo"
 
 msgid "Failures number value of Sample 1 must be a positive integer number"
 msgstr ""
-"Valor del número de fallos para la Muestra 1 debe ser un número entero "
-"positivo"
+"El número de fallos para la Muestra 1 debe ser un número entero positivo"
 
 msgid "Successes number value of Sample 2 must be a positive integer number"
 msgstr ""
-"Valor del número de éxitos para la Muestra 2 debe ser un número entero "
-"positivo"
+"El número de éxitos para la Muestra 2 debe ser un número entero positivo"
 
 msgid "Failures number value of Sample 2 must be a positive integer number"
 msgstr ""
-"Valor del número de fallos para la Muestra 2 debe ser un número entero "
-"positivo"
+"El número de fallos para la Muestra 2 debe ser un número entero positivo"
 
 msgid ""
 "Variables or successes number and failures number of two samples must be "
@@ -388,6 +793,9 @@ msgid "Hypothesis Testing for the mean difference of two paired samples"
 msgstr ""
 "Contraste de Hipótesis para la diferencia de medias de dos muestras pareadas"
 
+msgid "Hypothesis testing for the variance..."
+msgstr "Contraste de hipótesis para la varianza..."
+
 msgid "Hypothesis Testing for the variance"
 msgstr "Contraste de Hipótesis para la varianza"
 
@@ -439,6 +847,9 @@ msgstr "Variables ordinales"
 msgid "Numeric variables"
 msgstr "Variables numéricas"
 
+msgid "Other variables"
+msgstr "Otras variables"
+
 msgid "At least one variable must be selected"
 msgstr "Se debe seleccionar al menos una variable"
 
@@ -451,6 +862,15 @@ msgstr "no pueden ser forzadas a numérico"
 msgid "Select one or more variables to modify their type:"
 msgstr "Seleccionar una o más variables para modificar su tipo:"
 
+msgid "Nominal"
+msgstr "Nominal"
+
+msgid "Ordinal"
+msgstr "Ordinal"
+
+msgid "Numeric"
+msgstr "Numérico"
+
 msgid "Convert selected variables to:"
 msgstr "Convertir variables seleccionadas a:"
 
@@ -460,11 +880,20 @@ msgstr "Cuantil:"
 msgid "Numerical summary"
 msgstr "Resúmenes numéricos"
 
+msgid "unknown 'cortes' algorithm"
+msgstr "algoritmo desconocido para 'cortes'"
+
 msgid "Frequency distribution for discrete variables"
 msgstr "Distribución de frecuencias para variables discretas"
 
+msgid "unknown 'breaks' algorithm"
+msgstr "algoritmo desconocido para 'breaks'"
+
 msgid "Group"
 msgstr "Grupo"
+
+msgid "Frequency distribution for continuous variables"
+msgstr "Distribución de frecuencias para variables continuas"
 
 msgid "Numerical summary weighted by"
 msgstr "Resumen numérico ponderado por"
@@ -487,17 +916,60 @@ msgstr "Distribución de frecuencia para la variable tabulada"
 msgid "Ranges midpoints"
 msgstr "Puntos medios de los rangos"
 
+msgid "Factor (pick one or more)"
+msgstr "Factor (elegir una o más)"
+
+msgid "Reorder Levels for"
+msgstr "Reordenar niveles de"
+
+msgid "Variables and types in active data set"
+msgstr "Variables y tipos del conjunto de datos activo"
+
+msgid "Arguments pervar, vvar, and base must be character strings"
+msgstr "Los argumentos pervar, vvar y base deben ser cadenas de caracteres"
+
+msgid "The base variable cannot have repeated values"
+msgstr "La variable base no puede tener valores repetidos"
+
+msgid "is not a value in the variable \""
+msgstr "no es un valor de la variable \""
+
+msgid "\""
+msgstr "\""
+
+msgid "Arguments pervar, cvar, defl, and base must be character strings"
+msgstr ""
+"Los argumentos pervar, cvar, defl y base deben ser cadenas de caracteres"
+
+msgid ""
+"Arguments prodID, pervar, pvar, qvar, and base must be character strings"
+msgstr ""
+"Los argumentos prodID, pervar, pvar, qvar y base deben ser cadenas de "
+"caracteres"
+
 msgid "Confidence Interval for the ratio of two variances"
 msgstr "Intervalo de Confianza para cociente varianzas"
 
-msgid "Confidence level:"
-msgstr "Nivel de confianza:"
+msgid "Interval type"
+msgstr "Tipo de intervalo"
+
+msgid "Two-sided"
+msgstr "Bilateral"
+
+msgid "Left-sided"
+msgstr "Unilateral por la izquierda"
+
+msgid "Right-sided"
+msgstr "Unilateral por la derecha"
 
 msgid "Confidence level"
 msgstr "Nivel de confianza"
 
 msgid "Interval"
 msgstr "Intervalo"
+
+msgid "Confidence level:"
+msgstr "Nivel de confianza:"
 
 msgid "Confidence interval for difference of proportions"
 msgstr "Intervalo de confianza para diferencia de proporciones"
@@ -542,9 +1014,6 @@ msgid "Confidence Interval for the mean difference of two paired samples"
 msgstr ""
 "Intervalo de Confianza para la diferencia de medias de dos muestras pareadas"
 
-msgid "Variables"
-msgstr "Variables"
-
 msgid "Confidence interval for a proportion"
 msgstr "Intervalo de confianza para una proporción"
 
@@ -559,6 +1028,24 @@ msgstr "Intervalo de Confianza para la varianza con media desconocida"
 
 msgid "Confidence Interval for the variance with known mean ="
 msgstr "Intervalo de confianza para la varianza con media conocida ="
+
+msgid "One-Way ANOVA with random effects..."
+msgstr "ANOVA de un factor con efectos aleatorios..."
+
+msgid "One-Way Analysis of Variance with random effects"
+msgstr "ANOVA de un factor con efectos aleatorios"
+
+msgid "Moments"
+msgstr "Momentos"
+
+msgid "Maximum likelihood"
+msgstr "Máxima verosimilitud"
+
+msgid "Restricted maximum likelihood (REML)"
+msgstr "Máxima verosimilitud restringida (REML)"
+
+msgid "Variance estimations:"
+msgstr "Estimaciones de las varianzas:"
 
 msgid "Numerical summaries - Tabulated data"
 msgstr "Resúmenes numéricos - Datos tabulados"
@@ -575,26 +1062,14 @@ msgstr "Frecuencia"
 msgid "Frequency table"
 msgstr "Tabla de frecuencia"
 
-msgid "Standard Deviation"
-msgstr "Desviación Típica"
-
 msgid "Standard Error of Mean"
 msgstr "Error Estándar de la Media"
-
-msgid "Interquartile Range"
-msgstr "Rango Intercuartílico"
 
 msgid "Mode"
 msgstr "Moda"
 
 msgid "Coefficient of Variation"
 msgstr "Coeficiente de Variación"
-
-msgid "Skewness"
-msgstr "Asimetría"
-
-msgid "Kurtosis"
-msgstr "Curtosis"
 
 msgid "Quantiles:"
 msgstr "Cuantiles:"
@@ -662,14 +1137,57 @@ msgstr "Resúmenes numéricos - Variables ponderadas"
 msgid "Weight variable"
 msgstr "Variable de ponderación"
 
+msgid "Numerical summaries - Continuous variables"
+msgstr "Resúmenes numéricos - Variables continuas"
+
+msgid "Breaks number:"
+msgstr "Número de cortes:"
+
+msgid "Breaks vector:"
+msgstr "Vector de cortes:"
+
+msgid "Breaks algorithm:"
+msgstr "Algoritmo de cortes:"
+
+msgid "From:"
+msgstr "Desde:"
+
+msgid "to:"
+msgstr "hasta:"
+
+msgid "by:"
+msgstr "paso:"
+
+msgid "Breaks number must be provided"
+msgstr "Debe proporcionarse el número de cortes"
+
+msgid "Breaks number must be an integer > 1"
+msgstr "Número de cortes debe ser un entero >1"
+
+msgid "Breaks vector must be provided"
+msgstr "Se debe proporcionar un vector de cortes"
+
+msgid "Breaks vector must be a numeric vector of length > 1"
+msgstr "El vector de cortes debe ser un vector numérico de tamaño > 1"
+
+msgid "Breaks algorithm must be a name of a known 'breaks' algorithm"
+msgstr ""
+"Algoritmo de cortes debe ser un nombre de un algoritmo de 'cortes' conocido"
+
+msgid "'From', 'to' and 'by' must be provided"
+msgstr "'Desde', 'hasta' y 'paso' deben ser proporcionados"
+
+msgid "'From', 'to' and 'by' must be numeric values"
+msgstr "'Desde', 'hasta' y 'paso' deben ser valores numéricos"
+
+msgid "A 'breaks' option must be selected"
+msgstr "Se debe seleccionar una opción de 'cortes'"
+
 msgid "Numerical summaries - Discrete variables"
 msgstr "Resúmenes numéricos - Variables discretas"
 
 msgid "Breaks"
 msgstr "Cortes"
-
-msgid "Breaks must be an integer > 1 or a numeric vector of length > 1"
-msgstr "Cortes debe ser un entero > 1 o un vector numérico de tamaño > 1"
 
 msgid "Frequency distributions qualitative variables"
 msgstr "Distribuciones de frecuencia variables cualitativas"
@@ -732,6 +1250,18 @@ msgstr "Desviación típica poblacional de 'x' debe ser positiva"
 msgid "Population Standard Deviation of 'y' must be positive"
 msgstr "Desviación típica poblacional de 'y' debe ser positiva"
 
+msgid "Wrong length of Argument xlim"
+msgstr "Tamaño erróneo del Argumento xlim"
+
+msgid "Variables"
+msgstr "Variables"
+
+msgid "package \"IndexNumR\" is necessary"
+msgstr "es necesario el paquete \"IndexNumR\""
+
+msgid "Index Numbers"
+msgstr "Números Índice"
+
 msgid "Statistical Inference"
 msgstr "Inferencia Estadística"
 
@@ -752,9 +1282,6 @@ msgstr "Resúmenes numéricos - Variables ponderadas..."
 
 msgid "Numerical summaries - Tabulated data..."
 msgstr "Resúmenes numéricos - Datos tabulados..."
-
-msgid "Confidence Intervals"
-msgstr "Intervalos de confianza"
 
 msgid "Confidence interval for the mean..."
 msgstr "Intervalo de confianza para la media..."
@@ -824,8 +1351,359 @@ msgstr "Inferencia Estadística"
 msgid "Import data from text file, clipboard, or URL..."
 msgstr "Importar datos desde archivo de texto, portapapeles o URL..."
 
-msgid "Factor (pick one or more)"
-msgstr "Factor (elegir una o más)"
+msgid "Normal distribution's parameters:"
+msgstr "Parámetros de distribución normal:"
 
-msgid "Variables and types in active data set"
-msgstr "Variables y tipos del conjunto de datos activo"
+msgid "Normal characteristics..."
+msgstr "Características normales..."
+
+msgid "Normal Characteristics"
+msgstr "Características Normales"
+
+msgid "Normal distribution definition..."
+msgstr "Definición de distribución normal..."
+
+msgid "Normal Distribution Definition"
+msgstr "Definición de Distribución Normal"
+
+msgid "t distribution's parameters:"
+msgstr "Parámetros de distribución t:"
+
+msgid "t characteristics..."
+msgstr "Características t..."
+
+msgid "t Characteristics"
+msgstr "Características t"
+
+msgid "t distribution definition..."
+msgstr "Definición de distribución t..."
+
+msgid "t Distribution Definition"
+msgstr "Definición de Distribución t"
+
+msgid "ChiSquared distribution's parameters:"
+msgstr "Parámetros de distribución Chi-cuadrado:"
+
+msgid "ChiSquared characteristics..."
+msgstr "Características Chi-cuadrado..."
+
+msgid "ChiSquared Characteristics"
+msgstr "Características Chi-cuadrado"
+
+msgid "ChiSquared distribution definition..."
+msgstr "Definición de distribución Chi-cuadrado..."
+
+msgid "ChiSquared Distribution Definition"
+msgstr "Definición de Distribución Chi-cuadrado"
+
+msgid "F distribution's parameters:"
+msgstr "Parámetros de distribución F:"
+
+msgid "F characteristics..."
+msgstr "Características F..."
+
+msgid "F Characteristics"
+msgstr "Características F"
+
+msgid "F distribution definition..."
+msgstr "Definición de distribución F..."
+
+msgid "F Distribution Definition"
+msgstr "Definición de distribución F"
+
+msgid "Exponential distribution's parameters:"
+msgstr "Parámetros de distribución exponencial:"
+
+msgid "Exponential characteristics..."
+msgstr "Características exponenciales..."
+
+msgid "Exponential Characteristics"
+msgstr "Características Exponenciales"
+
+msgid "Exponential distribution definition..."
+msgstr "Definición de distribución exponencial..."
+
+msgid "Exponential Distribution Definition"
+msgstr "Definición de Distribución Exponencial"
+
+msgid "Uniform distribution's parameters:"
+msgstr "Parámetros de distribución uniforme:"
+
+msgid "Uniform characteristics..."
+msgstr "Características uniformes..."
+
+msgid "Uniform Characteristics"
+msgstr "Características Uniformes"
+
+msgid "Uniform distribution definition..."
+msgstr "Definición de distribución uniforme..."
+
+msgid "Uniform Distribution Definition"
+msgstr "Definición de Distribución Uniforme"
+
+msgid "Plot continuous Generic distribution..."
+msgstr "Gráfica de la distribución genérica continua..."
+
+msgid "Continuous Generic Distribution"
+msgstr "Distribución Genérica Continua"
+
+msgid "Continuous Generic distribution"
+msgstr "Distribución genérica continua"
+
+msgid "Continuous Generic probabilities..."
+msgstr "Probabilidades genéricas continuas acumuladas..."
+
+msgid "Continuous Generic quantiles..."
+msgstr "Cuantiles genéricos continuos..."
+
+msgid "Continuous Generic Quantiles"
+msgstr "Cuantiles Genéricos Continuos"
+
+msgid "Continuous Generic characteristics..."
+msgstr "Características genéricas continuas..."
+
+msgid "Continuous Generic Characteristics"
+msgstr "Características Genéricas Continuas"
+
+msgid "Sample from Continuous Generic distribution..."
+msgstr "Muestra de una distribución genérica continua..."
+
+msgid "Sample from Continuous Generic Distribution"
+msgstr "Muestra de una Distribución Genérica Continua"
+
+msgid "Continuous Generic distribution definition..."
+msgstr "Definición de distribución genérica continua..."
+
+msgid "Continuous Generic Distribution Definition"
+msgstr "Definición de Distribución Genérica Continua"
+
+msgid "Continuous Generic distribution's parameters:"
+msgstr "Parámetros de distribución genérica continua:"
+
+msgid "Binomial distribution's parameters:"
+msgstr "Parámetros de distribución binomial:"
+
+msgid "Binomial characteristics..."
+msgstr "Características binomiales..."
+
+msgid "Binomial Characteristics"
+msgstr "Características Binomiales"
+
+msgid "Binomial distribution definition..."
+msgstr "Definición de distribución binomial..."
+
+msgid "Binomial Distribution Definition"
+msgstr "Definición de Distribución Binomial"
+
+msgid "Poisson distribution's parameters:"
+msgstr "Parámetros de distribución de Poisson:"
+
+msgid "Poisson characteristics..."
+msgstr "Características de Poisson..."
+
+msgid "Poisson Characteristics"
+msgstr "Características de Poisson"
+
+msgid "Poisson distribution definition..."
+msgstr "Definición de distribución de Poisson..."
+
+msgid "Poisson Distribution Definition"
+msgstr "Definición de Distribución de Poisson"
+
+msgid "Geometric distribution's parameters:"
+msgstr "Parámetros de distribución geométrica:"
+
+msgid "Geometric characteristics..."
+msgstr "Características geométricas..."
+
+msgid "Geometric Characteristics"
+msgstr "Características Geométricas"
+
+msgid "Geometric distribution definition..."
+msgstr "Definición de distribución geométrica..."
+
+msgid "Geometric Distribution Definition"
+msgstr "Definición de Distribución Geométrica"
+
+msgid "NegativeBinomial distribution's parameters:"
+msgstr "Parámetros de distribución binomial negativa:"
+
+msgid "NegativeBinomial characteristics..."
+msgstr "Características binomiales negativas..."
+
+msgid "NegativeBinomial Characteristics"
+msgstr "Características Binomiales Negativas"
+
+msgid "NegativeBinomial distribution definition..."
+msgstr "Definición de distribución binomial negativa..."
+
+msgid "NegativeBinomial Distribution Definition"
+msgstr "Definición de Distribución Binomial Negativa"
+
+msgid "Plot discrete Generic distribution..."
+msgstr "Gráfica de la distribución genérica discreta..."
+
+msgid "Discrete Generic Distribution"
+msgstr "Distribución Genérica Discreta"
+
+msgid "Discrete Generic distribution"
+msgstr "Distribución genérica discreta"
+
+msgid "Discrete Generic tail probabilities..."
+msgstr "Probabilidades genéricas discretas acumuladas..."
+
+msgid "Discrete Generic quantiles..."
+msgstr "Cuantiles genéricos discretos..."
+
+msgid "Discrete Generic Quantiles"
+msgstr "Cuantiles Genéricos Discretos"
+
+msgid "Discrete Generic characteristics..."
+msgstr "Características genéricas discretas..."
+
+msgid "Discrete Generic Characteristics"
+msgstr "Características Genéricas Discretas"
+
+msgid "Sample from Discrete Generic distribution..."
+msgstr "Muestra de una distribución genérica discreta..."
+
+msgid "Sample from Discrete Generic Distribution"
+msgstr "Muestra de una Distribución Genérica Discreta"
+
+msgid "Discrete Generic distribution definition..."
+msgstr "Definición de distribución genérica discreta..."
+
+msgid "Discrete Generic Distribution Definition"
+msgstr "Definición de Distribución Genérica Discreta"
+
+msgid "Discrete Generic distribution's parameters:"
+msgstr "Parámetros de distribución genérica discreta:"
+
+msgid "Discrete Generic probabilities..."
+msgstr "Probabilidades genéricas discretas..."
+
+msgid "Discrete Generic Probabilities"
+msgstr "Probabilidades Genéricas Discretas"
+
+msgid "Continuous Generic Probabilities"
+msgstr "Probabilidades Genéricas Continuas"
+
+msgid "Normal Quantiles"
+msgstr "Cuantiles normales"
+
+msgid "Normal Distribution"
+msgstr "Distribución Normal"
+
+msgid "Sample from Normal Distribution"
+msgstr "Muestra de una Distribución Normal"
+
+msgid "Normal Probabilities"
+msgstr "Probabilidades Normales"
+
+msgid "t Quantiles"
+msgstr "Cuantiles t"
+
+msgid "t Distribution"
+msgstr "Distribución t"
+
+msgid "Sample from t Distribution"
+msgstr "Muestra de una distribución t"
+
+msgid "t Probabilities"
+msgstr "Probabilidades t"
+
+msgid "ChiSquared Quantiles"
+msgstr "Cuantiles Chi-cuadrado"
+
+msgid "ChiSquared Distribution"
+msgstr "Distribución Chi-cuadrado"
+
+msgid "Sample from ChiSquared Distribution"
+msgstr "Muestra de una Distribución Chi-cuadrado"
+
+msgid "ChiSquared Probabilities"
+msgstr "Probabilidades Chi-cuadrado"
+
+msgid "F Quantiles"
+msgstr "Cuantiles F"
+
+msgid "F Distribution"
+msgstr "Distribución F"
+
+msgid "Sample from F Distribution"
+msgstr "Muestra de una distribución F"
+
+msgid "F Probabilities"
+msgstr "Probabilidades F"
+
+msgid "Exponential Quantiles"
+msgstr "Cuantiles Exponenciales"
+
+msgid "Exponential Distribution"
+msgstr "Distribución Exponencial"
+
+msgid "Sample from Exponential Distribution"
+msgstr "Muestra de una Distribución Exponencial"
+
+msgid "Exponential Probabilities"
+msgstr "Probabilidades Exponenciales"
+
+msgid "Uniform Quantiles"
+msgstr "Cuantiles Uniformes"
+
+msgid "Uniform Distribution"
+msgstr "Distribución Uniforme"
+
+msgid "Sample from Uniform Distribution"
+msgstr "Muestra de una Distribución Uniforme"
+
+msgid "Uniform Probabilities"
+msgstr "Probabilidades Uniformes"
+
+msgid "Binomial Quantiles"
+msgstr "Cuantiles Binomiales"
+
+msgid "Binomial Distribution"
+msgstr "Distribución Binomial"
+
+msgid "Sample from Binomial Distribution"
+msgstr "Muestra de una Distribución Binomial"
+
+msgid "Binomial Probabilities"
+msgstr "Probabilidades Binomiales"
+
+msgid "Poisson Quantiles"
+msgstr "Cuantiles de Poisson"
+
+msgid "Poisson Distribution"
+msgstr "Distribución de Poisson"
+
+msgid "Sample from Poisson Distribution"
+msgstr "Muestra de una Distribución de Poisson"
+
+msgid "Poisson Probabilities"
+msgstr "Probabilidades de Poisson"
+
+msgid "Geometric Quantiles"
+msgstr "Cuantiles Geométricos"
+
+msgid "Geometric Distribution"
+msgstr "Distribución Geométrica"
+
+msgid "Sample from Geometric Distribution"
+msgstr "Muestra de una Distribución Geométrica"
+
+msgid "Geometric Probabilities"
+msgstr "Probabilidades Geométricas"
+
+msgid "NegativeBinomial Quantiles"
+msgstr "Cuantiles Binomiales Negativos"
+
+msgid "NegativeBinomial Distribution"
+msgstr "Distribución Binomial Negativa"
+
+msgid "Sample from NegativeBinomial Distribution"
+msgstr "Muestra de una Distribución Binomial Negativa"
+
+msgid "NegativeBinomial Probabilities"
+msgstr "Probabilidades Binomiales Negativas"

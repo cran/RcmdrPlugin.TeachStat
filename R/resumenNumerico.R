@@ -1,18 +1,20 @@
 resumenNumerico <- function(){
   Library("abind")
   Library("e1071")
-  defaults <- list(initial.x=NULL,initial.sg2=gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"),initial.sg="0",initial.g=NULL, initial.mean="1", initial.sd="1", initial.se.mean="0", initial.IQR="1", initial.cv="0",
-                   initial.quantiles.variable="1",
-                   initial.quantiles="0, .25, .5, .75, 1",
-                   initial.skewness="0", initial.kurtosis="0", initial.type="2",
+  defaults <- list(initial.x=NULL,initial.sg2=gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"),
+                   initial.sg="0",initial.g=NULL, initial.mean="1", initial.sd="1", initial.se.mean="0", 
+                   initial.IQR="1", initial.cv="0", initial.quantiles.variable="1",
+                   initial.quantiles="0, .25, .5, .75, 1", initial.skewness="0", initial.kurtosis="0", initial.type="2",
                    initial.group=NULL, initial.tab=0)
 
   dialog.values <- getDialog("resumenNumerico", defaults)
   initial.group <- dialog.values$initial.group
-  initializeDialog(title=gettext("Numerical summaries",domain="R-RcmdrPlugin.TeachStat"), use.tabs=TRUE, tabs=c("dataTab", "statisticsTab"))
+  initializeDialog(title=gettext("Numerical summaries",domain="R-RcmdrPlugin.TeachStat"), 
+                   use.tabs=TRUE, tabs=c("dataTab", "statisticsTab"))
 
-   xBox <- variableListBox(dataTab, Numeric(), selectmode="multiple", title=gettext("Variables (pick one or more)",domain="R-RcmdrPlugin.TeachStat"),
-                          initialSelection=varPosn(dialog.values$initial.x, "numeric"))
+   xBox <- variableListBox(dataTab, Numeric(), selectmode="multiple", 
+                           title=gettext("Variables (pick one or more)",domain="R-RcmdrPlugin.TeachStat"), 
+                           initialSelection=varPosn(dialog.values$initial.x, "numeric"))
    if (length(Factors())!=0){
      mostrar<-"readonly"
    }else {
@@ -25,15 +27,18 @@ resumenNumerico <- function(){
   groupFrame<-tkframe(dataTab)
   checkBoxes(window = dataTab, frame="groupFrame", boxes="sgroups",
              initialValues=dialog.values$initial.sg,labels=gettext("Pick a group",domain="R-RcmdrPlugin.TeachStat"))
-  gBox <- variableListBox(dataTab, gettext("No factors",domain="R-RcmdrPlugin.TeachStat"), selectmode="single",title=gettext("Group (pick one)",domain="R-RcmdrPlugin.TeachStat"),
+  gBox <- variableListBox(dataTab, gettext("No factors",domain="R-RcmdrPlugin.TeachStat"), 
+                          selectmode="single",title=gettext("Group (pick one)",domain="R-RcmdrPlugin.TeachStat"),
                           initialSelection=varPosn(dialog.values$initial.g, "factor"))
 
 
 
 
   checkBoxes(window = statisticsTab, frame="checkBoxFrame", boxes=c("mean", "sd", "se.mean", "IQR", "cv"),
-             initialValues=c(dialog.values$initial.mean, dialog.values$initial.sd, dialog.values$initial.se.mean, dialog.values$initial.IQR, dialog.values$initial.cv),
-             labels=gettext(c("Mean", "Standard Deviation", "Standard Error of Mean", "Interquartile Range", "Coefficient of Variation"),domain="R-RcmdrPlugin.TeachStat"))
+             initialValues=c(dialog.values$initial.mean, dialog.values$initial.sd, dialog.values$initial.se.mean, 
+                             dialog.values$initial.IQR, dialog.values$initial.cv),
+             labels=gettext(c("Mean", "Standard Deviation", "Standard Error of Mean", "Interquartile Range", 
+                              "Coefficient of Variation"),domain="R-RcmdrPlugin.TeachStat"))
   skFrame <- tkframe(statisticsTab)
   checkBoxes(window = skFrame, frame="skCheckBoxFrame", boxes=c("skewness", "kurtosis"),
              initialValues=c(dialog.values$initial.skewness, dialog.values$initial.kurtosis),
@@ -69,7 +74,8 @@ resumenNumerico <- function(){
     kurtosisVar <- tclvalue(kurtosisVariable)
     typeVar <- tclvalue(typeButtonsVariable)
     putDialog("resumenNumerico", list(
-      initial.x=x,initial.sg2=sg2var,initial.sg=sgVar, initial.g=g, initial.mean=meanVar, initial.sd=sdVar, initial.se.mean=se.meanVar, initial.IQR=IQRVar, initial.cv=cvVar,
+      initial.x=x,initial.sg2=sg2var,initial.sg=sgVar, initial.g=g, initial.mean=meanVar, initial.sd=sdVar,
+      initial.se.mean=se.meanVar, initial.IQR=IQRVar, initial.cv=cvVar,
       initial.quantiles.variable=quantsVar, initial.quantiles=quants,
       initial.skewness=skewnessVar, initial.kurtosis=kurtosisVar, initial.type=typeVar,
       initial.group=if (.groups != FALSE) .groups else NULL, initial.tab=tab
@@ -83,13 +89,15 @@ resumenNumerico <- function(){
     
     quants <- as.numeric( strsplit(quants,split=",")[[1]])
     
-    if(((NA %in% quants)||(length( quants[(quants<0)|(quants>1)])!=0) || length(quants)<=1) &&(quantsVar==1)){
-      errorCondition(recall=resumenNumerico, message=gettext("Quantiles must be a numeric vector in [0,1]",domain="R-RcmdrPlugin.TeachStat"))
+    if(((NA %in% quants)||(length( quants[(quants<0)|(quants>1)])!=0) || length(quants)<1) &&(quantsVar==1)){
+      errorCondition(recall=resumenNumerico, message=gettext("Quantiles must be a numeric vector in [0,1]",
+                                                             domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
     
     if((length(quants)==0 )&&(quantsVar==1)){
-      errorCondition(recall=resumenNumerico, message=gettext("Quantiles must be a numeric vector in [0,1]",domain="R-RcmdrPlugin.TeachStat"))
+      errorCondition(recall=resumenNumerico, message=gettext("Quantiles must be a numeric vector in [0,1]",
+                                                             domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
     

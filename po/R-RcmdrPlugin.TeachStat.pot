@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: RcmdrPlugin.TeachStat 1.0.10\n"
-"POT-Creation-Date: 2018-11-05 17:00\n"
+"Project-Id-Version: RcmdrPlugin.TeachStat 1.1.0\n"
+"POT-Creation-Date: 2020-11-17 11:20\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,10 +31,418 @@ msgstr ""
 msgid "Cut-point must be numeric or NULL"
 msgstr ""
 
-msgid "Hypothesis Testing for a proportion"
+msgid "Simple index numbers..."
 msgstr ""
 
 msgid "<no variable selected>"
+msgstr ""
+
+msgid "<no base level selected>"
+msgstr ""
+
+msgid "Simple Index Numbers"
+msgstr ""
+
+msgid "Value variable (pick one)"
+msgstr ""
+
+msgid "Base variable (pick one)"
+msgstr ""
+
+msgid "<no level selected>"
+msgstr ""
+
+msgid "Base (pick one)"
+msgstr ""
+
+msgid "Add to data frame"
+msgstr ""
+
+msgid "Variable name:"
+msgstr ""
+
+msgid "No value variable selected"
+msgstr ""
+
+msgid "No base variable selected"
+msgstr ""
+
+msgid "No base level selected"
+msgstr ""
+
+msgid "'The base variable cannot have repeated values'"
+msgstr ""
+
+msgid "Base change..."
+msgstr ""
+
+msgid "Base Change"
+msgstr ""
+
+msgid "Index variable (pick one)"
+msgstr ""
+
+msgid "New base (pick one)"
+msgstr ""
+
+msgid "No index variable selected"
+msgstr ""
+
+msgid "No new base level selected"
+msgstr ""
+
+msgid "Price index..."
+msgstr ""
+
+msgid "Price Index"
+msgstr ""
+
+msgid "Product variable (pick one)"
+msgstr ""
+
+msgid "Price variable (pick one)"
+msgstr ""
+
+msgid "Quantity variable (pick one)"
+msgstr ""
+
+msgid "Laspeyres"
+msgstr ""
+
+msgid "Paasche"
+msgstr ""
+
+msgid "Fisher"
+msgstr ""
+
+msgid "Aggregation Method"
+msgstr ""
+
+msgid "Other:"
+msgstr ""
+
+msgid "Save as a new data frame:"
+msgstr ""
+
+msgid "name:"
+msgstr ""
+
+msgid "No product variable selected."
+msgstr ""
+
+msgid "No base variable selected."
+msgstr ""
+
+msgid "No base level selected."
+msgstr ""
+
+msgid "No price variable selected."
+msgstr ""
+
+msgid "No quantitity variable selected."
+msgstr ""
+
+msgid "No other aggregation method was selected."
+msgstr ""
+
+msgid "No aggregation method selected."
+msgstr ""
+
+msgid "No name for data frame."
+msgstr ""
+
+msgid "Complex index numbers..."
+msgstr ""
+
+msgid "Complex Index Numbers"
+msgstr ""
+
+msgid "Arithmetic"
+msgstr ""
+
+msgid "Geometric"
+msgstr ""
+
+msgid "Harmonic"
+msgstr ""
+
+msgid "Geometric mean cannot be computed for variable"
+msgstr ""
+
+msgid "because it has non positive values"
+msgstr ""
+
+msgid "Geometric mean cannot be computed for variables"
+msgstr ""
+
+msgid "because they have non positive values"
+msgstr ""
+
+msgid "Harmonic mean cannot be computed for variable"
+msgstr ""
+
+msgid "because it has zero values"
+msgstr ""
+
+msgid "Harmonic mean cannot be computed for variables"
+msgstr ""
+
+msgid "because they have zero values"
+msgstr ""
+
+msgid "Deflation..."
+msgstr ""
+
+msgid "Deflation"
+msgstr ""
+
+msgid "Current value (pick one)"
+msgstr ""
+
+msgid "Deflator (pick one)"
+msgstr ""
+
+msgid "No current value variable selected"
+msgstr ""
+
+msgid "No deflactor selected"
+msgstr ""
+
+msgid "Plot"
+msgstr ""
+
+msgid "generic"
+msgstr ""
+
+msgid "discrete"
+msgstr ""
+
+msgid "continuous"
+msgstr ""
+
+msgid "distribution..."
+msgstr ""
+
+msgid "Discrete"
+msgstr ""
+
+msgid "Continuous"
+msgstr ""
+
+msgid "Distribution"
+msgstr ""
+
+msgid "Distribution (pick one)"
+msgstr ""
+
+msgid "<no distribution selected>"
+msgstr ""
+
+msgid "Select function to plot:"
+msgstr ""
+
+msgid "No plot selected."
+msgstr ""
+
+msgid "Number of Successes"
+msgstr ""
+
+msgid "Number of Failures until Success"
+msgstr ""
+
+msgid "Number of White Balls in Sample"
+msgstr ""
+
+msgid "Number of Failures Until Target Successes"
+msgstr ""
+
+msgid "Trials"
+msgstr ""
+
+msgid "Probability Mass"
+msgstr ""
+
+msgid "Numerator"
+msgstr ""
+
+msgid "Denominator"
+msgstr ""
+
+msgid "Density"
+msgstr ""
+
+msgid "Cumulative Probability"
+msgstr ""
+
+msgid "You must specify 'to' for the range."
+msgstr ""
+
+msgid "tail"
+msgstr ""
+
+msgid "probabilities..."
+msgstr ""
+
+msgid "Probabilities"
+msgstr ""
+
+msgid "Plot region"
+msgstr ""
+
+msgid "is not a valid list of numbers."
+msgstr ""
+
+msgid "distribution's parameters:"
+msgstr ""
+
+msgid "Probabilities:"
+msgstr ""
+
+msgid "From (>)"
+msgstr ""
+
+msgid "To (<=)"
+msgstr ""
+
+msgid "color:"
+msgstr ""
+
+msgid "quantiles..."
+msgstr ""
+
+msgid "Quantiles"
+msgstr ""
+
+msgid "Show cumulative probabilities"
+msgstr ""
+
+msgid "characteristics..."
+msgstr ""
+
+msgid "Characteristics"
+msgstr ""
+
+msgid "Expectation"
+msgstr ""
+
+msgid "Median"
+msgstr ""
+
+msgid "Standard Deviation"
+msgstr ""
+
+msgid "Interquartile Range"
+msgstr ""
+
+msgid "Skewness"
+msgstr ""
+
+msgid "Kurtosis"
+msgstr ""
+
+msgid "Moment of order:"
+msgstr ""
+
+msgid "Central moment of order:"
+msgstr ""
+
+msgid "Moment not specified or not an integer number."
+msgstr ""
+
+msgid "Central moment not specified or not an integer number."
+msgstr ""
+
+msgid "No characteristics selected."
+msgstr ""
+
+msgid "Sample from"
+msgstr ""
+
+msgid "distribution definition..."
+msgstr ""
+
+msgid "Distribution Definition"
+msgstr ""
+
+msgid "Probability mass function"
+msgstr ""
+
+msgid "Distribution function"
+msgstr ""
+
+msgid "Select function to provide:"
+msgstr ""
+
+msgid "Density function"
+msgstr ""
+
+msgid "Add piece"
+msgstr ""
+
+msgid "Delete last piece"
+msgstr ""
+
+msgid "You must enter the name of a distribution."
+msgstr ""
+
+msgid "No support specified."
+msgstr ""
+
+msgid "Support is not ordered."
+msgstr ""
+
+msgid "Probabilities are not ordered."
+msgstr ""
+
+msgid "Last probability must be 1."
+msgstr ""
+
+msgid "Some definition not specified."
+msgstr ""
+
+msgid "Some 'from' not specified."
+msgstr ""
+
+msgid "Some 'to' not specified."
+msgstr ""
+
+msgid "'to' must be greater than 'from'."
+msgstr ""
+
+msgid "Overlapping definitions."
+msgstr ""
+
+msgid "Definition intervals must be consecutive."
+msgstr ""
+
+msgid "Enter name for the distribution"
+msgstr ""
+
+msgid "Support"
+msgstr ""
+
+msgid "Definition"
+msgstr ""
+
+msgid "From"
+msgstr ""
+
+msgid "To"
+msgstr ""
+
+msgid "ANOVA table"
+msgstr ""
+
+msgid "Estimation of some variance component is negative. The variance component model is inadequate."
+msgstr ""
+
+msgid "Components of Variance"
+msgstr ""
+
+msgid "Confidence intervals"
+msgstr ""
+
+msgid "Hypothesis Testing for a proportion"
 msgstr ""
 
 msgid "Variable (pick one)"
@@ -89,9 +497,6 @@ msgid "No. attempts"
 msgstr ""
 
 msgid "Other levels"
-msgstr ""
-
-msgid "Distribution"
 msgstr ""
 
 msgid "Test statistics value"
@@ -355,6 +760,9 @@ msgstr ""
 msgid "Hypothesis Testing for the mean difference of two paired samples"
 msgstr ""
 
+msgid "Hypothesis testing for the variance..."
+msgstr ""
+
 msgid "Hypothesis Testing for the variance"
 msgstr ""
 
@@ -406,6 +814,9 @@ msgstr ""
 msgid "Numeric variables"
 msgstr ""
 
+msgid "Other variables"
+msgstr ""
+
 msgid "At least one variable must be selected"
 msgstr ""
 
@@ -418,6 +829,15 @@ msgstr ""
 msgid "Select one or more variables to modify their type:"
 msgstr ""
 
+msgid "Nominal"
+msgstr ""
+
+msgid "Ordinal"
+msgstr ""
+
+msgid "Numeric"
+msgstr ""
+
 msgid "Convert selected variables to:"
 msgstr ""
 
@@ -427,10 +847,19 @@ msgstr ""
 msgid "Numerical summary"
 msgstr ""
 
+msgid "unknown 'cortes' algorithm"
+msgstr ""
+
 msgid "Frequency distribution for discrete variables"
 msgstr ""
 
+msgid "unknown 'breaks' algorithm"
+msgstr ""
+
 msgid "Group"
+msgstr ""
+
+msgid "Frequency distribution for continuous variables"
 msgstr ""
 
 msgid "Numerical summary weighted by"
@@ -454,16 +883,55 @@ msgstr ""
 msgid "Ranges midpoints"
 msgstr ""
 
+msgid "Factor (pick one or more)"
+msgstr ""
+
+msgid "Reorder Levels for"
+msgstr ""
+
+msgid "Variables and types in active data set"
+msgstr ""
+
+msgid "Arguments pervar, vvar, and base must be character strings"
+msgstr ""
+
+msgid "The base variable cannot have repeated values"
+msgstr ""
+
+msgid "is not a value in the variable \""
+msgstr ""
+
+msgid "\""
+msgstr ""
+
+msgid "Arguments pervar, cvar, defl, and base must be character strings"
+msgstr ""
+
+msgid "Arguments prodID, pervar, pvar, qvar, and base must be character strings"
+msgstr ""
+
 msgid "Confidence Interval for the ratio of two variances"
 msgstr ""
 
-msgid "Confidence level:"
+msgid "Interval type"
+msgstr ""
+
+msgid "Two-sided"
+msgstr ""
+
+msgid "Left-sided"
+msgstr ""
+
+msgid "Right-sided"
 msgstr ""
 
 msgid "Confidence level"
 msgstr ""
 
 msgid "Interval"
+msgstr ""
+
+msgid "Confidence level:"
 msgstr ""
 
 msgid "Confidence interval for difference of proportions"
@@ -496,9 +964,6 @@ msgstr ""
 msgid "Confidence Interval for the mean difference of two paired samples"
 msgstr ""
 
-msgid "Variables"
-msgstr ""
-
 msgid "Confidence interval for a proportion"
 msgstr ""
 
@@ -512,6 +977,24 @@ msgid "Confidence Interval for the variance with unknown mean"
 msgstr ""
 
 msgid "Confidence Interval for the variance with known mean ="
+msgstr ""
+
+msgid "One-Way ANOVA with random effects..."
+msgstr ""
+
+msgid "One-Way Analysis of Variance with random effects"
+msgstr ""
+
+msgid "Moments"
+msgstr ""
+
+msgid "Maximum likelihood"
+msgstr ""
+
+msgid "Restricted maximum likelihood (REML)"
+msgstr ""
+
+msgid "Variance estimations:"
 msgstr ""
 
 msgid "Numerical summaries - Tabulated data"
@@ -529,25 +1012,13 @@ msgstr ""
 msgid "Frequency table"
 msgstr ""
 
-msgid "Standard Deviation"
-msgstr ""
-
 msgid "Standard Error of Mean"
-msgstr ""
-
-msgid "Interquartile Range"
 msgstr ""
 
 msgid "Mode"
 msgstr ""
 
 msgid "Coefficient of Variation"
-msgstr ""
-
-msgid "Skewness"
-msgstr ""
-
-msgid "Kurtosis"
 msgstr ""
 
 msgid "Quantiles:"
@@ -616,13 +1087,55 @@ msgstr ""
 msgid "Weight variable"
 msgstr ""
 
+msgid "Numerical summaries - Continuous variables"
+msgstr ""
+
+msgid "Breaks number:"
+msgstr ""
+
+msgid "Breaks vector:"
+msgstr ""
+
+msgid "Breaks algorithm:"
+msgstr ""
+
+msgid "From:"
+msgstr ""
+
+msgid "to:"
+msgstr ""
+
+msgid "by:"
+msgstr ""
+
+msgid "Breaks number must be provided"
+msgstr ""
+
+msgid "Breaks number must be an integer > 1"
+msgstr ""
+
+msgid "Breaks vector must be provided"
+msgstr ""
+
+msgid "Breaks vector must be a numeric vector of length > 1"
+msgstr ""
+
+msgid "Breaks algorithm must be a name of a known 'breaks' algorithm"
+msgstr ""
+
+msgid "'From', 'to' and 'by' must be provided"
+msgstr ""
+
+msgid "'From', 'to' and 'by' must be numeric values"
+msgstr ""
+
+msgid "A 'breaks' option must be selected"
+msgstr ""
+
 msgid "Numerical summaries - Discrete variables"
 msgstr ""
 
 msgid "Breaks"
-msgstr ""
-
-msgid "Breaks must be an integer > 1 or a numeric vector of length > 1"
 msgstr ""
 
 msgid "Frequency distributions qualitative variables"
@@ -685,6 +1198,9 @@ msgstr ""
 msgid "Population Standard Deviation of 'y' must be positive"
 msgstr ""
 
+msgid "Wrong length of Argument xlim"
+msgstr ""
+
 msgid "Statistical Inference"
 msgstr ""
 
@@ -742,9 +1258,6 @@ msgstr ""
 msgid "Hypothesis testing for the mean..."
 msgstr ""
 
-msgid "Hypothesis testing for the variance..."
-msgstr ""
-
 msgid "Hypothesis testing for a proportion..."
 msgstr ""
 
@@ -772,11 +1285,368 @@ msgstr ""
 msgid "Random Variables"
 msgstr ""
 
+msgid "Statistics Inference"
+msgstr ""
+
 msgid "Import data from text file, clipboard, or URL..."
 msgstr ""
 
-msgid "Factor (pick one or more)"
+msgid "Index Numbers"
 msgstr ""
 
-msgid "Variables and types in active data set"
+msgid "Normal distribution's parameters:" 
+msgstr ""
+
+msgid "Normal characteristics..." 
+msgstr ""
+
+msgid "Normal Characteristics" 
+msgstr ""
+
+msgid "Normal distribution definition..." 
+msgstr ""
+
+msgid "Normal Distribution Definition" 
+msgstr ""
+
+msgid "t distribution's parameters:" 
+msgstr ""
+
+msgid "t characteristics..." 
+msgstr ""
+
+msgid "t Characteristics" 
+msgstr ""
+
+msgid "t distribution definition..." 
+msgstr ""
+
+msgid "t Distribution Definition" 
+msgstr ""
+
+msgid "ChiSquared distribution's parameters:" 
+msgstr ""
+
+msgid "ChiSquared characteristics..." 
+msgstr ""
+
+msgid "ChiSquared Characteristics" 
+msgstr ""
+
+msgid "ChiSquared distribution definition..." 
+msgstr ""
+
+msgid "ChiSquared Distribution Definition" 
+msgstr ""
+
+msgid "F distribution's parameters:" 
+msgstr ""
+
+msgid "F characteristics..." 
+msgstr ""
+
+msgid "F Characteristics" 
+msgstr ""
+
+msgid "F distribution definition..." 
+msgstr ""
+
+msgid "F Distribution Definition" 
+msgstr ""
+
+msgid "Exponential distribution's parameters:" 
+msgstr ""
+
+msgid "Exponential characteristics..." 
+msgstr ""
+
+msgid "Exponential Characteristics" 
+msgstr ""
+
+msgid "Exponential distribution definition..." 
+msgstr ""
+
+msgid "Exponential Distribution Definition" 
+msgstr ""
+
+msgid "Uniform distribution's parameters:" 
+msgstr ""
+
+msgid "Uniform characteristics..." 
+msgstr ""
+
+msgid "Uniform Characteristics" 
+msgstr ""
+
+msgid "Uniform distribution definition..." 
+msgstr ""
+
+msgid "Uniform Distribution Definition" 
+msgstr ""
+
+msgid "Plot continuous Generic distribution..." 
+msgstr ""
+
+msgid "Continuous Generic Distribution" 
+msgstr ""
+
+msgid "Continuous Generic distribution" 
+msgstr ""
+
+msgid "Continuous Generic probabilities..." 
+msgstr ""
+
+msgid "Continuous Generic Probabilities" 
+msgstr ""
+
+msgid "Continuous Generic quantiles..." 
+msgstr ""
+
+msgid "Continuous Generic Quantiles" 
+msgstr ""
+
+msgid "Continuous Generic characteristics..." 
+msgstr ""
+
+msgid "Continuous Generic Characteristics" 
+msgstr ""
+
+msgid "Sample from Continuous Generic distribution..." 
+msgstr ""
+
+msgid "Sample from Continuous Generic Distribution" 
+msgstr ""
+
+msgid "Continuous Generic distribution definition..." 
+msgstr ""
+
+msgid "Continuous Generic Distribution Definition" 
+msgstr ""
+
+msgid "Continuous Generic distribution's parameters:" 
+msgstr ""
+
+msgid "Binomial distribution's parameters:" 
+msgstr ""
+
+msgid "Binomial characteristics..." 
+msgstr ""
+
+msgid "Binomial Characteristics" 
+msgstr ""
+
+msgid "Binomial distribution definition..." 
+msgstr ""
+
+msgid "Binomial Distribution Definition" 
+msgstr ""
+
+msgid "Poisson distribution's parameters:" 
+msgstr ""
+
+msgid "Poisson characteristics..." 
+msgstr ""
+
+msgid "Poisson Characteristics" 
+msgstr ""
+
+msgid "Poisson distribution definition..." 
+msgstr ""
+
+msgid "Poisson Distribution Definition" 
+msgstr ""
+
+msgid "Geometric distribution's parameters:" 
+msgstr ""
+
+msgid "Geometric characteristics..." 
+msgstr ""
+
+msgid "Geometric Characteristics" 
+msgstr ""
+
+msgid "Geometric distribution definition..." 
+msgstr ""
+
+msgid "Geometric Distribution Definition" 
+msgstr ""
+
+msgid "NegativeBinomial distribution's parameters:" 
+msgstr ""
+
+msgid "NegativeBinomial characteristics..." 
+msgstr ""
+
+msgid "NegativeBinomial Characteristics" 
+msgstr ""
+
+msgid "NegativeBinomial distribution definition..." 
+msgstr ""
+
+msgid "NegativeBinomial Distribution Definition" 
+msgstr ""
+
+msgid "Plot discrete Generic distribution..." 
+msgstr ""
+
+msgid "Discrete Generic Distribution" 
+msgstr ""
+
+msgid "Discrete Generic distribution" 
+msgstr ""
+
+msgid "Discrete Generic tail probabilities..." 
+msgstr ""
+
+msgid "Discrete Generic quantiles..." 
+msgstr ""
+
+msgid "Discrete Generic Quantiles" 
+msgstr ""
+
+msgid "Discrete Generic characteristics..." 
+msgstr ""
+
+msgid "Discrete Generic Characteristics" 
+msgstr ""
+
+msgid "Sample from Discrete Generic distribution..." 
+msgstr ""
+
+msgid "Sample from Discrete Generic Distribution" 
+msgstr ""
+
+msgid "Discrete Generic distribution definition..." 
+msgstr ""
+
+msgid "Discrete Generic Distribution Definition" 
+msgstr ""
+
+msgid "Discrete Generic distribution's parameters:" 
+msgstr ""
+
+msgid "Discrete Generic probabilities..." 
+msgstr ""
+
+msgid "Discrete Generic Probabilities" 
+msgstr ""
+
+msgid "Normal Quantiles" 
+msgstr ""
+
+msgid "Normal Distribution" 
+msgstr ""
+
+msgid "Sample from Normal Distribution" 
+msgstr ""
+
+msgid "Normal Probabilities" 
+msgstr ""
+
+msgid "t Quantiles" 
+msgstr ""
+
+msgid "t Distribution" 
+msgstr ""
+
+msgid "Sample from t Distribution" 
+msgstr ""
+
+msgid "t Probabilities" 
+msgstr ""
+
+msgid "ChiSquared Quantiles" 
+msgstr ""
+
+msgid "ChiSquared Distribution" 
+msgstr ""
+
+msgid "Sample from ChiSquared Distribution" 
+msgstr ""
+
+msgid "ChiSquared Probabilities" 
+msgstr ""
+
+msgid "F Quantiles" 
+msgstr ""
+
+msgid "F Distribution" 
+msgstr ""
+
+msgid "Sample from F Distribution" 
+msgstr ""
+
+msgid "F Probabilities" 
+msgstr ""
+
+msgid "Exponential Quantiles" 
+msgstr ""
+
+msgid "Exponential Distribution" 
+msgstr ""
+
+msgid "Sample from Exponential Distribution" 
+msgstr ""
+
+msgid "Exponential Probabilities" 
+msgstr ""
+
+msgid "Uniform Quantiles" 
+msgstr ""
+
+msgid "Uniform Distribution" 
+msgstr ""
+
+msgid "Sample from Uniform Distribution" 
+msgstr ""
+
+msgid "Uniform Probabilities" 
+msgstr ""
+
+msgid "Binomial Quantiles" 
+msgstr ""
+
+msgid "Binomial Distribution" 
+msgstr ""
+
+msgid "Sample from Binomial Distribution" 
+msgstr ""
+
+msgid "Binomial Probabilities" 
+msgstr ""
+
+msgid "Poisson Quantiles" 
+msgstr ""
+
+msgid "Poisson Distribution" 
+msgstr ""
+
+msgid "Sample from Poisson Distribution" 
+msgstr ""
+
+msgid "Poisson Probabilities" 
+msgstr ""
+
+msgid "Geometric Quantiles" 
+msgstr ""
+
+msgid "Geometric Distribution" 
+msgstr ""
+
+msgid "Sample from Geometric Distribution" 
+msgstr ""
+
+msgid "Geometric Probabilities" 
+msgstr ""
+
+msgid "NegativeBinomial Quantiles" 
+msgstr ""
+
+msgid "NegativeBinomial Distribution" 
+msgstr ""
+
+msgid "Sample from NegativeBinomial Distribution" 
+msgstr ""
+
+msgid "NegativeBinomial Probabilities" 
 msgstr ""

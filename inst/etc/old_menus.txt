@@ -1,51 +1,233 @@
-#type	menu/item		operation/parent	label			command/menu		activation		install?
-menu	EstadisticaUvigoMenu		topMenu			""			""			""			""
-item    topMenu			cascade     "Statistics Inference"	EstadisticaUvigoMenu             ""		        ""
+# Some Rcmdr menus for the RcmdrPlugin.TeachStat
+# When the plug-in is loaded, these menus are merged with the standard Rcmdr menus
 
-#item  EstadisticaUvigoMenu   separator               "" "" "" ""
+# last modified: Oct 2018 by M. A. Mosquera
 
-menu  EDescriptivaMenu      EstadisticaUvigoMenu    "" "" "" ""
-item  EDescriptivaMenu      command             "Frequency distributions for qualitative variables..."   resumenVariablesCualitativas          "factorsP()" ""
-item  EDescriptivaMenu   command             "Numerical summaries - Discrete variables..."    resumenNumericoVDiscreta          "numericP()" "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
+#   type    menu/item		            operation/parent	    label			                                                          command/menu                                 activation                                install?
 
-item  EDescriptivaMenu      command        "Numerical summaries..." resumenNumerico          "numericP()" "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
-item  EDescriptivaMenu   command            "Numerical summaries - Weighted variables..."    resumenNumericoPonderada          "numericP()" "packageAvailable('RcmdrMisc') && packageAvailable('Hmisc') && packageAvailable('abind')"
+# Rcmdr Menus Modifications (from RcmdrPlugin.UCA)
+    item    nonparametricMenu       command               "Randomness test for two level factor..."                           randomnessFTest                             "twoLevelFactorsP()"                       ""
+    item    nonparametricMenu       command               "Randomness test for numeric variable..."                           randomnessNTest                             "numericP()"                               ""
 
-item   EDescriptivaMenu command             "Numerical summaries - Tabulated data..."   resumenDatosTabulados          "numericP(n=3)" ""
-item  EstadisticaUvigoMenu   cascade        "Descriptive Statistics"  EDescriptivaMenu "" ""
+# New structure of menus  
+    menu    EstadisticaUvigoMenu    topMenu               ""                                                                  ""                                          ""                                         ""
+    item    topMenu			            cascade               "Basic Statistics"	                                                EstadisticaUvigoMenu                        ""                                         ""
 
-menu  IConfianzaMenu      EstadisticaUvigoMenu    "" "" "" ""
-item  EstadisticaUvigoMenu   cascade        "Confidence Intervals"  IConfianzaMenu  "" ""
-menu  IConfianzaMenu1     IConfianzaMenu          "" "" "" ""
-item  IConfianzaMenu1       command        "Confidence interval for the mean..." intervaloConfianzaMedia "numericP()"  "packageAvailable('tcltk2')"
-item  IConfianzaMenu1       command        "Confidence interval for the variance..." intervaloConfianzaVarianza "numericP()"  "packageAvailable('tcltk2')"
-item  IConfianzaMenu1       command        "Confidence interval for a proportion..." intervaloConfianzaProporcion ""  "packageAvailable('tcltk2')"
-item  IConfianzaMenu        cascade         "Confidence intervals for a sample" IConfianzaMenu1 "" ""
+#####
 
-menu  IConfianzaMenu2     IConfianzaMenu          "" "" "" ""
-item  IConfianzaMenu2       command        "Confidence interval for the difference of independent means..." intervaloConfianzaMediasIndependientes "twoOrMoreLevelFactorsP() && numericP()"  "packageAvailable('tcltk2')"
-item  IConfianzaMenu2       command        "Confidence interval for mean paired difference..." intervaloConfianzaMediasPareadas "numericP(n=2)"  ""
-item  IConfianzaMenu2       command        "Confidence interval for the ratio of two variances..." intervaloConfianza2Varianzas "twoOrMoreLevelFactorsP() && numericP()"  "packageAvailable('tcltk2')"
-item  IConfianzaMenu2       command        "Confidence interval for difference of proportions..." intervaloConfianzaDiferenciaProporciones ""  "packageAvailable('tcltk2')"
-item  IConfianzaMenu        cascade         "Confidence intervals for two samples" IConfianzaMenu2 "" ""
+    menu    dataMenu2               EstadisticaUvigoMenu  ""                                                                  ""                                          ""                                         ""
+    item    EstadisticaUvigoMenu    cascade               "Data"                                                              dataMenu2                                   ""                                         ""
 
-menu  CHipotesisMenu      EstadisticaUvigoMenu    "" "" "" ""
-item  EstadisticaUvigoMenu   cascade        "Hypothesis Testing"  CHipotesisMenu "" ""
-menu  CHipotesisMenu1     CHipotesisMenu          "" "" "" ""
-item  CHipotesisMenu1      command        "Hypothesis testing for the mean..." contrasteHipotesisMedia "numericP()"  "packageAvailable('tcltk2')"
-item  CHipotesisMenu1      command        "Hypothesis testing for the variance..." contrasteHipotesisVarianza "numericP()"  ""
-item  CHipotesisMenu1      command        "Hypothesis testing for a proportion..." contrastHipotesisProporcion ""  ""
-item  CHipotesisMenu        cascade         "Hypothesis testing for a sample" CHipotesisMenu1 "" ""
+    item    dataMenu2               command               "New data set..."                                                   newDataSet2                                 ""                                         "getRcmdr('editDataset.threshold') > 0"
+    item    dataMenu2               command               "Load data set..."                                                  loadDataSet                                 ""                                         ""
+    item	  dataMenu2               command               "Merge data sets..."                                                mergeDataSets                               "dataSetsP(2)"                             "packageAvailable('car') && packageAvailable('RcmdrMisc')"
+    item    dataMenu2               separator             ""                                                                  ""                                          ""                                         ""
+    item    dataMenu2               command               "Import data from text file, clipboard, or URL..."                  readDataSet                                 ""                                         ""
 
-menu  CHipotesisMenu2     CHipotesisMenu          "" "" "" ""
-item  CHipotesisMenu2      command        "Hypothesis testing for independent means..." contrasteHipotesisMediasIndependientes "twoOrMoreLevelFactorsP() && numericP()"  ""
-item  CHipotesisMenu2      command        "Hypothesis testing for paired means..." contrasteHipotesisMediasPareadas "numericP(n=2)"  ""
-item  CHipotesisMenu2      command        "Hypothesis testing for the ratio of two variances..." contrasteHipotesis2Varianzas "twoOrMoreLevelFactorsP() && numericP()"  ""
-item  CHipotesisMenu2      command        "Hypothesis testing for difference of proportions..." contrasteHipotesisDiferenciaProporciones ""  "packageAvailable('tcltk2')"
-item  CHipotesisMenu        cascade         "Hypothesis testing for two samples" CHipotesisMenu2 "" ""
+#    menu    importMenu2             dataMenu              ""                                                                  ""                                          ""                                         ""
+#    item    importMenu2             command               "from text file, clipboard, or URL..."                              readDataSet                                 ""                                         ""
+#    item    importMenu2      command         "from SPSS data set..."                         importSPSS                  ""          "packageAvailable('foreign')"
+#    item    importMenu2      command         "from SAS xport file..."                        importSAS                   ""           "packageAvailable('foreign')"
+#    item    importMenu2      command         "from SAS b7dat file..."                        importSASb7dat                   ""           "packageAvailable('RcmdrMisc')"
+#    item    importMenu2      command         "from Minitab data set..."                      importMinitab               ""          "packageAvailable('foreign')"
+#    item    importMenu2      command         "from STATA data set..."                        importSTATA                 ""          "packageAvailable('foreign')"
+##    item    importMenu      command         "from Excel, Access or dBase data set..."       importRODBCtable            ""          "WindowsP() && packageAvailable('RODBC') && (.Platform$r_arch == 'i386')"
+##    item    importMenu      command         "from Excel file..."                            importExcel                 ""      "packageAvailable('XLConnect') && (!WindowsP() | (.Platform$r_arch != 'i386')) && hasJava()"
+#    item    importMenu2             command               "from Excel file..."                                                importExcel                                 ""                                         "packageAvailable('readxl')"
+#
+#    item    dataMenu2               cascade               "Import data"                                                       importMenu2                                 ""                                         ""
+
+    menu    packagesMenu2           dataMenu2             ""                                                                  ""                                          ""                                         ""
+    item    packagesMenu2           command               "List data sets in packages"                                        listDataSetsInPackages                      ""                                         ""
+    item    packagesMenu2           command               "Read data set from an attached package..."                         readDataFromPackage                         ""                                         ""
+    item    dataMenu2               cascade               "Data in packages"                                                  packagesMenu2                               ""                                         ""
+    menu    activeMenu2             dataMenu2             ""                                                                  ""                                          ""                                         ""
+    item    activeMenu2             command               "View data..."                                                      viewData                                    "activeDataSetP()"                         ""
+    item    activeMenu2             command               "Select active data set..."                                         selectActiveDataSet                         "dataSetsP()"                              ""
+    item    activeMenu2             command               "Refresh active data set"                                           refreshActiveDataSet                        "activeDataSetP()"                         ""
+    item    activeMenu2             command               "Help on active data set (if available)"                            helpDataSet                                 "activeDataSetP()"                         ""
+    item    activeMenu2             command               "Variables and types in active data set"                            variablesandtypesDataSet                    "activeDataSetP()"                         ""
+    item    activeMenu2             command               "Set case names..."                                                 setCaseNames                                "activeDataSetP()"                         ""
+    item    activeMenu2             command               "Subset active data set..."                                         subsetDataSet                               "activeDataSetP()"                         ""
+    item    activeMenu2             command               "Sort active data set..."                                           sortDataSet                                 "activeDataSetP()"                         ""
+#    item	  activeMenu2             command               "Aggregate variables in active data set..."                         Aggregate                                   "activeDataSetP() && factorsP()"           ""
+    item	  activeMenu2             command               "Remove row(s) from active data set..."                             RemoveRows                                  "activeDataSetP()"                         ""
+#    item    activeMenu2             command               "Stack variables in active data set..."                             Stack                                       "activeDataSetP() && numericP(2)"          ""
+    item    activeMenu2             command               "Remove cases with missing data..."                                 filterNA                                    "activeDataSetP()"                         ""
+    item    activeMenu2             command               "Save active data set..."                                           saveDataSet                                 "activeDataSetP()"                         ""
+    item    activeMenu2             command               "Export active data set..."                                         exportDataSet                               "activeDataSetP()"                         ""
+    item    dataMenu2               cascade               "Active data set"                                                   activeMenu2                                 ""                                         ""
+    menu    variablesMenu2          dataMenu2             ""                                                                  ""                                          ""                                         ""
+    item    variablesMenu2          command               "Change variables type..."                                          ConvertVariables                            "activeDataSetP()"                         ""
+    item    variablesMenu2          command               "Recode variables..."                                               RecodeDialog                                "activeDataSetP()"                         "packageAvailable('car')"
+    item    variablesMenu2          command               "Compute new variable..."                                           Compute                                     "activeDataSetP()"                         ""
+    item    variablesMenu2          command               "Add observation numbers to data set"                               addObsNumbers                               "activeDataSetP()"                         ""
+    item    variablesMenu2          command               "Standardize variables..."                                          standardize                                 "numericP()"                               ""
+    item    variablesMenu2          command               "Convert numeric variables to factors..."                           numericToFactor2                            "numericP()"                               ""
+    item    variablesMenu2          command               "Bin numeric variable..."                                           binVariable2                                "numericP()"                               "packageAvailable('RcmdrMisc')"
+    item    variablesMenu2          command               "Reorder factor levels..."                                          reorderFactors                              "factorsP()"                               ""
+    item    variablesMenu2          command               "Drop unused factor levels..."                                      dropUnusedFactorLevels                      "factorsP()"                               ""
+#    item    variablesMenu2          command               "Define contrasts for a factor..."                                  setContrasts                                "factorsP()"                               ""
+    item    variablesMenu2          command               "Rename variables..."                                               renameVariables                             "activeDataSetP()"                         ""
+    item    variablesMenu2          command               "Delete variables from data set ..."                                deleteVariable                              "activeDataSetP()"                         ""
+    item    dataMenu2               cascade               "Manage variables in active data set"                               variablesMenu2                              ""                                         ""
+
+
+
+#####
+
+#    item    EstadisticaUvigoMenu    separator             ""                                                                  ""                                          ""                                         ""
+
+    menu    EDescriptivaMenu        EstadisticaUvigoMenu  ""                                                                  ""                                          ""                                         ""
+    item    EstadisticaUvigoMenu    cascade               "Descriptive Statistics"                                            EDescriptivaMenu                            ""                                         ""
+
+    item    EDescriptivaMenu        command               "Active data set"                                                   summarizeDataSet                            "activeDataSetP()"                         ""
+ 
+    item    EDescriptivaMenu        command               "Frequency distributions for qualitative variables..."              resumenVariablesCualitativas                "factorsP()"                               ""
+    item    EDescriptivaMenu        command               "Numerical summaries - Discrete variables..."                       resumenNumericoVDiscreta                    "numericP()"                               "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
+
+    item    EDescriptivaMenu        command               "Numerical summaries..."                                            resumenNumerico                             "numericP()"                               "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
+    item    EDescriptivaMenu        command               "Numerical summaries - Weighted variables..."                       resumenNumericoPonderada                    "numericP()"                               "packageAvailable('RcmdrMisc') && packageAvailable('Hmisc') && packageAvailable('abind')"
+
+    item    EDescriptivaMenu        command               "Numerical summaries - Tabulated data..."                           resumenDatosTabulados                       "numericP(n=3)"                            ""
+
+    menu    tablesMenuES            EDescriptivaMenu      ""                                                                  ""                                          ""                                         ""
+    item    tablesMenuES            command               "Two-way table..."                                                  twoWayTable                                 "factorsP(2)"                              "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
+    item    tablesMenuES            command               "Multi-way table..."                                                multiWayTable                               "factorsP(3)"                              "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
+    item    tablesMenuES            command               "Enter and analyze two-way table..."                                enterTable                                  ""                                         "packageAvailable('RcmdrMisc') && packageAvailable('abind')"
+    item    EDescriptivaMenu        cascade               "Contingency tables"                                                tablesMenuES                                ""                                         "packageAvailable('abind')"
+    
+    menu    VAleatoriaMenu          EstadisticaUvigoMenu  ""                                                                  ""                                          ""                                         ""
+    item    EstadisticaUvigoMenu    cascade               "Random Variables"                                                  VAleatoriaMenu                              ""                                         ""
+
+    menu    continuasMenu           VAleatoriaMenu        ""                                                                  ""                                          ""                                         ""
+    item    VAleatoriaMenu          cascade               "Continuous distributions"                                          continuasMenu                               ""                                         ""
+
+    # Normal distribution
+    menu    normalMenuES            continuasMenu         ""                                                                  ""                                          ""                                         ""
+    item    continuasMenu           cascade               "Normal distribution"                                               normalMenuES                                ""                                         ""
+    item    normalMenuES            command               "Normal quantiles..."                                               normalQuantiles                             ""                                         ""
+    item    normalMenuES            command               "Normal probabilities..."                                           normalProbabilities                         ""                                         ""
+    item    normalMenuES            command               "Plot normal distribution..."                                       normalDistributionPlot                      ""                                         "packageAvailable('RcmdrMisc')"
+    item    normalMenuES            command               "Sample from normal distribution..."                                normalDistributionSamples                   ""                                         ""
+          
+    # t distribution 
+    menu    tMenuES                 continuasMenu         ""                                                                  ""                                          ""                                         ""
+    item    continuasMenu           cascade               "t distribution"                                                    tMenuES                                     ""                                         ""
+    item    tMenuES                 command               "t quantiles..."                                                    tQuantiles                                  ""                                         ""
+    item    tMenuES                 command               "t probabilities..."                                                tProbabilities                              ""                                         ""
+    item    tMenuES                 command               "Plot t distribution..."                                            tDistributionPlot                           ""                                         "packageAvailable('RcmdrMisc')"
+    item    tMenuES                 command               "Sample from t distribution..."                                     tDistributionSamples                        ""                                         ""
+          
+    # Chi-square distribution
+    menu    chisqMenuES             continuasMenu         ""                                                                  ""                                          ""                                         ""
+    item    continuasMenu           cascade               "Chi-squared distribution"                                          chisqMenuES                                 ""                                         ""
+    item    chisqMenuES             command               "Chi-squared quantiles..."                                          chisqQuantiles                              ""                                         ""
+    item    chisqMenuES             command               "Chi-squared probabilities..."                                      chisqProbabilities                          ""                                         ""
+    item    chisqMenuES             command               "Plot chi-squared distribution..."                                  chisqDistributionPlot                       ""                                         "packageAvailable('RcmdrMisc')"
+    item    chisqMenuES             command               "Sample from chi-squared distribution..."                           chisqDistributionSamples                    ""                                         ""
+    
+    # F distribution
+    menu    FMenuES                 continuasMenu         ""                                                                  ""                                          ""                                         ""
+    item    continuasMenu           cascade               "F distribution"                                                    FMenuES                                     ""                                         ""
+    item    FMenuES                 command               "F quantiles..."                                                    FQuantiles                                  ""                                         ""
+    item    FMenuES                 command               "F probabilities..."                                                FProbabilities                              ""                                         ""
+    item    FMenuES                 command               "Plot F distribution..."                                            FDistributionPlot                           ""                                         "packageAvailable('RcmdrMisc')"
+    item    FMenuES                 command               "Sample from F distribution..."                                     FDistributionSamples                        ""                                         ""
+          
+    # Exponential distribution
+    menu    exponentialMenuES       continuasMenu         ""                                                                  ""                                          ""                                         "" 
+    item    continuasMenu           cascade               "Exponential distribution"                                          exponentialMenuES                           ""                                         ""
+    item    exponentialMenuES       command               "Exponential quantiles..."                                          exponentialQuantiles                        ""                                         ""
+    item    exponentialMenuES       command               "Exponential probabilities..."                                      exponentialProbabilities                    ""                                         ""
+    item    exponentialMenuES       command               "Plot exponential distribution..."                                  exponentialDistributionPlot                 ""                                         "packageAvailable('RcmdrMisc')"
+    item    exponentialMenuES       command               "Sample from exponential distribution..."                           exponentialDistributionSamples              ""                                         ""
+          
+    # Uniform distribution      
+    menu    uniformMenuES           continuasMenu         ""                                                                  ""                                          ""                                         "" 
+    item    continuasMenu           cascade               "Uniform distribution"                                              uniformMenuES                               ""                                         ""
+    item    uniformMenuES           command               "Uniform quantiles..."                                              uniformQuantiles                            ""                                         ""
+    item    uniformMenuES           command               "Uniform probabilities..."                                          uniformProbabilities                        ""                                         ""
+    item    uniformMenuES           command               "Plot uniform distribution..."                                      uniformDistributionPlot                     ""                                         "packageAvailable('RcmdrMisc')"
+    item    uniformMenuES           command               "Sample from uniform distribution..."                               uniformDistributionSamples                  ""                                         ""
+     
+     
+    menu    discretasMenu           VAleatoriaMenu        ""                                                                  ""                                          ""                                         ""
+    item    VAleatoriaMenu          cascade               "Discrete distributions"                                            discretasMenu                               ""                                         ""
+     
+    # Binomial distribution     
+    menu    binomialMenuES          discretasMenu         ""                                                                  ""                                          ""                                         ""
+    item    discretasMenu           cascade               "Binomial distribution"                                             binomialMenuES                              ""                                         ""
+    item    binomialMenuES          command               "Binomial quantiles..."                                             binomialQuantiles                           ""                                         ""
+    item    binomialMenuES          command               "Binomial tail probabilities..."                                    binomialProbabilities                       ""                                         ""
+    item    binomialMenuES          command               "Binomial probabilities..."                                         binomialMass                                ""                                         ""
+    item    binomialMenuES          command               "Plot binomial distribution..."                                     binomialDistributionPlot                    ""                                         "packageAvailable('RcmdrMisc')"
+    item    binomialMenuES          command               "Sample from binomial distribution..."                              binomialDistributionSamples                 ""                                         ""
+                
+    # Poisson distribution            
+    menu    PoissonMenuES           discretasMenu         ""                                                                  ""                                          ""                                         ""
+    item    discretasMenu           cascade               "Poisson distribution"                                              PoissonMenuES                               ""                                         ""
+    item    PoissonMenuES           command               "Poisson quantiles..."                                              PoissonQuantiles                            ""                                         ""
+    item    PoissonMenuES           command               "Poisson tail probabilities..."                                     PoissonProbabilities                        ""                                         ""
+    item    PoissonMenuES           command               "Poisson probabilities..."                                          PoissonMass                                 ""                                         ""
+    item    PoissonMenuES           command               "Plot Poisson distribution..."                                      PoissonDistributionPlot                     ""                                         "packageAvailable('RcmdrMisc')"
+    item    PoissonMenuES           command               "Sample from Poisson distribution..."                               PoissonDistributionSamples                  ""                                         ""
+            
+    # Geometric distribution            
+    menu    geometricMenuES         discretasMenu         ""                                                                  ""                                          ""                                         ""
+    item    discretasMenu           cascade               "Geometric distribution"                                            geometricMenuES                             ""                                         ""
+    item    geometricMenuES         command               "Geometric quantiles..."                                            geomQuantiles                               ""                                         ""
+    item    geometricMenuES         command               "Geometric tail probabilities..."                                   geomProbabilities                           ""                                         ""
+    item    geometricMenuES         command               "Geometric probabilities..."                                        geomMass                                    ""                                         ""
+    item    geometricMenuES         command               "Plot geometric distribution..."                                    geomDistributionPlot                        ""                                         "packageAvailable('RcmdrMisc')"
+    item    geometricMenuES         command               "Sample from geometric distribution..."                             geomDistributionSamples                     ""                                         ""
+                
+            
+    # Negative binomial distribution      
+    menu    negbinomialMenuES       discretasMenu         ""                                                                  ""                                          ""                                         ""
+    item    discretasMenu           cascade               "Negative binomial distribution"                                    negbinomialMenuES                           ""                                         ""
+    item    negbinomialMenuES       command               "Negative binomial quantiles..."                                    negbinomialQuantiles                        ""                                         ""
+    item    negbinomialMenuES       command               "Negative binomial tail probabilities..."                           negbinomialProbabilities                    ""                                         ""
+    item    negbinomialMenuES       command               "Negative binomial probabilities..."                                negbinomialMass                             ""                                         ""
+    item    negbinomialMenuES       command               "Plot negative binomial distribution..."                            negbinomialDistributionPlot                 ""                                         "packageAvailable('RcmdrMisc')"
+    item    negbinomialMenuES       command               "Sample from negative binomial distribution..."                     negbinomialDistributionSamples              ""                                         ""
+
+
+    menu    InferenciaMenu          EstadisticaUvigoMenu  ""                                                                  ""                                          ""                                         ""
+    item    EstadisticaUvigoMenu    cascade               "Statistical Inference"                                             InferenciaMenu                              ""                                         ""
+  
+    menu    IConfianzaMenu          InferenciaMenu        ""                                                                  ""                                          ""                                         ""
+    item    InferenciaMenu          cascade               "Confidence Intervals"                                              IConfianzaMenu                              ""                                         ""
+    menu    IConfianzaMenu1         IConfianzaMenu        ""                                                                  ""                                          ""                                         ""
+    item    IConfianzaMenu1         command               "Confidence interval for the mean..."                               intervaloConfianzaMedia                     "numericP()"                               "packageAvailable('tcltk2')"
+    item    IConfianzaMenu1         command               "Confidence interval for the variance..."                           intervaloConfianzaVarianza                  "numericP()"                               "packageAvailable('tcltk2')"
+    item    IConfianzaMenu1         command               "Confidence interval for a proportion..."                           intervaloConfianzaProporcion                ""                                         "packageAvailable('tcltk2')"
+    item    IConfianzaMenu          cascade               "Confidence intervals for a sample"                                 IConfianzaMenu1 "" ""
+  
+    menu    IConfianzaMenu2         IConfianzaMenu        ""                                                                  ""                                          ""                                         ""
+    item    IConfianzaMenu2         command               "Confidence interval for the difference of independent means..."    intervaloConfianzaMediasIndependientes      "twoOrMoreLevelFactorsP() && numericP()"   "packageAvailable('tcltk2')"
+    item    IConfianzaMenu2         command               "Confidence interval for mean paired difference..."                 intervaloConfianzaMediasPareadas            "numericP(n=2)"                            ""
+    item    IConfianzaMenu2         command               "Confidence interval for the ratio of two variances..."             intervaloConfianza2Varianzas                "twoOrMoreLevelFactorsP() && numericP()"   "packageAvailable('tcltk2')"
+    item    IConfianzaMenu2         command               "Confidence interval for difference of proportions..."              intervaloConfianzaDiferenciaProporciones    ""                                         "packageAvailable('tcltk2')"
+    item    IConfianzaMenu          cascade               "Confidence intervals for two samples"                              IConfianzaMenu2                             ""                                         ""
+  
+    menu    CHipotesisMenu          InferenciaMenu        ""                                                                  ""                                          ""                                         ""
+    item    InferenciaMenu          cascade               "Hypothesis Testing"                                                CHipotesisMenu                              ""                                         ""
+    menu    CHipotesisMenu1         CHipotesisMenu          "" "" "" ""
+    item    CHipotesisMenu1         command               "Hypothesis testing for the mean..."                                contrasteHipotesisMedia                     "numericP()"                               "packageAvailable('tcltk2')"
+    item    CHipotesisMenu1         command               "Hypothesis testing for the variance..."                            contrasteHipotesisVarianza                  "numericP()"                               ""
+    item    CHipotesisMenu1         command               "Hypothesis testing for a proportion..."                            contrastHipotesisProporcion                 ""                                         ""
+    item    CHipotesisMenu          cascade               "Hypothesis testing for a sample"                                   CHipotesisMenu1                             ""                                         ""
+  
+    menu    CHipotesisMenu2         CHipotesisMenu        ""                                                                  ""                                          ""                                         ""
+    item    CHipotesisMenu2         command               "Hypothesis testing for independent means..."                       contrasteHipotesisMediasIndependientes      "twoOrMoreLevelFactorsP() && numericP()"   ""
+    item    CHipotesisMenu2         command               "Hypothesis testing for paired means..."                            contrasteHipotesisMediasPareadas            "numericP(n=2)"                            ""
+    item    CHipotesisMenu2         command               "Hypothesis testing for the ratio of two variances..."              contrasteHipotesis2Varianzas                "twoOrMoreLevelFactorsP() && numericP()"   ""
+    item    CHipotesisMenu2         command               "Hypothesis testing for difference of proportions..."               contrasteHipotesisDiferenciaProporciones    ""                                         "packageAvailable('tcltk2')"
+    item    CHipotesisMenu          cascade               "Hypothesis testing for two samples"                                CHipotesisMenu2                             ""                                         ""
 
 
 
 
 
-remove  statisticsTable    ""		""										""							""      ""
+#   remove  statisticsTable         ""                    ""                                                                  ""                                          ""                                         ""

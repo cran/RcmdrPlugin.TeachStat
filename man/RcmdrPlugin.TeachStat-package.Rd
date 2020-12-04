@@ -3,7 +3,7 @@
 \alias{RcmdrPlugin.TeachStat}
 \docType{package}
 \title{
-RCommander plugin for teaching statistical methods. 
+R Commander plugin for teaching statistical methods. 
 }
 \description{
 It adds a new menu for making easier the teaching of the main concepts about the main statistical methods.
@@ -12,8 +12,8 @@ It adds a new menu for making easier the teaching of the main concepts about the
 \tabular{ll}{
 Package: \tab RcmdrPlugin.TeachStat\cr
 Type: \tab Package\cr
-Version: \tab 1.0.10-0\cr
-Date: \tab 2018-12-11\cr
+Version: \tab 1.1.0\cr
+Date: \tab 2020-01-15\cr
 License: \tab GPL version 2 or newer\cr
 }
 }

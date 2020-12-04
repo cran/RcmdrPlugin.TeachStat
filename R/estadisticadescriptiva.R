@@ -66,10 +66,12 @@ pprint <- function(x,Table) {
 #   pprint()
 # Package: RcmdrMisc
 # numSummary()
-calcularResumenVariablesDiscretas <- function (data, statistics = c("mean", "sd", "se(mean)", "IQR", "quantiles", "cv", "skewness", "kurtosis"), quantiles = c(0, 0.25, 0.5, 0.75, 1), groups=NULL, tablaFrecuencia=FALSE, cortes=NULL)
+calcularResumenVariablesDiscretas <- function (data, statistics = c("mean", "sd", "se(mean)", "IQR", "quantiles", "cv", "skewness", "kurtosis"), quantiles = c(0, 0.25, 0.5, 0.75, 1), 
+                                               groups=NULL, tablaFrecuencia=FALSE, cortes=NULL)
 {
   .resumen <- list(.summary=NULL,.table=NULL)
-
+  data<-as.data.frame(data)
+  
   if(is.null(groups)) {
     cat("\n-------------------------------\n")
     cat("\n",gettext("Numerical summary",domain="R-RcmdrPlugin.TeachStat"),":\n", sep="")
@@ -78,17 +80,16 @@ calcularResumenVariablesDiscretas <- function (data, statistics = c("mean", "sd"
       if(is.null(cortes)) {
         .resumen$.table <- lapply(data,tabla.frec.cualitativa, ordinal=TRUE)
       } else {
-######### SOLO CON UNA VARIABLE !!!! Para que calcule automaticamente el número de cortes segun  las fórmulas de Sturges, Freedman-Diaconis o Scott     
-#         if (is.character(cortes)) {
-#           cortes <- match.arg(tolower(cortes), c("sturges", 
-#                                                  "fd", "freedman-diaconis", "scott"))
-#           cortes <- switch(cortes, sturges = nclass.Sturges(data[,1]), 
-#                            `freedman-diaconis` = , fd = nclass.FD(data[,1]), scott = nclass.scott(data[,1]), 
-#                            stop("unknown 'cortes' algorithm"))
-#         }
-######################
-
         dd <- function(x, cortes){
+          ######### Para que calcule automaticamente el número de cortes segun  las fórmulas de Sturges, Freedman-Diaconis o Scott     
+          if (is.character(cortes)) {
+            cortes <- match.arg(tolower(cortes), c("sturges",
+                                                   "fd", "freedman-diaconis", "scott"))
+            cortes <- switch(cortes, sturges = nclass.Sturges(na.omit(x)),
+                             `freedman-diaconis` = , fd = nclass.FD(na.omit(x)), scott = nclass.scott(na.omit(x)),
+                             stop("unknown 'cortes' algorithm"))
+          }
+          ######################
           xx <- cut(x,breaks=cortes,include.lowest=TRUE, right=FALSE)
           return(tabla.frec.cualitativa(xx,ordinal=TRUE))
         }
@@ -106,14 +107,22 @@ calcularResumenVariablesDiscretas <- function (data, statistics = c("mean", "sd"
         #        .resumen$.table <- lapply(data,tabla.frec.cualitativa, ordinal=TRUE)
         .resumen$.table <- by(data, groups, function(x) lapply(x,tabla.frec.cualitativa, ordinal=TRUE) )
       } else {
-
         dd <- function(x, cortes){
+          ######### Para que calcule automaticamente el número de cortes segun  las fórmulas de Sturges, Freedman-Diaconis o Scott     
+          if (is.character(cortes)) {
+            cortes <- match.arg(tolower(cortes), c("sturges",
+                                                   "fd", "freedman-diaconis", "scott"))
+            cortes <- switch(cortes, sturges = nclass.Sturges(na.omit(x)),
+                             `freedman-diaconis` = , fd = nclass.FD(na.omit(x)), scott = nclass.scott(na.omit(x)),
+                             stop("unknown 'breaks' algorithm"))
+          }
+          ######################
           xx <- cut(x,breaks=cortes,include.lowest=TRUE, right=FALSE)
           return(tabla.frec.cualitativa(xx,ordinal=TRUE))
         }
         #        .resumen$.table <- lapply(data,dd, cortes)
         .resumen$.table <- by(data, groups, function(x) lapply(x,dd, cortes) )
-
+        
       }
       cat("\n-------------------------------\n")
       cat("\n",gettext("Frequency distribution for discrete variables",domain="R-RcmdrPlugin.TeachStat"),":\n", sep="")
@@ -139,6 +148,101 @@ calcularResumenVariablesDiscretas <- function (data, statistics = c("mean", "sd"
                    cat("\n ",gettext("Group",domain="R-RcmdrPlugin.TeachStat"),": ", names(Table)[x], "\n", sep="")
                    print(Table[[x]], digits = 3)
                    cat("N= ", sum(Table[[x]][, 1]), "\n", sep="") } ,
+                 Table= .xx )
+        }
+      }
+    }
+  }
+  return(invisible(.resumen))
+}
+
+
+tabla.frec.cuantitativa <- function(x, cortes="Sturges", include.lowest=TRUE, right=FALSE,...)
+{
+  if (is.character(cortes)) {
+    cortes <- match.arg(tolower(cortes), c("sturges",
+                                           "fd", "freedman-diaconis", "scott"))
+    cortes <- switch(cortes, sturges = nclass.Sturges(na.omit(x)),
+                     `freedman-diaconis` = , fd = nclass.FD(na.omit(x)), scott = nclass.scott(na.omit(x)),
+                     stop("unknown 'cortes' algorithm"))
+  }
+  ######################
+  xx <- cut(x,breaks=cortes,include.lowest=include.lowest, right=right,...)
+  lims <- levels(xx)
+  indi<-as.numeric(regexpr(",",lims))
+  l_inf <- as.numeric(substr(lims,2,indi-1))
+  l_sup <- as.numeric(substr(lims,indi+1,nchar(lims)-1))
+  xi <- (l_inf + l_sup)/2
+  ai <- l_sup - l_inf
+  ni<-as.numeric(table(xx))
+  
+  N <- sum(ni)
+  .Frec <- cbind(Li_1=l_inf, Li=l_sup, xi=xi, ni=ni, fi=ni/N, Ni= Ni<- cumsum(ni), Fi=Ni/N, ai= ai, hi= ni/N/ai)
+  rownames(.Frec) <- lims
+  return(.Frec)
+}
+
+### menu: 02.1 Resumen numerico 
+
+# Dependencias:
+# Arquivo: 01 Resumenes numericos - v. cualitativa.r
+#   tabla.frec.cuantitativa()
+# Package: RcmdrMisc
+# numSummary()
+
+calcularResumenVariablesContinuas <- function (data, statistics = c("mean", "sd", "se(mean)", "IQR", "quantiles", "cv", "skewness", "kurtosis"), quantiles = c(0, 0.25, 0.5, 0.75, 1), 
+                                               groups=NULL, tablaFrecuencia=FALSE, cortes="Sturges",...)
+{
+  .resumen <- list(.summary=NULL,.table=NULL)
+  data<-as.data.frame(data)
+  
+  if(is.null(groups)) {
+    cat("\n-------------------------------\n")
+    cat("\n",gettext("Numerical summary",domain="R-RcmdrPlugin.TeachStat"),":\n", sep="")
+    print(.resumen$.summary <- numSummary(data, statistics=statistics, quantiles=quantiles,...))
+    if (tablaFrecuencia) {
+      .resumen$.table <- lapply(data,tabla.frec.cuantitativa, cortes)
+      cat("\n-------------------------------\n")
+      cat("\n",gettext("Frequency distribution for continuous variables",domain="R-RcmdrPlugin.TeachStat"),":\n", sep="")
+      lapply(1:(length(.resumen$.table)), 
+             function(x,Table) {
+               cat("\n",gettext("Variable",domain="R-RcmdrPlugin.TeachStat"),": ",names(Table)[x],"\n", sep="")
+               print(Table[[x]], digits=3)
+               cat("N= ",sum(Table[[x]][,4]),"\n", sep="")
+             },
+             Table=.resumen$.table)
+    }
+  }
+  else {
+    cat("\n-------------------------------\n")
+    cat("\n",gettext("Numerical summary",domain="R-RcmdrPlugin.TeachStat"),":\n", sep="")
+    print(.resumen$.summary <- numSummary(data, groups=groups, statistics=statistics, quantiles=quantiles,...))
+    if (tablaFrecuencia) {
+      .resumen$.table <- by(data, groups, function(x) lapply(x,tabla.frec.cuantitativa, cortes) )
+      cat("\n-------------------------------\n")
+      cat("\n",gettext("Frequency distribution for continuous variables",domain="R-RcmdrPlugin.TeachStat"),":\n", sep="")
+      if(length(names(data))==1 )
+      {
+        .xx <- lapply( 1:length(.resumen$.table), function(x) .resumen$.table[[x]] )
+        names(.xx) <-  names(.resumen$.table)
+        cat("\n ",gettext("Variable",domain="R-RcmdrPlugin.TeachStat"),": ",names(data), "\n", sep="")
+        lapply(1:(length(.resumen$.table)),
+               function (x, Table) {
+                 cat("\n ",gettext("Group",domain="R-RcmdrPlugin.TeachStat"),": ", names(Table)[x], "\n", sep="")
+                 print(Table[[x]], digits = 3)
+                 cat("N= ", sum(Table[[x]][, 4]), "\n", sep="") } ,
+               Table= .xx )
+      } else {
+        for( ii in 1:length(names(data)))
+        {
+          .xx <- lapply( 1:length(.resumen$.table), function(x) .resumen$.table[[x]][[ii]] )
+          names(.xx) <-  attr(.resumen$.table,"dimnames")$groups
+          cat("\n ",gettext("Variable",domain="R-RcmdrPlugin.TeachStat"),": ",names(data)[ii], "\n", sep="")
+          lapply(1:(length(.resumen$.table)),
+                 function (x, Table) {
+                   cat("\n ",gettext("Group",domain="R-RcmdrPlugin.TeachStat"),": ", names(Table)[x], "\n", sep="")
+                   print(Table[[x]], digits = 3)
+                   cat("N= ", sum(Table[[x]][, 4]), "\n", sep="") } ,
                  Table= .xx )
         }
       }
@@ -445,11 +549,22 @@ calcularResumenDatosTabulados<- function(l_inf, l_sup, ni, statistics = c("mean"
   if ("mode" %in% statistics)
   {
     if("quantiles" %in% statistics)
+    {
+      if(is.null(dim(.resumen$.summary$table)))
+      {
+        .resumen$.summary$table <- as.matrix(t(.resumen$.summary$table))
+        rownames(.resumen$.summary$table) <- ""
+      } 
       .resumen$.summary$table[, (length(statistics)-1):(length(statistics) + length(quantiles) - 2)] <- sapply(quantiles, percentil, tabla = .resumen$.table)
-
+    }
     .resumen$.summary$table <- cbind(.resumen$.summary$table, mode=moda(.resumen$.table) )
   }else if ("quantiles" %in% statistics)
   {
+    if(is.null(dim(.resumen$.summary$table)))
+    {
+      .resumen$.summary$table <- as.matrix(t(.resumen$.summary$table))
+      rownames(.resumen$.summary$table) <- ""
+    } 
     .resumen$.summary$table[, (length(statistics)):(length(statistics) + length(quantiles) - 1)] <- sapply(quantiles, percentil, tabla = .resumen$.table)
   }
   .resumen$.summary$n <- N
