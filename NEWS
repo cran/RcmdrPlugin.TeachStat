@@ -1,3 +1,12 @@
+RcmdrPlugin.TeachStat v1.1.1 (Release date: 2022-06-22)
+==============
+
+Changes:
+
+* Elimination of dependence on "randtests" package.
+* Fixed several build notes.
+
+
 RcmdrPlugin.TeachStat v1.1.0 (Release date: 2020-11-16)
 ==============
 

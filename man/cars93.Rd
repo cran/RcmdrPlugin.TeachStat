@@ -18,13 +18,13 @@ cars93
     \item{\code{Manufacturer}}{Manufacturer.}
     \item{\code{Model}}{Model.}
     \item{\code{Type}}{Type: a factor with levels \code{"Small"}, \code{"Sporty"}, \code{"Compact"}, \code{"Midsize"}, \code{"Large"} and \code{"Van"}.}
-    \item{\code{MinPrice}}{Minimum Price (in \$1,000): price for a basic version.}
+    \item{\code{MinPrice}}{Minimum Price (in $1,000): price for a basic version.}
     \item{\code{MidPrice}}{
-      Midrange Price (in \$1,000): average of \code{Min.Price} and
+      Midrange Price (in $1,000): average of \code{Min.Price} and
       \code{Max.Price}.
     }
     \item{\code{MaxPrice}}{
-      Maximum Price (in \$1,000): price for \dQuote{a premium version}.
+      Maximum Price (in $1,000): price for \dQuote{a premium version}.
     }
     \item{\code{CityMPG}}{
       City MPG (miles per US gallon by EPA rating).
@@ -104,7 +104,7 @@ cars93
   1993 New Car Data.
   \emph{Journal of Statistics Education}
   \bold{1}(1).
-  \url{https://doi.org/10.1080/10691898.1993.11910459}.
+  \doi{10.1080/10691898.1993.11910459}.
 }
 \references{
   Venables, W. N. and Ripley, B. D. (1999)

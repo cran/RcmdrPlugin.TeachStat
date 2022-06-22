@@ -31,15 +31,16 @@ import(Rcmdr)
 import(tcltk2)
 
 importFrom(stats, aov, as.formula, complete.cases, confint, cov.wt, na.omit, pchisq, pnorm, qchisq, qnorm, relevel,
-             var)
+             var,median)
 
 importFrom(Hmisc, wtd.mean, wtd.var,wtd.quantile,wtd.table,wtd.rank,capitalize)
 importFrom(tcltk, tkfont.create, ttkprogressbar, tkwidget, setTkProgressBar, ttknotebook, tkadd, 
            tkselect, tkbutton,ttkcombobox,tkget, .Tcl, .Tcl.args,tkgrid.forget)
 importFrom(tseries, tseries.runs.test = "runs.test")
-importFrom(randtests, randtests.runs.test = "runs.test")
+
 importFrom(utils, type.convert)
 importFrom(IndexNumR, priceIndex)
 importFrom(lme4, lmer,VarCorr,methTitle)
-importFrom(grDevices, rgb, nclass.FD, nclass.Sturges, nclass.scott)
+importFrom(grDevices, rgb, nclass.FD, nclass.Sturges, nclass.scott,gray)
+importFrom(graphics, abline)
 

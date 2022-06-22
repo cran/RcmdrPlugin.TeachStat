@@ -1,6 +1,6 @@
-e68d0357c0a9fa01e8c61ee04da42bd7 *DESCRIPTION
-37c4cd61a6f08bebb30271e57410c049 *NAMESPACE
-24d5bac1f350701745bf1f7bbf640b80 *NEWS
+83a01ce49f679459539c43993957e33d *DESCRIPTION
+2a748cbeff4e117815637e614a1c9838 *NAMESPACE
+f0b256172af1cade838096855dd15562 *NEWS
 be62701e4ee7b93fdf7bb138e6d0265b *R/Aleatoriedad.R
 46cb771a8d6a19314d95b1d3762deb83 *R/IndexNumbers.R
 247429835e3887f8e4734a064fe1252b *R/RandVarMenu.R
@@ -33,7 +33,8 @@ a017b188a9a4204207cb08edb6732b37 *R/resumenNumericoVDiscreta.R
 7b1f9731f64922e13f57b1463d29aab9 *R/resumenVariablesCualitativas.R
 8706f272975cb713085f1f4f7f9bb751 *R/startup.R
 0244b000f13c4028f95e2a53f03ade95 *R/testscontrasteshipotesis.R
-5d8b854dbfc4507d796240ea4ba995c0 *R/utilities.R
+770efbb5e1ca4af28a54d6ac894d8130 *R/utilities.R
+9ecb0bdfb906213cc54af05f9a8fb645 *build/partial.rdb
 b00e2219e92fabfbb1ecb55338a677ae *data/Agrupadas.RData
 d214a28682101b1e3028b188eaf24e7d *data/Depositos.RData
 cfa0d61bdb3587c903edd5bbd24fb103 *data/Prices.RData
@@ -47,7 +48,7 @@ e4d34f268cb9f3817c3b3ff6a3932382 *man/Agrupadas.Rd
 04467f82d91c211f8f0761431877ef50 *man/Cprop.test.Rd
 99e5fecc0a43bad1a763f4b1217ff5cd *man/DMKV.test.Rd
 b0343dae1360fa1f5c73569ea5928522 *man/Deflat.Rd
-2be0e7420d3f4ca103c537b2ac839446 *man/Depositos.Rd
+2495a930631437ae08eb0b3fc215fef8 *man/Depositos.Rd
 f584b3ca4e98e4c4848fde66157e1d7a *man/GUI_ConvertVariables.Rd
 bd7a246ebb638760ae96ab4d00a6691b *man/GUI_ICHCMedia.Rd
 ce58e8faea70d8d6ea004a9ff124eb33 *man/GUI_ICHCMediasIndependientes.Rd
@@ -69,7 +70,7 @@ b45f4f3dd6974a2fe65750816f38d3a9 *man/calcularResumenDatosTabulados.Rd
 0ff0261e4e5949adfd683be1a3747fa2 *man/calcularResumenVariablesContinuas.Rd
 72961d860fb2457db66c88a2f979ab80 *man/calcularResumenVariablesDiscretas.Rd
 694ed6364f8e6d67d9bae16f5cb89ddd *man/calcular_frecuencia.Rd
-4c588a49280da9d31f014bd94f3ea8ab *man/cars93.Rd
+8375f2ba6e1d52a794d5ae6d01255f28 *man/cars93.Rd
 24d0c9df9730e8e4f2a288a8f8c9e9c0 *man/characRV.Rd
 726a7ffb8a3c57bbd1ee105ff9c84e35 *man/distrDefine.Rd
 248b2c5eee23ed6e2b5124560f952439 *man/listTypesVariables.Rd
