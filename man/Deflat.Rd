@@ -5,7 +5,7 @@
 Deflation of an economic series
 }
 \description{
-\code{Deflat} deflacts a current value variable into a constant value variable.
+\code{Deflat} deflates a current value variable into a constant value variable.
 }
 \usage{
 Deflat(x, pervar, cvar, defl, base)

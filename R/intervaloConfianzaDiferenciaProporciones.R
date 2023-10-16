@@ -16,7 +16,7 @@ intervaloConfianzaDiferenciaProporciones <- function () {
   selectFrame<-tkframe(top)
   selectFactorsFrame<-ttkframe(selectFrame, borderwidth=1, relief="solid", padding=c(5,5,8,8))
   
-  ##Creaci髇 de los ComboBox 1
+  ##Creaci贸n de los ComboBox 1
   
   comboBoxFrameL<-ttklabelframe(selectFactorsFrame,  text=gettext("Groups (pick one)",domain="R-RcmdrPlugin.TeachStat"), padding=c(5,5,5,5))
   comboBoxFrame<-tkframe(comboBoxFrameL)
@@ -89,7 +89,7 @@ intervaloConfianzaDiferenciaProporciones <- function () {
   
   ##Fin creacin comboBox
   
-  ##Creaci髇 de los ComboBox 2
+  ##Creaci贸n de los ComboBox 2
   
   
   
@@ -144,7 +144,7 @@ intervaloConfianzaDiferenciaProporciones <- function () {
   
   
   
-  ##Fin creaci髇 comboBox2
+  ##Fin creaci贸n comboBox2
   
   
   
@@ -323,7 +323,7 @@ intervaloConfianzaDiferenciaProporciones <- function () {
     valornfracasos2<-as.integer(valornfracasos2)
     valornConfianza<-as.numeric(valornConfianza)
     
-    ###################### Imprimir la funci髇 a llamar por RCommander ###########################################
+    ###################### Imprimir la funci贸n a llamar por RCommander ###########################################
     
     .activeDataSet<-ActiveDataSet()
     

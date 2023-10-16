@@ -73,7 +73,7 @@ resumenVariablesCualitativas <- function () {
     ordenado_Frecuencia<-as.logical(as.numeric(var3))
     cuantilP<-var4
 
-###################### Imprimir la función a llamar por RCommander ###########################################
+###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
 
     .activeDataSet<-ActiveDataSet()
 

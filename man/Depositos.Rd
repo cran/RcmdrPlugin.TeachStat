@@ -21,9 +21,9 @@ Private sector deposits (in millions of euro) with credit institutions in the pr
 \source{
 Galician Institute of Statistics (2019):
 
-- \url{http://www.ige.eu/igebdt/esqv.jsp?ruta=verTabla.jsp?OP=1&B=1&M=&COD=462&R=2\%5B2002:2003:2004:2005:2006:2007:2008:2009:2010:2011:2012:2013:2014:2015:2016:2017:2018\%5D&C=9928\%5B32\%5D;0\%5B3\%5D;1\%5B3\%5D&F=&S=&SCF=#}
+- \url{https://www.ige.gal/igebdt/esqv.jsp?ruta=verTabla.jsp?OP=1&B=1&M=&COD=462&R=2\%5B2002:2003:2004:2005:2006:2007:2008:2009:2010:2011:2012:2013:2014:2015:2016:2017:2018\%5D&C=9928\%5B32\%5D;0\%5B3\%5D;1\%5B3\%5D&F=&S=&SCF=#}
 
-- \url{http://www.ige.eu/igebdt/esqv.jsp?ruta=verTabla.jsp?OP=1&B=1&M=&COD=8547&R=0\%5Ball\%5D&C=2\%5B0\%5D;1\%5B0\%5D;9928\%5B108:12\%5D&F=&S=&SCF=}
+- \url{https://www.ige.gal/igebdt/esqv.jsp?ruta=verTabla.jsp?OP=1&B=1&M=&COD=8547&R=0\%5Ball\%5D&C=2\%5B0\%5D;1\%5B0\%5D;9928\%5B108:12\%5D&F=&S=&SCF=}
 }
 
 \examples{

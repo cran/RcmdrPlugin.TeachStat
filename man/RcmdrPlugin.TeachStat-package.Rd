@@ -10,18 +10,18 @@ It adds a new menu for making easier the teaching of the main concepts about the
 }
 \details{
 \tabular{ll}{
-Package: \tab RcmdrPlugin.TeachStat\cr
+Package: \tab \code{RcmdrPlugin.TeachStat}\cr
 Type: \tab Package\cr
-Version: \tab 1.1.0\cr
-Date: \tab 2020-01-15\cr
+Version: \tab 1.1.2\cr
+Date: \tab 2023-10-16\cr
 License: \tab GPL version 2 or newer\cr
 }
 }
 
 \author{
-Tom·s R. Cotos YaÒez <cotos@uvigo.es>\cr
-Manuel A. Mosquera RodrÌguez <mamrguez@uvigo.es>\cr
-Ana PÈrez Gonz·lez <anapg@uvigo.es>\cr
+Tom√°s R. Cotos Ya√±ez <cotos@uvigo.gal>\cr
+Manuel A. Mosquera Rodr√≠guez <mamrguez@uvigo.gal>\cr
+Ana P√©rez Gonz√°lez <anapg@uvigo.gal>\cr
 Benigno Reguengo Lareo <benireguengo@gmail.com>
 }
 

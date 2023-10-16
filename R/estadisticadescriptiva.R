@@ -81,7 +81,7 @@ calcularResumenVariablesDiscretas <- function (data, statistics = c("mean", "sd"
         .resumen$.table <- lapply(data,tabla.frec.cualitativa, ordinal=TRUE)
       } else {
         dd <- function(x, cortes){
-          ######### Para que calcule automaticamente el número de cortes segun  las fórmulas de Sturges, Freedman-Diaconis o Scott     
+          ######### Para que calcule automaticamente el nÃºmero de cortes segun  las fÃ³rmulas de Sturges, Freedman-Diaconis o Scott     
           if (is.character(cortes)) {
             cortes <- match.arg(tolower(cortes), c("sturges",
                                                    "fd", "freedman-diaconis", "scott"))
@@ -108,7 +108,7 @@ calcularResumenVariablesDiscretas <- function (data, statistics = c("mean", "sd"
         .resumen$.table <- by(data, groups, function(x) lapply(x,tabla.frec.cualitativa, ordinal=TRUE) )
       } else {
         dd <- function(x, cortes){
-          ######### Para que calcule automaticamente el número de cortes segun  las fórmulas de Sturges, Freedman-Diaconis o Scott     
+          ######### Para que calcule automaticamente el nÃºmero de cortes segun  las fÃ³rmulas de Sturges, Freedman-Diaconis o Scott     
           if (is.character(cortes)) {
             cortes <- match.arg(tolower(cortes), c("sturges",
                                                    "fd", "freedman-diaconis", "scott"))
@@ -585,7 +585,7 @@ calcularResumenDatosTabulados<- function(l_inf, l_sup, ni, statistics = c("mean"
 }
 
 
-#Cálculo percentil p
+#CÃ¡lculo percentil p
 percentil<-function(p, tabla){
   N <- sum(tabla[,"ni"])
   Np<-N*p
@@ -598,7 +598,7 @@ percentil<-function(p, tabla){
   return(xp)
 }
 
-#Cálculo de la moda
+#CÃ¡lculo de la moda
 moda <- function(tabla) {
   indicem<-which.max(tabla[,"hi"])
   if(indicem==1){

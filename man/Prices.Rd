@@ -7,7 +7,7 @@ Data for computing price indices.
 \description{
 Data on the sold quantity and sale price of several products through some years.
 
-It is used as an example for the use of the \emph{Price index} window of the RcmdrPlugin.TeachStat package
+It is used as an example for the use of the \emph{Price index} window of the \code{RcmdrPlugin.TeachStat} package
 }
 \usage{data("Prices")}
 \format{

@@ -100,7 +100,7 @@ intervaloConfianzaMedia <- function () {
     valorvarianza<-as.numeric(valorvarianza)
     varConocida<-as.logical(as.numeric(varConocida))
     
-    ###################### Imprimir la función a llamar por RCommander ###########################################
+    ###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
     
     .activeDataSet<-ActiveDataSet()
     

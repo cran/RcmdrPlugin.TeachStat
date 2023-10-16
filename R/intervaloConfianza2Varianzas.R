@@ -11,7 +11,7 @@ intervaloConfianza2Varianzas <- function () {
   dialog.values <- getDialog (dialogName, defaults)
   initializeDialog(title = gettext("Confidence Interval for the ratio of two variances",domain="R-RcmdrPlugin.TeachStat"))
   
-  ##Creación de los ComboBox
+  ##CreaciÃ³n de los ComboBox
   
   selectFactorsFrame<-tkframe(top)
   
@@ -80,7 +80,7 @@ intervaloConfianza2Varianzas <- function () {
   combo_box3<-ttkcombobox(comboBoxFrame,values=valuescombo_box3,textvariable=varcombo_box3,state=mostrar)
   
   
-  ##Fin creación comboBox
+  ##Fin creaciÃ³n comboBox
   
   nconftypeFrame<-tkframe(top)
   ### Tipo de Intervalo
@@ -129,7 +129,7 @@ intervaloConfianza2Varianzas <- function () {
     valornConfianza<-tclvalue(nConfianzaVar)
     
     if(is.na(as.numeric(valornConfianza)) || (as.numeric(valornConfianza)<0)||(as.numeric(valornConfianza)>1)) {
-      valornConfianza=0.95
+      valornConfianza<-0.95
       errorCondition(recall=dialogNameF, message=gettext("Confidence level must be between 0 and 1",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -145,7 +145,7 @@ intervaloConfianza2Varianzas <- function () {
     closeDialog()
     
     
-    ###################### Imprimir la función a llamar por RCommander ###########################################
+    ###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
     
     .activeDataSet<-ActiveDataSet()
     level1<-tclvalue(varcombo_box2)

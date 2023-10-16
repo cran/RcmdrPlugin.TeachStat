@@ -18,7 +18,7 @@ calcularResumenVariablesContinuas(data,
   \item{data}{\code{data.frame} with the continuous variables.}
   \item{statistics}{any of \code{"mean"}, \code{"sd"}, \code{"se(mean)"}, \code{"quantiles"}, \code{"cv"} (coefficient of variation - sd/mean), \code{"skewness"} or \code{"kurtosis"}; defaulting to \code{c("mean", "sd", "quantiles", "IQR")}.}
   \item{quantiles}{quantiles to report; by default is \code{c(0, 0.25, 0.5, 0.75, 1)}.}
-  \item{groups}{optional variable, typically a factor, to be used to partition the data. By deafault is \code{NULL}.}
+  \item{groups}{optional variable, typically a factor, to be used to partition the data. By default is \code{NULL}.}
   \item{tablaFrecuencia}{logical value indicating whether or not to display the frequency table, by default is \code{FALSE}.}
   \item{cortes}{one of:
     \itemize{ 

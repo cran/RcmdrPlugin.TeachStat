@@ -73,7 +73,7 @@ radioButtonsFrame<-tkframe(top)
     varConocida <- tclvalue(MediaVariable)
     if(varConocida=="1"){valorMedia<-tclvalue(Mediaconocida)
                 if(is.na(as.numeric(valorMedia))) {
-                  valorMedia=""
+                  valorMedia<-""
                   errorCondition(recall=contrasteHipotesisVarianza, message=gettext("Known mean value must be numeric",domain="R-RcmdrPlugin.TeachStat"))
                   return()
                 }
@@ -84,7 +84,7 @@ radioButtonsFrame<-tkframe(top)
     valornConfianza<-tclvalue(nConfianzaVar)
 
     if(is.na(as.numeric(valornConfianza)) || (as.numeric(valornConfianza)<0)||(as.numeric(valornConfianza)>1)) {
-      valornConfianza=0.95
+      valornConfianza<-0.95
       errorCondition(recall=contrasteHipotesisVarianza, message=gettext("Confidence level must be between 0 and 1",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -93,7 +93,7 @@ radioButtonsFrame<-tkframe(top)
     valorsigma20<-tclvalue(sigma2Variable)
 
     if(is.na(as.numeric(valorsigma20))||(as.numeric(valorsigma20)<=0)){
-      valorsigma20="0.0"
+      valorsigma20<-"0.0"
       errorCondition(recall=contrasteHipotesisVarianza, message=gettext("Value for the null hypothesis must be a positive number",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -109,7 +109,7 @@ radioButtonsFrame<-tkframe(top)
    varConocida<-as.logical(as.numeric(varConocida))
 
 
-   ###################### Imprimir la función a llamar por RCommander ###########################################
+   ###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
 
    .activeDataSet<-ActiveDataSet()
 

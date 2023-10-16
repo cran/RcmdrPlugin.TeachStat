@@ -6,7 +6,7 @@ Grouped or tabulated data set
 }
 \description{
 Grouped or tabulated data set, given by lower and upper limits and frequency.
-It is used as an example for the use of the \emph{Numerical Summaries - Tabulated data} window of the RcmdrPlugin.TeachStat package
+It is used as an example for the use of the \emph{Numerical Summaries - Tabulated data} window of the \code{RcmdrPlugin.TeachStat} package
 }
 \usage{data("Agrupadas")}
 \format{
@@ -14,7 +14,7 @@ It is used as an example for the use of the \emph{Numerical Summaries - Tabulate
   \describe{
     \item{\code{Linf}}{Numeric value, the lower limit of the tabulated data.}
     \item{\code{Lsup}}{Numeric value, the upper limit of the tabulated data.}
-    \item{\code{ni}}{Numeric value, the frecuency of the tabulated data.}
+    \item{\code{ni}}{Numeric value, the frequency of the tabulated data.}
   }
 }
 

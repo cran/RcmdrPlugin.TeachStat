@@ -15,12 +15,15 @@ aovremm(formula, data = NULL, ...)
 \arguments{
   \item{formula}{
 %%     ~~Describe \code{formula} here~~
+A formula specifying the model.
 }
   \item{data}{
 %%     ~~Describe \code{data} here~~
+A data frame in which the variables specified in the \code{formula} will be found. If missing, the variables are searched for in the standard way.
 }
   \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
+Arguments to be passed to other functions.
 }
 }
 

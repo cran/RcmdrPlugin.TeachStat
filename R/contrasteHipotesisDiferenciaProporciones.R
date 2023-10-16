@@ -8,7 +8,7 @@ contrasteHipotesisDiferenciaProporciones <- function () {
 seleccionFrame<-tkframe(top)
 selectFactorsFrame<-ttkframe(seleccionFrame, borderwidth=1, relief="solid", padding=c(5,5,8,8))
 
-##Creación de los ComboBox 1
+##CreaciÃ³n de los ComboBox 1
 
 #comboBoxFrame<-ttklabelframe(selectFactorsFrame, text="Variable 1", padding=c(5,5,5,5))
 comboBoxFrame<-tkframe(selectFactorsFrame)
@@ -22,7 +22,7 @@ if (length(twoOrMoreLevelFactors())!=0){
 
 
 valuescombo_box<-c(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"),twoOrMoreLevelFactors())
-varcombo_box=tclVar(valuescombo_box[1])
+varcombo_box<-tclVar(valuescombo_box[1])
 
 DatosFrame<-tkframe(comboBoxFrame)
 combo_box<-ttkcombobox(DatosFrame,values=valuescombo_box,textvariable=varcombo_box,state=mostrar)
@@ -56,13 +56,13 @@ tkbind(combo_box, "<<ComboboxSelected>>",function(){
     tclvalue(varcombo_box22)<-niveles}})
 
 ExitoFrame<-tkframe(comboBoxFrame)
-varcombo_box2=tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
+varcombo_box2<-tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
 combo_box2<-ttkcombobox(ExitoFrame,values=varcombo_box2,textvariable=varcombo_box2,state="disabled")
 # tkgrid(labelRcmdr(ExitoFrame, text=""),sticky="nw")
 Etiqueta<-labelRcmdr(ExitoFrame, text=gettext("Group 1",domain="R-RcmdrPlugin.TeachStat"), foreground=getRcmdr("title.color"))
 tkgrid(Etiqueta, sticky="nw")
 tkgrid(combo_box2, sticky="nw")
-varcombo_box22=tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
+varcombo_box22<-tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
 combo_box22<-ttkcombobox(ExitoFrame,values=varcombo_box22,textvariable=varcombo_box22,state="disabled")
 # tkgrid(labelRcmdr(ExitoFrame, text=""),sticky="nw")
 Etiqueta<-labelRcmdr(ExitoFrame, text=gettext("Group 2",domain="R-RcmdrPlugin.TeachStat"), foreground=getRcmdr("title.color"))
@@ -77,7 +77,7 @@ tkgrid(ExitoFrame, sticky="nw")
 #  comboBoxFrame2<-ttklabelframe(selectFactorsFrame, text="Variable 2", padding=c(5,5,5,5))
 comboBoxFrame2<-tkframe(selectFactorsFrame)
 valuescombo_box3<-c(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"),twoOrMoreLevelFactors())
-varcombo_box3=tclVar(valuescombo_box3[1])
+varcombo_box3<-tclVar(valuescombo_box3[1])
 
 DatosFrame2<-tkframe(comboBoxFrame2)
 combo_box3<-ttkcombobox(DatosFrame2,values=valuescombo_box3,textvariable=varcombo_box3,state=mostrar)
@@ -105,7 +105,7 @@ tkbind(combo_box3, "<<ComboboxSelected>>",function(){
     tclvalue(varcombo_box4)<-niveles}})
 
 Exito2Frame<-tkframe(comboBoxFrame2)
-varcombo_box4=tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
+varcombo_box4<-tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
 combo_box4<-ttkcombobox(Exito2Frame,values=varcombo_box4,textvariable=varcombo_box4,state="disabled")
 # tkgrid(labelRcmdr(Exito2Frame, text=""),sticky="nw")
 Etiqueta2<-labelRcmdr(Exito2Frame, text=gettext("Success",domain="R-RcmdrPlugin.TeachStat"),foreground=getRcmdr("title.color"))
@@ -211,7 +211,7 @@ muestrasFrame<-ttkframe(seleccionFrame, borderwidth=1, relief="solid", padding=c
 
     valornexitos<-tclvalue(nExitosVar)
                 if( (valornexitos!="") && (is.na(as.integer(valornexitos)) || (as.integer(valornexitos)<0) || !(isTRUE(all.equal(as.numeric(valornexitos),as.integer(valornexitos)))) )) {
-                  valornexitos=""
+                  valornexitos<-""
                   errorCondition(recall=contrasteHipotesisDiferenciaProporciones, message=gettext("Successes number value of Sample 1 must be a positive integer number",domain="R-RcmdrPlugin.TeachStat"))
                   return()
                 }
@@ -219,7 +219,7 @@ muestrasFrame<-ttkframe(seleccionFrame, borderwidth=1, relief="solid", padding=c
 
     valornfracasos<-tclvalue(nFracasosVar)
     if((valornfracasos!="") && (is.na(as.integer(valornfracasos)) || (as.integer(valornfracasos)<0) || !(isTRUE(all.equal(as.numeric(valornfracasos),as.integer(valornfracasos)))) )){
-      valornfracasos=""
+      valornfracasos<-""
       errorCondition(recall=contrasteHipotesisDiferenciaProporciones, message=gettext("Failures number value of Sample 1 must be a positive integer number",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -228,7 +228,7 @@ muestrasFrame<-ttkframe(seleccionFrame, borderwidth=1, relief="solid", padding=c
 
     valornexitos2<-tclvalue(nExitosVar2)
     if( (valornexitos2!="") && (is.na(as.integer(valornexitos2)) || (as.integer(valornexitos2)<0) || !(isTRUE(all.equal(as.numeric(valornexitos2),as.integer(valornexitos2)))) )) {
-      valornexitos2=""
+      valornexitos2<-""
       errorCondition(recall=contrasteHipotesisDiferenciaProporciones, message=gettext("Successes number value of Sample 2 must be a positive integer number",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -236,7 +236,7 @@ muestrasFrame<-ttkframe(seleccionFrame, borderwidth=1, relief="solid", padding=c
 
     valornfracasos2<-tclvalue(nFracasosVar2)
     if((valornfracasos2!="") && (is.na(as.integer(valornfracasos2)) || (as.integer(valornfracasos2)<0) || !(isTRUE(all.equal(as.numeric(valornfracasos2),as.integer(valornfracasos2)))) )){
-      valornfracasos2=""
+      valornfracasos2<-""
       errorCondition(recall=contrasteHipotesisDiferenciaProporciones, message=gettext("Failures number value of Sample 2 must be a positive integer number",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -277,7 +277,7 @@ muestrasFrame<-ttkframe(seleccionFrame, borderwidth=1, relief="solid", padding=c
     valornConfianza<-tclvalue(nConfianzaVar)
 
     if(is.na(as.numeric(valornConfianza)) || (as.numeric(valornConfianza)<0)||(as.numeric(valornConfianza)>1)) {
-      valornConfianza=0.95
+      valornConfianza<-0.95
       errorCondition(recall=contrasteHipotesisDiferenciaProporciones, message=gettext("Confidence level must be between 0 and 1",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -286,7 +286,7 @@ muestrasFrame<-ttkframe(seleccionFrame, borderwidth=1, relief="solid", padding=c
     valordiferenciaProporciones<-tclvalue(diferenciaProporcionesVariable)
 
     if(is.na(as.numeric(valordiferenciaProporciones))|| (as.numeric(valordiferenciaProporciones)< (-1))||(as.numeric(valordiferenciaProporciones)>1)){
-      valordiferenciaProporciones="0.0"
+      valordiferenciaProporciones<-"0.0"
       errorCondition(recall=contrasteHipotesisDiferenciaProporciones, message=gettext("Value for the null hypothesis must be between -1 and 1",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }

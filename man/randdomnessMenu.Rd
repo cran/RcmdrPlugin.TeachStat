@@ -11,13 +11,13 @@
 
   The first "Randomness test for two level factor..." can be used to
   contrast the randomness of a factor with two levels. This option use the function \code{runs.test} from
-  \code{tseries} package. For more information see
+  \code{tseries} package. %% For more information see
   \code{\link[tseries]{runs.test}}.
   
   The second entry in the menu
   "Randomness test for numeric variable..." is used to test the
   randomness of a numerical variable. This option use the function \code{runs.test} from
-  \code{randtest} package. For more information see \code{\link[randtests]{runs.test}}.
+  \code{randtest} package. %% For more information see \code{\link[randtests]{runs.test}}.
 }
 
 \details{

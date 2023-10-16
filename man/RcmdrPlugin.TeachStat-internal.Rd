@@ -99,7 +99,7 @@
 \alias{uniformDistrSamples}
 \alias{checkNames}
 \alias{isstring}
-\description{Internal RcmdrPlugin.TeachStat objects}
+\description{Internal \code{RcmdrPlugin.TeachStat} objects}
 \details{These are not to be called by the user.}
 \keyword{internal}
 

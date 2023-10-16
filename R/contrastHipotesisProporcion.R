@@ -5,7 +5,7 @@ contrastHipotesisProporcion <- function () {
   dialog.values <- getDialog ("contrastHipotesisProporcion", defaults)
   initializeDialog(title = gettext("Hypothesis Testing for a proportion",domain="R-RcmdrPlugin.TeachStat"))
 
-##Creación de los ComboBox
+##CreaciÃ³n de los ComboBox
 
   selectFactorsFrame<-tkframe(top)
   comboBoxFrame<-tkframe(selectFactorsFrame)
@@ -20,7 +20,7 @@ contrastHipotesisProporcion <- function () {
 
 
   valuescombo_box<-c(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"),twoOrMoreLevelFactors())
-  varcombo_box=tclVar(valuescombo_box[1])
+  varcombo_box<-tclVar(valuescombo_box[1])
 
   combo_box<-ttkcombobox(comboBoxFrame,values=valuescombo_box,textvariable=varcombo_box,state=mostrar)
   tkgrid(labelRcmdr(comboBoxFrame, text=gettext("Variable (pick one)",domain="R-RcmdrPlugin.TeachStat"), foreground=getRcmdr("title.color") ), sticky="nw")
@@ -42,13 +42,13 @@ contrastHipotesisProporcion <- function () {
           tkconfigure(combo_box2,values=niveles)
           tclvalue(varcombo_box2)<-niveles}})
 
-  varcombo_box2=tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
+  varcombo_box2<-tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
   combo_box2<-ttkcombobox(comboBoxFrame,values=varcombo_box2,textvariable=varcombo_box2,state="disabled")
 
   tkgrid(labelRcmdr(comboBoxFrame, text=gettext("Proportion for the level (pick one)",domain="R-RcmdrPlugin.TeachStat"), foreground=getRcmdr("title.color") ), sticky="nw")
   tkgrid(combo_box2, sticky="nw")
 
-##Fin creación comboBox
+##Fin creaciÃ³n comboBox
 
 
 
@@ -105,7 +105,7 @@ contrastHipotesisProporcion <- function () {
 
     valornexitos<-tclvalue(nExitosVar)
                 if( (valornexitos!="") && (is.na(as.integer(valornexitos)) || (as.integer(valornexitos)<0) || !(isTRUE(all.equal(as.numeric(valornexitos),as.integer(valornexitos)))) )) {
-                  valornexitos=""
+                  valornexitos<-""
                   errorCondition(recall=contrastHipotesisProporcion, message=gettext("Successes number value must be a positive integer number",domain="R-RcmdrPlugin.TeachStat"))
                   return()
                 }
@@ -113,7 +113,7 @@ contrastHipotesisProporcion <- function () {
 
     valornfracasos<-tclvalue(nFracasosVar)
     if((valornfracasos!="") && (is.na(as.integer(valornfracasos)) || (as.integer(valornfracasos)<0) || !(isTRUE(all.equal(as.numeric(valornfracasos),as.integer(valornfracasos)))) )){
-      valornfracasos=""
+      valornfracasos<-""
       errorCondition(recall=contrastHipotesisProporcion, message=gettext("Failures number value must be a positive integer number",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -143,7 +143,7 @@ contrastHipotesisProporcion <- function () {
     valornConfianza<-tclvalue(nConfianzaVar)
 
     if(is.na(as.numeric(valornConfianza)) || (as.numeric(valornConfianza)<=0)||(as.numeric(valornConfianza)>=1)) {
-      valornConfianza=0.95
+      valornConfianza<-0.95
       errorCondition(recall=contrastHipotesisProporcion, message=gettext("Confidence level must be between 0 and 1",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -152,7 +152,7 @@ contrastHipotesisProporcion <- function () {
     valorp0<-tclvalue(p0Variable)
 
     if((is.na(as.numeric(valorp0))) || (as.numeric(valorp0)<0)||(as.numeric(valorp0)>1)){
-      valorp0="0.0"
+      valorp0<-"0.0"
       errorCondition(recall=contrastHipotesisProporcion, message=gettext("Value for the null hypothesis must be between 0 and 1 (and not be)",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -169,7 +169,7 @@ contrastHipotesisProporcion <- function () {
     valornfracasos<-as.integer(valornfracasos)
     valornConfianza<-as.numeric(valornConfianza)
 
-    ###################### Imprimir la función a llamar por RCommander ###########################################
+    ###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
 
     .activeDataSet<-ActiveDataSet()
 

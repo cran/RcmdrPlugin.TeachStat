@@ -14,43 +14,43 @@ plotRegions(D, add = FALSE, regions = NULL, col = "gray", legend = TRUE,
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{D}{
-%%     ~~Describe \code{D} here~~
+object of class "\code{AffLinUnivarLebDecDistribution}" or class "\code{UnivarLebDecDistribution}" or class "\code{AbscontDistribution}" or class "\code{DiscreteDistribution}" or class "\code{DistrList}": (list of) distribution(s) to be plotted
 }
   \item{add}{
-%%     ~~Describe \code{add} here~~
+logical; if \code{TRUE} only \emph{add} to an existing plot.
 }
   \item{regions}{
-%%     ~~Describe \code{regions} here~~
+a list of regions to fill with color \code{col}; each element of the list is a pair of x values with the minimum and maximum horizontal coordinates of the corresponding region.
 }
   \item{col}{
-%%     ~~Describe \code{col} here~~
+may be a single value or a vector indicating the colors of the regions.
 }
   \item{legend}{
-%%     ~~Describe \code{legend} here~~
+plot a legend of the regions (default \code{TRUE}).
 }
   \item{legend.pos}{
-%%     ~~Describe \code{legend.pos} here~~
+position for the \code{legend} (see \code{\link[graphics]{legend}}, default "\code{topright}").
 }
   \item{to.draw.arg}{
-%%     ~~Describe \code{to.draw.arg} here~~
+Either \code{NULL} (default; everything is plotted) or a vector of either integers (the indices of the subplots to be drawn) or characters — the names of the subplots to be drawn: in case of an object x of class "\code{DiscreteDistribution}" or "\code{AbscontDistribution}" c("\code{d}","\code{p}","\code{q}") for density, c.d.f. and quantile function; in case of x a proper "\code{UnivarLebDecDistribution}" (with pos. weights for both discrete and abs. continuous part) names are c("\code{p}","\code{q}","\code{d.c}","\code{p.c}","\code{q.c}","\code{d.d}","\code{p.d}","\code{q.d}")) for c.d.f. and quantile function of the composed distribution and the respective three panels for the absolutely continuous and the discrete part, respectively;
 }
   \item{verticals}{
-%%     ~~Describe \code{verticals} here~~
+logical: if TRUE, draw vertical lines at steps; as in \link{plot.stepfun}
 }
   \item{ngrid}{
-%%     ~~Describe \code{ngrid} here~~
+integer: number of grid points used for plots of absolutely continuous distributions
 }
   \item{cex.points}{
-%%     ~~Describe \code{cex.points} here~~
+numeric; character expansion factor; as in \link{plot.stepfun}
 }
   \item{mfColRow}{
-%%     ~~Describe \code{mfColRow} here~~
+shall default partition in panels be used -- defaults to TRUE
 }
   \item{lwd}{
-%%     ~~Describe \code{lwd} here~~
+a vector of line widths, see \link{par}.
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+arguments to be passed to plot.
 }
 }
 \value{

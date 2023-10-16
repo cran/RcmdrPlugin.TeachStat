@@ -18,11 +18,11 @@ W.numSummary(data,
   \item{statistics}{any of \code{"mean"}, \code{"sd"}, \code{"se(mean)"}, \code{"quantiles"}, \code{"cv"} (coefficient of variation - sd/mean), \code{"skewness"} or \code{"kurtosis"}; defaulting to \code{c("mean", "sd", "quantiles", "IQR")}.}
   \item{type}{definition to use in computing skewness and kurtosis; see the \code{\link[e1071]{skewness}} and \code{\link[e1071]{kurtosis}} functions in the \pkg{e1071} package. The default is "2".}
   \item{quantiles}{quantiles to report; by default is \code{c(0, 0.25, 0.5, 0.75, 1)}.}
-  \item{groups}{optional variable, typically a factor, to be used to partition the data. By deafault is \code{NULL}.}
+  \item{groups}{optional variable, typically a factor, to be used to partition the data. By default is \code{NULL}.}
   \item{weights}{numeric vector of weights. Zero values are allowed.}
 }
 \details{
-\code{W.numSummary} performs a descriptive analisys of quantitative variables weighted (or not) by a numeric variable which determines the importance of each subject in the data frame. Optionally it allows the partition of the data by a factor variable (\code{groups}).
+\code{W.numSummary} performs a descriptive analysis of quantitative variables weighted (or not) by a numeric variable which determines the importance of each subject in the data frame. Optionally it allows the partition of the data by a factor variable (\code{groups}).
 
 Note that, unlike the \code{\link[RcmdrMisc]{numSummary}} function, the sample standard deviation is calculated instead of the sample standard quasideviation.
 }

@@ -5,7 +5,7 @@
 Frequency distributions for qualitative variables
 }
 \description{
-Performs the frequency distribution for qualitative variables, nominals and/or ordinals. For ordinal variables requested quantile is calculated.
+Performs frequency distribution for qualitative, nominal and/or ordinal variables. For ordinal variables, the requested quantile is calculated.
 }
 
 \usage{

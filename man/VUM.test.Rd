@@ -13,7 +13,7 @@ VUM.test(x, sigma = 1, sigmasq = sigma^2,
 }
 \arguments{
   \item{x}{a (non-empty) numeric vector of data values.}
-  \item{sigma}{a number indicating the true value of the population standar deviation - Null hypothesis.}
+  \item{sigma}{a number indicating the true value of the population standard deviation - Null hypothesis.}
   \item{sigmasq}{control argument.}
   \item{alternative}{a character string specifying the alternative hypothesis, must be one of  \code{"two.sided"}, \code{"greater"} o \code{"less"}. You can specify just the initial letter.}
   \item{conf.level}{confidence level of the interval.}
@@ -26,7 +26,7 @@ A list with class \code{"htest"} containing the following components:
   \item{parameter}{the degrees of freedom for the test statistic}
   \item{p.value}{the p-value for the test.}
   \item{conf.int}{confidence interval for variance with unknown population mean associated with the specified alternative hypothesis.}
-  \item{estimate}{vthe estimated variance.}
+  \item{estimate}{the estimated variance.}
   \item{null.value}{the specified hypothesized value of the variance.}
   \item{alternative}{a character string describing the alternative hypothesis.}
   \item{method}{a character string indicating what type of statistical test was performed.}

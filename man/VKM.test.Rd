@@ -13,7 +13,7 @@ VKM.test(x, sigma = 1, sigmasq = sigma^2, mu,
 }
 \arguments{
  \item{x}{a (non-empty) numeric vector of data values.}
-  \item{sigma}{a number indicating the true value of the population standar deviation - Null hypothesis.}
+  \item{sigma}{a number indicating the true value of the population standard deviation - Null hypothesis.}
   \item{sigmasq}{control argument.}
   \item{mu}{numerical value indicating the population mean assumed to be known (mandatory).}
   \item{alternative}{a character string specifying the alternative hypothesis, must be one of \code{"two.sided"} (default), \code{"greater"} or \code{"less"}. You can specify just the initial letter.}

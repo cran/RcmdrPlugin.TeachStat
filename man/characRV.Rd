@@ -1,5 +1,6 @@
 \name{characRV}
 \alias{characRV}
+\encoding{UTF-8}
 
 \title{
 Characteristics of Random Variables.
@@ -14,16 +15,16 @@ characRV(D, charact = c("expectation", "median", "sd", "IQR", "skewness", "kurto
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{D}{
-%%     ~~Describe \code{D} here~~
+An object of the class \code{Distribution}.
 }
   \item{charact}{
-%%     ~~Describe \code{charact} here~~
+any of "\code{expectation}", "\code{median}", "\code{sd}", "\code{IQR}", "\code{skewness}", "\code{kurtosis}", "\code{moment}", "\code{cmoment}"
 }
   \item{moment}{
-%%     ~~Describe \code{moment} here~~
+an integer indicating the moment with respect to the origin to be calculated.
 }
   \item{cmoment}{
-%%     ~~Describe \code{cmoment} here~~
+an integer indicating the moment with respect to the expectation to be calculated.
 }
 }
 

@@ -54,7 +54,7 @@ contrasteHipotesisMediasPareadas <- function () {
     valornConfianza<-tclvalue(nConfianzaVar)
 
     if(is.na(as.numeric(valornConfianza)) || (as.numeric(valornConfianza)<0)||(as.numeric(valornConfianza)>1)) {
-      valornConfianza=0.95
+      valornConfianza<-0.95
       errorCondition(recall=contrasteHipotesisMediasPareadas, message=gettext("Confidence level must be between 0 and 1",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -63,7 +63,7 @@ contrasteHipotesisMediasPareadas <- function () {
     valormu0<-tclvalue(muVariable)
 
     if(is.na(as.numeric(valormu0))){
-      valormu0="0.0"
+      valormu0<-"0.0"
       errorCondition(recall=contrasteHipotesisMediasPareadas, message=gettext("No valid value for the Null Hypothesis",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -77,7 +77,7 @@ contrasteHipotesisMediasPareadas <- function () {
     closeDialog()
 
 
-###################### Imprimir la función a llamar por RCommander ###########################################
+###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
 
    .activeDataSet<-ActiveDataSet()
 

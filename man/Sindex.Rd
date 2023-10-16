@@ -5,7 +5,7 @@
 Simple index numbers
 }
 \description{
-\code{Sindex} returns a data frame with the index numbers with a given base. An index number measures changes in a varible with respect to a characteristic (time, location, \ldots)
+\code{Sindex} returns a data frame with the index numbers with a given base. An index number measures changes in a variable with respect to a characteristic (time, location, \ldots)
 
 \code{Sindex} can also be used for computing the base change of an index number.
 }

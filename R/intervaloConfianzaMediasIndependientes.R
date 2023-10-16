@@ -20,7 +20,7 @@ intervaloConfianzaMediasIndependientes <- function () {
                                             title=gettext("Variable (pick one)",domain="R-RcmdrPlugin.TeachStat"))
   
   
-  ##Creación de los ComboBox
+  ##CreaciÃ³n de los ComboBox
   
   
   comboBoxFrame<-tkframe(selectFrame)
@@ -81,7 +81,7 @@ intervaloConfianzaMediasIndependientes <- function () {
   
   
   
-  ##Fin creación comboBox
+  ##Fin creaciÃ³n comboBox
   
   #   variablenumericaFrame<-tkframe(top)
   #   selectVariableICMedia <- variableComboBox(variablenumericaFrame, variableList=Numeric(),
@@ -207,7 +207,7 @@ intervaloConfianzaMediasIndependientes <- function () {
     closeDialog()
     
     
-    ###################### Imprimir la función a llamar por RCommander ###########################################
+    ###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
     
     .activeDataSet<-ActiveDataSet()
     level1<-tclvalue(varcombo_box2)

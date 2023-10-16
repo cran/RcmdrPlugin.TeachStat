@@ -5,7 +5,7 @@
 \alias{DiscreteDistrsP}
 \alias{AbscontDistrsP}
 \title{
-RcmdrPlugin.TeachStat Utility Functions
+\code{RcmdrPlugin.TeachStat} Utility Functions
 }
 \description{
 \code{twoOrMoreLevelFactorsP()} returns TRUE if there is at least one factor in the active dataset that has two or more levels.

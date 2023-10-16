@@ -27,9 +27,9 @@ DMKV.test(x, y, difmu = 0, sdx, sdy,
  A list with class \code{"htest"} containing the following components:
 
   \item{statistic}{the value of the test statistic.}
-  \item{parameter}{sample lenghts and population standard deviations.}
+  \item{parameter}{sample lengths and population standard deviations.}
   \item{p.value}{the p-value for the test.}
-  \item{conf.int}{intervalo de confianza para la diferencia de medias con varianzas poblacionales conocidas asociado a la hipótesis alternativa especificada.}
+  \item{conf.int}{confidence interval for the difference of means with known population variances associated with the specified alternative hypothesis.}
   \item{estimate}{the estimated difference in means.}
   \item{null.value}{the specified hypothesized value of the mean difference.}
   \item{alternative}{a character string describing the alternative hypothesis.}

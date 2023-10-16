@@ -26,7 +26,7 @@ contrasteHipotesis2Varianzas <- function () {
 
 
   valuescombo_box<-c(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"),twoOrMoreLevelFactors())
-  varcombo_box=tclVar(valuescombo_box[1])
+  varcombo_box<-tclVar(valuescombo_box[1])
 
   combo_box<-ttkcombobox(comboBoxFrame,values=valuescombo_box,textvariable=varcombo_box,state=mostrar)
   tkgrid(labelRcmdr(comboBoxFrame, text=gettext("Groups (pick one)",domain="R-RcmdrPlugin.TeachStat"), foreground=getRcmdr("title.color") ), sticky="nw")
@@ -55,19 +55,19 @@ contrasteHipotesis2Varianzas <- function () {
           tkconfigure(combo_box3,values=niveles)
           tclvalue(varcombo_box3)<-niveles}})
 
-  varcombo_box2=tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
+  varcombo_box2<-tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
   combo_box2<-ttkcombobox(comboBoxFrame,values=varcombo_box2,textvariable=varcombo_box2,state="disabled")
 
   tkgrid(labelRcmdr(comboBoxFrame, text=gettext("Group 1",domain="R-RcmdrPlugin.TeachStat"), foreground=getRcmdr("title.color") ), sticky="nw")
   tkgrid(combo_box2, sticky="nw")
 
-  varcombo_box3=tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
+  varcombo_box3<-tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
   combo_box3<-ttkcombobox(comboBoxFrame,values=varcombo_box3,textvariable=varcombo_box3,state="disabled")
 
   tkgrid(labelRcmdr(comboBoxFrame, text=gettext("Group 2",domain="R-RcmdrPlugin.TeachStat"), foreground=getRcmdr("title.color") ), sticky="nw")
   tkgrid(combo_box3, sticky="nw")
 
-##Fin creación comboBox
+##Fin creaciÃ³n comboBox
 
 
 
@@ -122,7 +122,7 @@ contrasteHipotesis2Varianzas <- function () {
     valornConfianza<-tclvalue(nConfianzaVar)
 
     if(is.na(as.numeric(valornConfianza)) || (as.numeric(valornConfianza)<0)||(as.numeric(valornConfianza)>1)) {
-      valornConfianza=0.95
+      valornConfianza<-0.95
       errorCondition(recall=contrasteHipotesis2Varianzas, message=gettext("Confidence level must be between 0 and 1",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -131,7 +131,7 @@ contrasteHipotesis2Varianzas <- function () {
     valorsigma0<-tclvalue(sigmaVariable)
 
     if(is.na(as.numeric(valorsigma0))||(as.numeric(valorsigma0)<=0)){
-      valorsigma0="0.0"
+      valorsigma0<-"0.0"
       errorCondition(recall=contrasteHipotesis2Varianzas, message=gettext("Value for the null hypothesis must be a positive number",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -144,7 +144,7 @@ contrasteHipotesis2Varianzas <- function () {
     closeDialog()
 
 
-###################### Imprimir la función a llamar por RCommander ###########################################
+###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
 
    .activeDataSet<-ActiveDataSet()
     level1<-tclvalue(varcombo_box2)

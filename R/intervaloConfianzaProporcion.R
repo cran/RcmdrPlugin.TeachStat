@@ -12,7 +12,7 @@ intervaloConfianzaProporcion <- function () {
   dialog.values <- getDialog (dialogName, defaults)
   initializeDialog(title = gettext("Confidence interval for a proportion",domain="R-RcmdrPlugin.TeachStat"))
   
-  ##Creación de los ComboBox
+  ##CreaciÃ³n de los ComboBox
   
   selectFrame<-tkframe(top)
   comboBoxFrame<-ttkframe(selectFrame,borderwidth=1, relief="solid", padding=c(5,5,8,8))
@@ -66,7 +66,7 @@ intervaloConfianzaProporcion <- function () {
   combo_box2<-ttkcombobox(comboBoxFrame,values=valuescombo_box2,textvariable=varcombo_box2,state=mostrar)
   
   
-  ##Fin creación comboBox
+  ##Fin creaciÃ³n comboBox
   
   
   
@@ -173,7 +173,7 @@ intervaloConfianzaProporcion <- function () {
     valornfracasos<-as.integer(valornfracasos)
     valornConfianza<-as.numeric(valornConfianza)
     
-    ###################### Imprimir la función a llamar por RCommander ###########################################
+    ###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
     
     .activeDataSet<-ActiveDataSet()
     

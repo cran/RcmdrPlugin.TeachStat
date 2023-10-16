@@ -1,11 +1,11 @@
 contrasteHipotesisMediasIndependientes <- function () {
  #invisible(library(tcltk2))
 
-  defaults <- list (initial.var="<no variable selected>",initial.varianza="2",initial.valorvarianzaconocida1="",initial.valorvarianzaconocida2="",initial.nconf="0.95",initial.alternative = "two.sided",initial.mu = "0.0")
+  defaults <- list (initial.var=gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"),initial.varianza="2",initial.valorvarianzaconocida1="",initial.valorvarianzaconocida2="",initial.nconf="0.95",initial.alternative = "two.sided",initial.mu = "0.0")
   dialog.values <- getDialog ("contrasteHipotesisMediasIndependientes", defaults)
   initializeDialog(title = gettext("Hypothesis Testing for the difference of independent means",domain="R-RcmdrPlugin.TeachStat"))
 
-##Creación de los ComboBox
+##CreaciÃ³n de los ComboBox
 
   selectFactorsFrame<-tkframe(top)
   
@@ -27,7 +27,7 @@ contrasteHipotesisMediasIndependientes <- function () {
 
 
   valuescombo_box<-c(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"),twoOrMoreLevelFactors())
-  varcombo_box=tclVar(valuescombo_box[1])
+  varcombo_box<-tclVar(valuescombo_box[1])
 
   combo_box<-ttkcombobox(comboBoxFrame,values=valuescombo_box,textvariable=varcombo_box,state=mostrar)
   tkgrid(labelRcmdr(comboBoxFrame, text=gettext("Groups (pick one)",domain="R-RcmdrPlugin.TeachStat"), foreground=getRcmdr("title.color")), sticky="nw")
@@ -56,19 +56,19 @@ contrasteHipotesisMediasIndependientes <- function () {
           tkconfigure(combo_box3,values=niveles)
           tclvalue(varcombo_box3)<-niveles}})
 
-  varcombo_box2=tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
+  varcombo_box2<-tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
   combo_box2<-ttkcombobox(comboBoxFrame,values=varcombo_box2,textvariable=varcombo_box2,state="disabled")
 
   tkgrid(labelRcmdr(comboBoxFrame, text=gettext("Group 1",domain="R-RcmdrPlugin.TeachStat"), foreground=getRcmdr("title.color") ), sticky="nw")
   tkgrid(combo_box2, sticky="nw")
 
-  varcombo_box3=tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
+  varcombo_box3<-tclVar(gettext("<no variable selected>",domain="R-RcmdrPlugin.TeachStat"))
   combo_box3<-ttkcombobox(comboBoxFrame,values=varcombo_box3,textvariable=varcombo_box3,state="disabled")
 
   tkgrid(labelRcmdr(comboBoxFrame, text=gettext("Group 2",domain="R-RcmdrPlugin.TeachStat"), foreground=getRcmdr("title.color") ), sticky="nw")
   tkgrid(combo_box3, sticky="nw")
 
-##Fin creación comboBox
+##Fin creaciÃ³n comboBox
 
 
 
@@ -153,8 +153,8 @@ onOK <- function(){
     if(tipoVarianza=="1"){valorsigma1<-tclvalue(varianzaconocida1)
                           valorsigma2<-tclvalue(varianzaconocida2)
           if(is.na(as.numeric(valorsigma1)) || (as.numeric(valorsigma1)<=0)||is.na(as.numeric(valorsigma2)) || (as.numeric(valorsigma2)<=0) ){
-             valorsigma1=""
-             valorsigma2=""
+             valorsigma1<-""
+             valorsigma2<-""
              errorCondition(recall=contrasteHipotesisMediasIndependientes, message=gettext("Known variances values must be positive numbers",domain="R-RcmdrPlugin.TeachStat"))
               return()
           }
@@ -166,7 +166,7 @@ onOK <- function(){
     valornConfianza<-tclvalue(nConfianzaVar)
 
     if(is.na(as.numeric(valornConfianza)) || (as.numeric(valornConfianza)<0)||(as.numeric(valornConfianza)>1)) {
-      valornConfianza=0.95
+      valornConfianza<-0.95
       errorCondition(recall=contrasteHipotesisMediasIndependientes, message=gettext("Confidence level must be between 0 and 1",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -177,7 +177,7 @@ onOK <- function(){
     valormu0<-tclvalue(muVariable)
 
     if(is.na(as.numeric(valormu0))){
-      valormu0="0.0"
+      valormu0<-"0.0"
       errorCondition(recall=contrasteHipotesisMediasIndependientes, message=gettext("No valid value for the Null Hypothesis",domain="R-RcmdrPlugin.TeachStat"))
       return()
     }
@@ -192,7 +192,7 @@ onOK <- function(){
     closeDialog()
 
 
-###################### Imprimir la función a llamar por RCommander ###########################################
+###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
 
    .activeDataSet<-ActiveDataSet()
     level1<-tclvalue(varcombo_box2)
@@ -203,7 +203,7 @@ onOK <- function(){
     vLevelGrupos<-paste("c(",'"',tclvalue(varcombo_box2),'"',",",'"',tclvalue(varcombo_box3),'"',")",sep="")
     vVariable<-paste(.activeDataSet,"$",varHCMedia, sep="")
   if(tipoVarianza=="1"){ valorVarianza<-paste("c(",valorsigma1,",",valorsigma2,")",sep="")}
-  else{valorVarianza=NA}
+  else{valorVarianza<-NA}
 
   Haltern<-paste('"',varHAlternativa,'"',sep="")
 

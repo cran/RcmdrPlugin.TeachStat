@@ -72,7 +72,7 @@ ConvertVariables<- function () {
    
     
 
-###################### Imprimir la función a llamar por RCommander ###########################################
+###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
 
     .activeDataSet<-ActiveDataSet()
     asNominal <- setdiff(var1,nominales_en_ActiveDataSet)

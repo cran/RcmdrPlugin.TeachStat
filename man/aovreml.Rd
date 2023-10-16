@@ -15,19 +15,19 @@ aovreml(formula, data = NULL, Lconfint = FALSE, REML = TRUE, ...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{formula}{
-%%     ~~Describe \code{formula} here~~
+A formula specifying the model. Random-effects terms are distinguished by vertical bars (|) separating expressions for design matrices from grouping factors. Two vertical bars (||) can be used to specify multiple uncorrelated random effects for the same grouping variable. (Because of the way it is implemented, the ||-syntax works only for design matrices containing numeric (continuous) predictors.)
 }
   \item{data}{
-%%     ~~Describe \code{data} here~~
+an optional data frame containing the variables named in \code{formula}. By default the variables are taken from the environment of \code{formula}.
 }
   \item{Lconfint}{
-%%     ~~Describe \code{Lconfint} here~~
+logical scalar - Should the confidence intervals be printed?
 }
   \item{REML}{
-%%     ~~Describe \code{REML} here~~
+logical scalar - Should the estimates be chosen to optimize the REML criterion (as opposed to the log-likelihood)?
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Arguments to be passed to other functions.
 }
 }
 \value{
