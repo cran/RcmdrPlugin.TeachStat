@@ -1,7 +1,7 @@
 Package: RcmdrPlugin.TeachStat
 Type: Package
 Title: R Commander Plugin for Teaching Statistical Methods
-Version: 1.1.2
+Version: 1.1.3
 Authors@R: c(
     person("Tomás R.", "Cotos Yañez", email="cotos@uvigo.gal",role = "aut",comment = c(ORCID = "0000-0002-7732-6565")),
     person("Manuel A.", "Mosquera Rodríguez", email = "mamrguez@uvigo.es", role = c("aut","cre"),comment = c(ORCID = "0000-0002-4769-6119")),
@@ -17,7 +17,7 @@ Suggests: tkrplot, e1071, RcmdrMisc, randtests
 LazyData: TRUE
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2023-10-16 10:38:26 UTC; Alfredo
+Packaged: 2023-11-13 14:47:23 UTC; Alfredo
 Author: Tomás R. Cotos Yañez [aut] (<https://orcid.org/0000-0002-7732-6565>),
   Manuel A. Mosquera Rodríguez [aut, cre]
     (<https://orcid.org/0000-0002-4769-6119>),
@@ -25,4 +25,4 @@ Author: Tomás R. Cotos Yañez [aut] (<https://orcid.org/0000-0002-7732-6565>),
   Benigno Reguengo Lareo [aut]
 Maintainer: Manuel A. Mosquera Rodríguez <mamrguez@uvigo.es>
 Repository: CRAN
-Date/Publication: 2023-10-16 14:00:02 UTC
+Date/Publication: 2023-11-14 13:53:28 UTC

@@ -1,11 +1,11 @@
-3b95ee759a81c90dad5c2dcfc2ade8f3 *DESCRIPTION
+b764445d17744decbd785e6fe71bff68 *DESCRIPTION
 2a748cbeff4e117815637e614a1c9838 *NAMESPACE
-999ef60ca841379b225895c2ddf48006 *NEWS
+f5f2e147bc6abdf7358081ebd2cb5cae *NEWS
 be62701e4ee7b93fdf7bb138e6d0265b *R/Aleatoriedad.R
 46cb771a8d6a19314d95b1d3762deb83 *R/IndexNumbers.R
 247429835e3887f8e4734a064fe1252b *R/RandVarMenu.R
 18792ef0cfe6a412add1a4451019fb80 *R/aovre_functions.R
-637a53360d8721bccc886df0188115da *R/contrastHipotesisProporcion.R
+9f4a156e95019ba2403ed05bab5e3256 *R/contrastHipotesisProporcion.R
 06baff0636a0fa2304359e8a5e7a5ff8 *R/contrasteHipotesis2Varianzas.R
 933374d72b770f103586e5c738c57e4c *R/contrasteHipotesisDiferenciaProporciones.R
 bf4c52201b3fa2a54d5fae3137414407 *R/contrasteHipotesisMedia.R
@@ -29,7 +29,7 @@ fd7dc454cc9c0ffb1d38d85fef0d8278 *R/randomANOVA.R
 2aa19265a8aea8f425c512fc209c29d5 *R/resumenNumerico.R
 cd4ae577c8f46162f526f45872ddb03b *R/resumenNumericoPonderada.R
 93b6e046ed278386095c667547041c6a *R/resumenNumericoVContinua.R
-a017b188a9a4204207cb08edb6732b37 *R/resumenNumericoVDiscreta.R
+106afcc1bee7c7c3890025c74db50628 *R/resumenNumericoVDiscreta.R
 21ac66cebaaae8207a788f954ac9676c *R/resumenVariablesCualitativas.R
 8706f272975cb713085f1f4f7f9bb751 *R/startup.R
 0244b000f13c4028f95e2a53f03ade95 *R/testscontrasteshipotesis.R
@@ -58,7 +58,7 @@ bf9fe209253a52edfd3df9bede77cbce *man/GUI_IndexNumbers.Rd
 02c6a22e6af31ba4958a187686e3f1f1 *man/MKV.test.Rd
 412ac84b4fbabc65a799eac8ad2cee83 *man/Prices.Rd
 66eeae4ee7a8c43c73a314709ace9456 *man/RcmdrPlugin.TeachStat-internal.Rd
-2da3b9f65412972201d4f17804bb4154 *man/RcmdrPlugin.TeachStat-package.Rd
+c1cf439dd05ccbf1cf0830168b7f14a5 *man/RcmdrPlugin.TeachStat-package.Rd
 cc302489f9b2e50defa41d4812e9b958 *man/Sindex.Rd
 1b9d76a786f0cc8d6e69c644149fe694 *man/Utilities.Rd
 09f0c37ae8a902638f3971665914ea77 *man/VKM.test.Rd
@@ -74,7 +74,7 @@ cd79371ade3a5b58fa9721e381ab7cb8 *man/calcular_frecuencia.Rd
 9905428bb149a49f8c55e80a71c695cc *man/characRV.Rd
 726a7ffb8a3c57bbd1ee105ff9c84e35 *man/distrDefine.Rd
 248b2c5eee23ed6e2b5124560f952439 *man/listTypesVariables.Rd
-a26353f166faef28239673246ae8e958 *man/plotRegions.Rd
+a6453a7900bd58a819ab43bcb249e02a *man/plotRegions.Rd
 5cb3b18eedb05d4b9ddcc6f1cc7f09b7 *man/priceIndexNum.Rd
 5df658008b93d30c8d52f4481f0b14c2 *man/randdomnessMenu.Rd
 39cc3fb39b6c6bda7757d7255e80033c *po/R-RcmdrPlugin.TeachStat.pot

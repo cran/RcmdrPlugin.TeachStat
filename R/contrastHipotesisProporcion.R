@@ -5,7 +5,7 @@ contrastHipotesisProporcion <- function () {
   dialog.values <- getDialog ("contrastHipotesisProporcion", defaults)
   initializeDialog(title = gettext("Hypothesis Testing for a proportion",domain="R-RcmdrPlugin.TeachStat"))
 
-##Creación de los ComboBox
+##Creacion de los ComboBox
 
   selectFactorsFrame<-tkframe(top)
   comboBoxFrame<-tkframe(selectFactorsFrame)
@@ -48,7 +48,7 @@ contrastHipotesisProporcion <- function () {
   tkgrid(labelRcmdr(comboBoxFrame, text=gettext("Proportion for the level (pick one)",domain="R-RcmdrPlugin.TeachStat"), foreground=getRcmdr("title.color") ), sticky="nw")
   tkgrid(combo_box2, sticky="nw")
 
-##Fin creación comboBox
+##Fin creacion comboBox
 
 
 
@@ -169,7 +169,7 @@ contrastHipotesisProporcion <- function () {
     valornfracasos<-as.integer(valornfracasos)
     valornConfianza<-as.numeric(valornConfianza)
 
-    ###################### Imprimir la función a llamar por RCommander ###########################################
+    ###################### Imprimir la funcion a llamar por RCommander ###########################################
 
     .activeDataSet<-ActiveDataSet()
 
@@ -192,7 +192,7 @@ contrastHipotesisProporcion <- function () {
 
   #     auxi<-sum(variableICProporcion==vLevelICProporcion)
   #      if(auxi<1){
-  #      errorCondition(recall=contrastHipotesisProporcion, message=gettext("N?mero de Exitos no puede ser menor que 1",domain="R-RcmdrPlugin.TeachStat"))
+  #      errorCondition(recall=contrastHipotesisProporcion, message=gettext("Numero de Exitos no puede ser menor que 1",domain="R-RcmdrPlugin.TeachStat"))
   #      return()
   #    }
 
@@ -241,7 +241,7 @@ contrastHipotesisProporcion <- function () {
       }
 
       command2<- paste("aux<- Cprop.test(ex=",valornexitos,", nx=",valornexitos + valornfracasos,",p.null=",valorp0,", alternative=",Haltern,")",sep="" )
-#       tipointervalo<-paste("\\nCONTRASTE DE HIP?TESIS PARA UNA PROPORCI?N","\\n", sep="")
+#       tipointervalo<-paste("\\nCONTRASTE DE HIPOTESIS PARA UNA PROPORCION","\\n", sep="")
 #       linaux<-paste(rep(c("-"," "),(nchar(tipointervalo)/2)),collapse="")
 #       tipointervalo<-paste(tipointervalo, linaux,sep="")
 
@@ -275,9 +275,9 @@ contrastHipotesisProporcion <- function () {
 #       if(aux$p.value>=0 && aux$p.value<=0.0001){cat("P.valor:",format.pval(aux$p.value),"***\\n")}'
 # 
 # 
-#       if (varHAlternativa == "two.sided"){h.alt<-paste("Proporci?n poblacional no es igual a ",valorp0,sep="")}
-#       if (varHAlternativa == "less"){h.alt<-paste("Proporci?n poblacional es menor a ",valorp0,sep="")}
-#       if (varHAlternativa == "greater"){h.alt<- paste("Proporci?n poblacional es mayor a ",valorp0,sep="")}
+#       if (varHAlternativa == "two.sided"){h.alt<-paste("Proporcion poblacional no es igual a ",valorp0,sep="")}
+#       if (varHAlternativa == "less"){h.alt<-paste("Proporcion poblacional es menor a ",valorp0,sep="")}
+#       if (varHAlternativa == "greater"){h.alt<- paste("Proporcion poblacional es mayor a ",valorp0,sep="")}
 #       h.alt<-paste('\n cat("Hipotesis alternativa:","',h.alt,'","\\n")')
 
       #e.muestral<-'\n cat("Estimador muestral:",names(aux$estimate),as.numeric(aux$estimate),"\\n")'

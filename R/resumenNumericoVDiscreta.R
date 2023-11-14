@@ -405,7 +405,7 @@ resumenNumericoVDiscreta <- function(){
     print_tabla_Frecuencia<-as.logical(as.numeric(tfrec))
     
     
-    ###################### Imprimir la función a llamar por RCommander ###########################################
+    ###################### Imprimir la funciÃ³n a llamar por RCommander ###########################################
     
     .activeDataSet<-ActiveDataSet()
     

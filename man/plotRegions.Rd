@@ -32,7 +32,7 @@ plot a legend of the regions (default \code{TRUE}).
 position for the \code{legend} (see \code{\link[graphics]{legend}}, default "\code{topright}").
 }
   \item{to.draw.arg}{
-Either \code{NULL} (default; everything is plotted) or a vector of either integers (the indices of the subplots to be drawn) or characters — the names of the subplots to be drawn: in case of an object x of class "\code{DiscreteDistribution}" or "\code{AbscontDistribution}" c("\code{d}","\code{p}","\code{q}") for density, c.d.f. and quantile function; in case of x a proper "\code{UnivarLebDecDistribution}" (with pos. weights for both discrete and abs. continuous part) names are c("\code{p}","\code{q}","\code{d.c}","\code{p.c}","\code{q.c}","\code{d.d}","\code{p.d}","\code{q.d}")) for c.d.f. and quantile function of the composed distribution and the respective three panels for the absolutely continuous and the discrete part, respectively;
+Either \code{NULL} (default; everything is plotted) or a vector of either integers (the indices of the subplots to be drawn) or characters - the names of the subplots to be drawn: in case of an object x of class "\code{DiscreteDistribution}" or "\code{AbscontDistribution}" c("\code{d}","\code{p}","\code{q}") for density, c.d.f. and quantile function; in case of x a proper "\code{UnivarLebDecDistribution}" (with pos. weights for both discrete and abs. continuous part) names are c("\code{p}","\code{q}","\code{d.c}","\code{p.c}","\code{q.c}","\code{d.d}","\code{p.d}","\code{q.d}")) for c.d.f. and quantile function of the composed distribution and the respective three panels for the absolutely continuous and the discrete part, respectively;
 }
   \item{verticals}{
 logical: if TRUE, draw vertical lines at steps; as in \link{plot.stepfun}

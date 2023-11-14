@@ -13,7 +13,7 @@ It adds a new menu for making easier the teaching of the main concepts about the
 Package: \tab \code{RcmdrPlugin.TeachStat}\cr
 Type: \tab Package\cr
 Version: \tab 1.1.2\cr
-Date: \tab 2023-10-16\cr
+Date: \tab 2023-11-13\cr
 License: \tab GPL version 2 or newer\cr
 }
 }
