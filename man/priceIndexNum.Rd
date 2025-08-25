@@ -32,7 +32,7 @@ Character string for the name of the quantity variable.
 Character string for the name of the base characteristic.
 }
   \item{indexMethod}{
-Character vector to select the price index method. Tipical price index methods are laspeyres (default), paasche, and fisher, but it can also be use those in function \code{\link{priceIndex}} from package \code{IndexNumR} (dutot, carli, jevons, cswd, harmonic, tornqvist, satovartia, walsh and CES).
+Character vector to select the price index method. Tipical price index methods are laspeyres (default), paasche, and fisher, but it can also be use those in function \code{\link[IndexNumR]{priceIndex}} from package \code{IndexNumR} (dutot, carli, jevons, cswd, harmonic, tornqvist, satovartia, walsh and CES).
 }
   \item{output}{
 A character string specifying whether a chained (output="chained") , fixed base (output="fixedBase") or period-on-period (output="pop") price index numbers should be returned. Default is fixed base.
@@ -42,7 +42,7 @@ Further arguments passed to or from other methods.
 }
 }
 \details{
-\code{priceIndexNum} uses the function \code{\link{priceIndex}} from package \code{IndexNumR} without restricting the argument \code{pervar} from being integers starting at period 1 (base) and increasing in increments of 1 period. 
+\code{priceIndexNum} uses the function \code{\link[IndexNumR]{priceIndex}} from package \code{IndexNumR} without restricting the argument \code{pervar} from being integers starting at period 1 (base) and increasing in increments of 1 period. 
 }
 \value{
 \code{priceIndexNum} returns a data frame with one column with the characteristic variable plus as many columns as \code{indexMethod} selected:
@@ -54,7 +54,7 @@ Further arguments passed to or from other methods.
 }
 
 \seealso{
-\code{\link{priceIndex}}, \code{\link{Sindex}}, \code{\link{Deflat}}, \code{\link{ComplexIN}}.
+\code{\link[IndexNumR]{priceIndex}}, \code{\link{Sindex}}, \code{\link{Deflat}}, \code{\link{ComplexIN}}.
 }
 \examples{
 library(IndexNumR)

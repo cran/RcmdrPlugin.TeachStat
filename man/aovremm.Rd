@@ -37,7 +37,7 @@ A list%%  ~Describe the value returned
 
 
 \seealso{
-\code{\link{aov}}, \code{\link{lmer}}, \code{\link{aovreml}}.
+\code{\link{aov}}, \code{\link[lme4]{lmer}}, \code{\link{aovreml}}.
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----

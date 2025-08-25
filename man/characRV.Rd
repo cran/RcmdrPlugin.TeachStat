@@ -33,8 +33,8 @@ an integer indicating the moment with respect to the expectation to be calculate
 }
 
 \seealso{
-\code{\link{E}}, \code{\link{median}}, \code{\link{sd}}, \code{\link{IQR}}, 
-\code{\link{skewness}}, \code{\link{kurtosis}}
+\code{\link[distrEx]{E}}, \code{\link[distrEx]{median}}, \code{\link[distrEx]{sd}}, \code{\link[distrEx]{IQR}}, 
+\code{\link[distrEx]{skewness}}, \code{\link[distrEx]{kurtosis}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----

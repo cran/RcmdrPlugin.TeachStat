@@ -12,8 +12,8 @@ It adds a new menu for making easier the teaching of the main concepts about the
 \tabular{ll}{
 Package: \tab \code{RcmdrPlugin.TeachStat}\cr
 Type: \tab Package\cr
-Version: \tab 1.1.2\cr
-Date: \tab 2023-11-13\cr
+Version: \tab 1.1.4\cr
+Date: \tab 2025-08-25\cr
 License: \tab GPL version 2 or newer\cr
 }
 }
@@ -27,6 +27,6 @@ Benigno Reguengo Lareo <benireguengo@gmail.com>
 
 \keyword{ package }
 \seealso{
-\code{\link{Rcmdr}}.
+\code{\link[Rcmdr]{Rcmdr}}.
 }
 

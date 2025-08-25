@@ -12,11 +12,11 @@
 
 \code{twoOrMoreLevelFactors()} returns the object name of those factors that are active in the dataset that have at least two levels.
 
-\code{listDistrs(class, env)} returns the object name of those distributions of class \code{class} (see package \code{\link{distr}}) in the \code{env} environment.
+\code{listDistrs(class, env)} returns the object name of those distributions of class \code{class} (see package \code{\link[distr]{distr}}) in the \code{env} environment.
 
-\code{DiscreteDistrsP()} returns TRUE if there is at least one distribution of class \code{DiscreteDistribution} (see \code{\link{DiscreteDistribution}}).
+\code{DiscreteDistrsP()} returns TRUE if there is at least one distribution of class \code{DiscreteDistribution} (see \code{\link[distr]{DiscreteDistribution}}).
 
-\code{AbscontDistrsP()} returns TRUE if there is at least one distribution of class \code{AbscontDistribution} (see \code{\link{AbscontDistribution}}).
+\code{AbscontDistrsP()} returns TRUE if there is at least one distribution of class \code{AbscontDistribution} (see \code{\link[distr]{AbscontDistribution}}).
 }
 
 
